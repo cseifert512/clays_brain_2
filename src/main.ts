@@ -207,19 +207,19 @@ function createImageSprites() {
         console.error(`There was an error loading texture: ${url}`);
     };
     
-    const cloudName = 'dazckbnuv';
-    const imageVersionPath = 'v1748342088'; // The version part of the Cloudinary URL
+    const cloudName = 'dhivyxaxy';
+    const imageVersionPath = 'v1753319642'; // The version part of the Cloudinary URL
 
     loadedEmbeddings.forEach((item, index) => {
-        const filenameWithoutExtension = item.filename.substring(0, item.filename.lastIndexOf('.'));
+        // Use the filename directly, including its extension
         let imageUrl = '';
 
         if (IS_MOBILE) {
             // Construct URL with width transformation for mobile
-            imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/w_${MOBILE_TEXTURE_WIDTH}/${imageVersionPath}/${filenameWithoutExtension}.webp`;
+            imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/w_${MOBILE_TEXTURE_WIDTH}/${imageVersionPath}/${item.filename}`;
         } else {
             // Original URL for desktop
-            imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/${imageVersionPath}/${filenameWithoutExtension}.webp`;
+            imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/${imageVersionPath}/${item.filename}`;
         }
         // console.log(`Loading image: ${imageUrl}`); // For debugging
 
