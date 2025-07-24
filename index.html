@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clays_brain</title>
+  <script type="module" crossorigin src="/assets/index-BCC3yBGL.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Fg3dmWsR.css">
+</head>
+<body>
+    <div id="preloader-modal">
+        <h2>Hello!</h2>
+        <p id="description">This is a visualization of my brain. It's a work in progress, and I'm not sure what it's going to look like when it's done.<br><br>Use your mouse to navigate the visualization or toggle the Orbit mode.</p>
+        
+        <div id="preloader-interactive-area">
+            <div class="loading-bar-container">
+                <div class="loading-bar-fill" id="loading-bar-fill"></div>
+            </div>
+            <span id="start-button">Start</span>
+        </div>
+
+    </div>
+
+    <div class="view-controls">
+        <div class="visualization-toggle">
+            <input type="radio" id="viz-3d" name="visualization" value="3d" checked>
+            <label for="viz-3d">3D</label>
+            <input type="radio" id="viz-2d-grid" name="visualization" value="2d-grid">
+            <label for="viz-2d-grid">2D Grid</label>
+            <input type="radio" id="viz-2d-scatter" name="visualization" value="2d-scatter">
+            <label for="viz-2d-scatter">2D Scatter</label>
+        </div>
+        <div class="toggle-switch">
+            <input type="checkbox" id="auto-rotate-toggle" class="toggle-input" checked>
+            <label for="auto-rotate-toggle" class="toggle-label">Orbit</label>
+        </div>
+    </div>
+
+    <canvas id="webgl-canvas"></canvas>
+</body>
+</html>
