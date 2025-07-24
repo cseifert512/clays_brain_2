@@ -3,6 +3,19 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { gsap } from 'gsap';
 import type { EmbeddingItem, LayoutAlgorithm } from './types';
 
+// Add this at the top of the file or in a types file if not present
+// Vite provides import.meta.env, so we need to declare it for TypeScript
+// If you already have this in types.ts, you can skip it
+
+declare global {
+  interface ImportMeta {
+    env: {
+      BASE_URL: string;
+      [key: string]: any;
+    };
+  }
+}
+
 const IS_MOBILE = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
 const MAX_EMBEDDINGS_MOBILE = 1000; // Attempt to load all 1000 images on mobile with resizing
 const MOBILE_TEXTURE_WIDTH = 256; // Target width for textures on mobile
@@ -84,7 +97,8 @@ function initThreeApp() {
 
 async function loadDataAndSetupUI() {
     try {
-        const response = await fetch('/embeddings.json');
+        // Use Vite's base URL for correct asset path in dev and production
+        const response = await fetch(`${import.meta.env.BASE_URL}embeddings.json`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -208,18 +222,19 @@ function createImageSprites() {
     };
     
     const cloudName = 'dhivyxaxy';
-    const imageVersionPath = 'v1753319642'; // The version part of the Cloudinary URL
+    // Remove the version part entirely
+    // const imageVersionPath = ''; // No longer needed
 
     loadedEmbeddings.forEach((item, index) => {
-        // Use the filename directly, including its extension
+        const filenameWithoutExtension = item.filename.substring(0, item.filename.lastIndexOf('.'));
         let imageUrl = '';
 
         if (IS_MOBILE) {
-            // Construct URL with width transformation for mobile
-            imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/w_${MOBILE_TEXTURE_WIDTH}/${imageVersionPath}/${item.filename}`;
+            // Construct URL with width transformation for mobile, no version
+            imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/w_${MOBILE_TEXTURE_WIDTH}/${filenameWithoutExtension}.png`;
         } else {
-            // Original URL for desktop
-            imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/${imageVersionPath}/${item.filename}`;
+            // Original URL for desktop, no version
+            imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/${filenameWithoutExtension}.png`;
         }
         // console.log(`Loading image: ${imageUrl}`); // For debugging
 

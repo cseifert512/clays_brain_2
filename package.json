@@ -3,15 +3,18 @@
   "private": false,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME",
   "scripts": {
-    "dev": "vite --host",
-    "build": "rm -rf dist && vite build",
-    "preview": "vite preview",
-    "deploy": "npm run build && gh-pages --dist dist --branch gh-pages --message \"Deploy to GitHub Pages\" --dotfiles"
+    "dev": "vite",
+    "build": "rimraf dist && vite build",
+    "serve": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@types/three": "^0.176.0",
     "gh-pages": "^6.3.0",
+    "rimraf": "^6.0.1",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"
   },
