@@ -62,6 +62,130 @@ const GRID_CELL_SIZE = SPRITE_SCALE * 2.0; // Increased spacing for grid items (
 const CLUSTER_EPICENTER_SPREAD = 50; 
 const ITEMS_WITHIN_CLUSTER_SPREAD = 10; 
 
+// Raycaster and mouse for interaction
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+let hoveredSprite: THREE.Sprite | null = null;
+let selectedSprite: THREE.Sprite | null = null;
+const MAX_SPRITE_SCREEN_SIZE = 0.4; // Max fraction of screen height/width
+
+function onPointerMove(event: MouseEvent) {
+    const canvas = renderer.domElement;
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(imageSprites);
+    if (intersects.length > 0) {
+        const sprite = intersects[0].object as THREE.Sprite;
+        if (hoveredSprite !== sprite) {
+            if (hoveredSprite && hoveredSprite !== selectedSprite) {
+                gsap.to(hoveredSprite.scale, { // Reset previous hover
+                    x: hoveredSprite.userData.originalScale.x,
+                    y: hoveredSprite.userData.originalScale.y,
+                    z: hoveredSprite.userData.originalScale.z,
+                    duration: 0.2
+                });
+            }
+            hoveredSprite = sprite;
+            if (hoveredSprite !== selectedSprite) {
+                // Calculate max allowed scale based on screen size
+                const dist = camera.position.distanceTo(hoveredSprite.position);
+                const vFOV = THREE.MathUtils.degToRad(camera.fov);
+                const screenHeight = 2 * Math.tan(vFOV / 2) * dist;
+                const maxScale = screenHeight * MAX_SPRITE_SCREEN_SIZE;
+                const aspect = hoveredSprite.scale.x / hoveredSprite.scale.y;
+                const targetY = Math.min(maxScale, hoveredSprite.userData.originalScale.y * 2.5);
+                const targetX = targetY * aspect;
+                gsap.to(hoveredSprite.scale, {
+                    x: targetX,
+                    y: targetY,
+                    z: 1,
+                    duration: 0.2
+                });
+            }
+        }
+    } else {
+        if (hoveredSprite && hoveredSprite !== selectedSprite) {
+            gsap.to(hoveredSprite.scale, {
+                x: hoveredSprite.userData.originalScale.x,
+                y: hoveredSprite.userData.originalScale.y,
+                z: hoveredSprite.userData.originalScale.z,
+                duration: 0.2
+            });
+        }
+        hoveredSprite = null;
+    }
+}
+
+function onPointerDown(event: MouseEvent) {
+    const canvas = renderer.domElement;
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(imageSprites);
+    if (intersects.length > 0) {
+        const sprite = intersects[0].object as THREE.Sprite;
+        if (selectedSprite && selectedSprite !== hoveredSprite) {
+            // Reset previous selected
+            gsap.to(selectedSprite.scale, {
+                x: selectedSprite.userData.originalScale.x,
+                y: selectedSprite.userData.originalScale.y,
+                z: selectedSprite.userData.originalScale.z,
+                duration: 0.2
+            });
+        }
+        if (sprite) {
+            selectedSprite = sprite;
+            // Calculate max allowed scale based on screen size
+            const dist = camera.position.distanceTo(selectedSprite!.position);
+            const vFOV = THREE.MathUtils.degToRad(camera.fov);
+            const screenHeight = 2 * Math.tan(vFOV / 2) * dist;
+            const maxScale = screenHeight * MAX_SPRITE_SCREEN_SIZE;
+            const aspect = selectedSprite!.scale.x / selectedSprite!.scale.y;
+            const targetY = Math.min(maxScale, selectedSprite!.userData.originalScale.y * 2.5);
+            const targetX = targetY * aspect;
+            gsap.to(selectedSprite!.scale, {
+                x: targetX,
+                y: targetY,
+                z: 1,
+                duration: 0.3
+            });
+            // Animate camera and controls to focus on the sprite
+            const coverage = 0.6; // 60% of screen
+            const requiredDist = getCameraDistanceForScreenCoverage(selectedSprite!, coverage);
+            // Find a camera position with no overlap
+            const bestCamPos = findNonOverlappingCameraPosition(selectedSprite!, requiredDist, 36);
+            gsap.to(camera.position, {
+                x: bestCamPos.x,
+                y: bestCamPos.y,
+                z: bestCamPos.z,
+                duration: 0.8,
+                ease: 'power2.out',
+                onUpdate: () => { camera.lookAt(selectedSprite!.position); }
+            });
+            gsap.to(controls.target, {
+                x: selectedSprite!.position.x,
+                y: selectedSprite!.position.y,
+                z: selectedSprite!.position.z,
+                duration: 0.8,
+                ease: 'power2.out',
+                onUpdate: () => { controls.update(); }
+            });
+        }
+    }
+}
+
+// Attach event listeners after renderer is created
+function enableSpriteInteraction() {
+    const canvas = renderer.domElement;
+    canvas.addEventListener('pointermove', onPointerMove);
+    canvas.addEventListener('pointerdown', onPointerDown);
+}
+
 // This function will set up the basic Three.js environment
 function initThreeApp() {
     scene = new THREE.Scene();
@@ -246,7 +370,7 @@ function createImageSprites() {
                 const sprite = new THREE.Sprite(material);
                 const aspectRatio = texture.image.width / texture.image.height;
                 sprite.scale.set(SPRITE_SCALE * aspectRatio, SPRITE_SCALE, 1);
-                sprite.userData = { id: index, embeddingItem: item }; 
+                sprite.userData = { id: index, embeddingItem: item, originalScale: sprite.scale.clone() };
                 imageSprites.push(sprite);
                 scene.add(sprite);
             },
@@ -256,6 +380,7 @@ function createImageSprites() {
             }
         );
     });
+    enableSpriteInteraction();
 }
 
 function calculatePCABounds() {
@@ -454,6 +579,119 @@ function updateSpritePositions(animateTransition = false) {
     });
 }
 
+function getCameraDistanceForScreenCoverage(sprite: THREE.Sprite, coverage: number) {
+    // Get the sprite's world scale
+    const worldScale = new THREE.Vector3();
+    sprite.getWorldScale(worldScale);
+    // Get the aspect ratio of the canvas
+    const canvas = renderer.domElement;
+    const aspect = canvas.width / canvas.height;
+    // Sprite size in world units
+    const spriteWidth = worldScale.x;
+    const spriteHeight = worldScale.y;
+    // Camera FOV is vertical
+    // For height: h = 2 * d * tan(fov/2) => d = h / (2 * tan(fov/2))
+    const vFOV = THREE.MathUtils.degToRad(camera.fov);
+    const requiredDistForHeight = spriteHeight / (2 * coverage * Math.tan(vFOV / 2));
+    // For width: w = 2 * d * tan(fov/2) * aspect => d = w / (2 * coverage * tan(fov/2) * aspect)
+    const requiredDistForWidth = spriteWidth / (2 * coverage * Math.tan(vFOV / 2) * aspect);
+    // Use the larger required distance (whichever is more limiting)
+    return Math.max(requiredDistForHeight, requiredDistForWidth);
+}
+
+function getSpriteFrontDirection(sprite: THREE.Sprite): THREE.Vector3 {
+    // Sprites in Three.js always face the camera, so use camera-to-sprite direction
+    // We'll use the current camera position to determine the direction
+    const dir = new THREE.Vector3();
+    dir.subVectors(camera.position, sprite.position).normalize();
+    return dir;
+}
+
+function bringSpriteForward(sprite: THREE.Sprite, offset = 0.1) {
+    // Move the sprite slightly forward along the camera-to-sprite direction
+    const dir = getSpriteFrontDirection(sprite);
+    sprite.position.addScaledVector(dir, -offset); // Move toward camera
+}
+
+function spritesOverlapOnScreen(spriteA: THREE.Sprite, spriteB: THREE.Sprite): boolean {
+    // Project both sprite centers to screen space
+    const width = renderer.domElement.width;
+    const height = renderer.domElement.height;
+    const projA = spriteA.position.clone().project(camera);
+    const projB = spriteB.position.clone().project(camera);
+    // Get world scale for each sprite
+    const scaleA = new THREE.Vector3(); spriteA.getWorldScale(scaleA);
+    const scaleB = new THREE.Vector3(); spriteB.getWorldScale(scaleB);
+    // Estimate screen-space size (height in NDC * screen height)
+    const spriteAScreenH = scaleA.y / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2)) * height / camera.position.distanceTo(spriteA.position);
+    const spriteBScreenH = scaleB.y / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2)) * height / camera.position.distanceTo(spriteB.position);
+    // Use a simple bounding box around the center
+    const ax = (projA.x * 0.5 + 0.5) * width;
+    const ay = (projA.y * -0.5 + 0.5) * height;
+    const bx = (projB.x * 0.5 + 0.5) * width;
+    const by = (projB.y * -0.5 + 0.5) * height;
+    // Rectangle: center +/- half height (approximate as square)
+    const aRect = {left: ax - spriteAScreenH/2, right: ax + spriteAScreenH/2, top: ay - spriteAScreenH/2, bottom: ay + spriteAScreenH/2};
+    const bRect = {left: bx - spriteBScreenH/2, right: bx + spriteBScreenH/2, top: by - spriteBScreenH/2, bottom: by + spriteBScreenH/2};
+    // Check for overlap
+    return !(aRect.right < bRect.left || aRect.left > bRect.right || aRect.bottom < bRect.top || aRect.top > bRect.bottom);
+}
+
+function findNonOverlappingCameraPosition(targetSprite: THREE.Sprite, requiredDist: number, steps = 36): THREE.Vector3 {
+    // Try camera positions every 10 degrees around the sprite in XY and XZ planes
+    let bestPos = null;
+    let minOverlaps = Infinity;
+    // First: XY plane
+    for (let i = 0; i < steps; i++) {
+        const angle = (i / steps) * Math.PI * 2;
+        const camPos = new THREE.Vector3(
+            targetSprite.position.x + requiredDist * Math.cos(angle),
+            targetSprite.position.y + requiredDist * Math.sin(angle),
+            targetSprite.position.z
+        );
+        camera.position.copy(camPos);
+        camera.lookAt(targetSprite.position);
+        let overlaps = 0;
+        for (const other of imageSprites) {
+            if (other !== targetSprite && spritesOverlapOnScreen(targetSprite, other)) {
+                overlaps++;
+            }
+        }
+        if (overlaps === 0) {
+            return camPos.clone();
+        }
+        if (overlaps < minOverlaps) {
+            minOverlaps = overlaps;
+            bestPos = camPos.clone();
+        }
+    }
+    // Second: XZ plane (vertical orbit)
+    for (let i = 0; i < steps; i++) {
+        const angle = (i / steps) * Math.PI * 2;
+        const camPos = new THREE.Vector3(
+            targetSprite.position.x + requiredDist * Math.cos(angle),
+            targetSprite.position.y,
+            targetSprite.position.z + requiredDist * Math.sin(angle)
+        );
+        camera.position.copy(camPos);
+        camera.lookAt(targetSprite.position);
+        let overlaps = 0;
+        for (const other of imageSprites) {
+            if (other !== targetSprite && spritesOverlapOnScreen(targetSprite, other)) {
+                overlaps++;
+            }
+        }
+        if (overlaps === 0) {
+            return camPos.clone();
+        }
+        if (overlaps < minOverlaps) {
+            minOverlaps = overlaps;
+            bestPos = camPos.clone();
+        }
+    }
+    // If no perfect spot, return the one with the least overlap
+    return bestPos || camera.position.clone();
+}
 
 function adjustCameraForMode(mode: '3d' | '2d-scatter' | '2d-grid') {
     if (!camera || !controls) return;
