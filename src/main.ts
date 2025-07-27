@@ -217,6 +217,8 @@ function initThreeApp() {
     scene.add(directionalLight);
 
     window.addEventListener('resize', onWindowResize);
+    storeInitialState(); // Store initial state after setup
+    // createResetButton(); // Moved to start button click handler
 }
 
 async function loadDataAndSetupUI() {
@@ -789,6 +791,93 @@ function adjustCameraForMode(mode: '3d' | '2d-scatter' | '2d-grid') {
     controls.update();
 }
 
+// Store initial camera and controls state for reset functionality
+let initialCameraPosition: THREE.Vector3;
+let initialControlsTarget: THREE.Vector3;
+let initialCameraFOV: number;
+
+function storeInitialState() {
+    initialCameraPosition = camera.position.clone();
+    initialControlsTarget = controls.target.clone();
+    initialCameraFOV = camera.fov;
+}
+
+function resetToInitialState() {
+    // Reset camera and controls
+    gsap.to(camera.position, {
+        x: initialCameraPosition.x,
+        y: initialCameraPosition.y,
+        z: initialCameraPosition.z,
+        duration: 0.8,
+        ease: 'power2.out'
+    });
+    gsap.to(controls.target, {
+        x: initialControlsTarget.x,
+        y: initialControlsTarget.y,
+        z: initialControlsTarget.z,
+        duration: 0.8,
+        ease: 'power2.out',
+        onUpdate: () => { controls.update(); }
+    });
+    gsap.to(camera, {
+        fov: initialCameraFOV,
+        duration: 0.8,
+        ease: 'power2.out',
+        onUpdate: () => { camera.updateProjectionMatrix(); }
+    });
+    
+    // Reset any selected or hovered sprites
+    if (selectedSprite) {
+        gsap.to(selectedSprite.scale, {
+            x: selectedSprite.userData.originalScale.x,
+            y: selectedSprite.userData.originalScale.y,
+            z: selectedSprite.userData.originalScale.z,
+            duration: 0.3
+        });
+        selectedSprite = null;
+    }
+    if (hoveredSprite) {
+        gsap.to(hoveredSprite.scale, {
+            x: hoveredSprite.userData.originalScale.x,
+            y: hoveredSprite.userData.originalScale.y,
+            z: hoveredSprite.userData.originalScale.z,
+            duration: 0.3
+        });
+        hoveredSprite = null;
+    }
+}
+
+function createResetButton() {
+    const resetButton = document.createElement('button');
+    resetButton.textContent = 'Reset View';
+    resetButton.style.position = 'absolute';
+    resetButton.style.top = '20px';
+    resetButton.style.right = '20px';
+    resetButton.style.zIndex = '1000';
+    resetButton.style.padding = '8px 15px';
+    resetButton.style.backgroundColor = '#f0f0f0';
+    resetButton.style.border = '1px solid #ccc';
+    resetButton.style.borderRadius = '18px';
+    resetButton.style.cursor = 'pointer';
+    resetButton.style.fontSize = '0.9em';
+    resetButton.style.fontFamily = "'Space Grotesk', sans-serif";
+    resetButton.style.color = '#333';
+    resetButton.style.transition = 'background-color 0.3s, color 0.3s';
+    resetButton.style.boxShadow = 'none';
+    
+    // Add hover effect to match the visualization toggle buttons
+    resetButton.addEventListener('mouseenter', () => {
+        resetButton.style.backgroundColor = '#ddd';
+    });
+    resetButton.addEventListener('mouseleave', () => {
+        resetButton.style.backgroundColor = '#f0f0f0';
+    });
+    
+    resetButton.addEventListener('click', resetToInitialState);
+    
+    document.body.appendChild(resetButton);
+}
+
 
 function onWindowResize() {
     if (camera && renderer) {
@@ -845,6 +934,7 @@ function setupPreloader() {
                 if (viewControls) {
                     viewControls.style.display = 'flex'; // Show the controls
                 }
+                createResetButton(); // Create the reset button after modal disappears
             }
         });
     });
