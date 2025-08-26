@@ -4,18 +4,293 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>clays_brain</title>
-    <link rel="stylesheet" href="./src/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #222;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        a {
+            color: #222;
+        }
+
+        #webgl-canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1; 
+        }
+
+        .controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 10;
+            color: #333;
+        }
+
+        .controls label {
+            margin-right: 5px;
+            color: #333;
+        }
+
+        .controls select {
+            padding: 5px;
+            border-radius: 3px;
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #aaa;
+        }
+
+        #preloader-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        #preloader-modal h2 {
+            font-size: 2.5em;
+            margin-bottom: 0px;
+            color: #333;
+        }
+
+        #preloader-modal p {
+            width: 85vw;
+            max-width: 550px;
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #preloader-interactive-area {
+            height: 60px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .loading-bar-container {
+            width: 60%;
+            max-width: 400px;
+            height: 10px;
+            background-color: #e0e0e0;
+            overflow: hidden;
+        }
+
+        .loading-bar-fill {
+            width: 0%;
+            height: 100%;
+            background-color: #000000;
+            transition: width 0.2s ease-out;
+        }
+
+        #start-button {
+            display: none;
+            font-size: 2em;
+            color: #333;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+
+        #start-button:hover {
+            color: #007bff;
+        }
+
+        .view-controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .visualization-toggle {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 18px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .visualization-toggle input[type="radio"] {
+            display: none;
+        }
+
+        .visualization-toggle label {
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 0.9em;
+            color: #333;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+            border-right: 1px solid #ccc;
+        }
+
+        .visualization-toggle label:last-child {
+            border-right: none;
+        }
+
+        .visualization-toggle input[type="radio"]:checked + label {
+            background-color: #000;
+            color: white;
+        }
+
+        .visualization-toggle label:hover {
+            background-color: #ddd;
+        }
+
+        .visualization-toggle input[type="radio"]:checked + label:hover {
+            background-color: #333;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 120px;
+            height: 34px;
+            vertical-align: middle;
+            margin: 0px;
+            z-index: 10;
+        }
+
+        .toggle-input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-label {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 34px;
+            transition: .4s;
+            font-size: 0.8em;
+            line-height: 34px;
+            text-align: center;
+            color: #333;
+        }
+
+        .toggle-label:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        .toggle-input:checked + .toggle-label {
+            background-color: #000;
+            color: white;
+        }
+
+        .toggle-input:checked + .toggle-label:before {
+            transform: translateX(86px);
+        }
+
+        /* Reset Button Styles */
+        #reset-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            padding: 8px 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 18px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: none;
+        }
+
+        #reset-button:hover {
+            background-color: #ddd;
+        }
+
+        /* Navigation Button Styles */
+        #back-button, #forward-button {
+            position: absolute;
+            top: 60px;
+            z-index: 9999;
+            padding: 8px 12px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 18px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+            box-shadow: none;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        #back-button {
+            right: 80px;
+        }
+
+        #forward-button {
+            right: 20px;
+        }
+
+        #back-button:hover, #forward-button:hover {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
     <div id="preloader-modal">
         <h2>Hello!</h2>
-        <p id="description">This is a visualization of my brain. It's a work in progress, and I'm not sure what it's going to look like when it's done.<br><br>Use your mouse to navigate the visualization or toggle the Orbit mode.</p>
+        <p id="description">This is a visualization of my brain. It's a work in progress, and I'm not sure what it's going to look like when it's done.<br><br>Enjoy!</p>
         
         <div id="preloader-interactive-area">
             <div class="loading-bar-container">
                 <div class="loading-bar-fill" id="loading-bar-fill"></div>
             </div>
-            <span id="start-button">Start</span>
+            <span id="start-button">Enter</span>
         </div>
 
     </div>

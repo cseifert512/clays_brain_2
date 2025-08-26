@@ -69,6 +69,13 @@ let hoveredSprite: THREE.Sprite | null = null;
 let selectedSprite: THREE.Sprite | null = null;
 const MAX_SPRITE_SCREEN_SIZE = 0.4; // Max fraction of screen height/width
 
+// Store original opacity values for dimming functionality
+const originalOpacities = new Map<THREE.Sprite, number>();
+
+// Track selection history for Previous button functionality
+const selectionHistory: THREE.Sprite[] = [];
+let currentHistoryIndex = -1;
+
 function onPointerMove(event: MouseEvent) {
     const canvas = renderer.domElement;
     const rect = canvas.getBoundingClientRect();
@@ -80,102 +87,189 @@ function onPointerMove(event: MouseEvent) {
     if (intersects.length > 0) {
         const sprite = intersects[0].object as THREE.Sprite;
         if (hoveredSprite !== sprite) {
+            // Reset previous hover if it exists and is not the selected sprite
             if (hoveredSprite && hoveredSprite !== selectedSprite) {
-                gsap.to(hoveredSprite.scale, { // Reset previous hover
+                gsap.to(hoveredSprite.scale, {
                     x: hoveredSprite.userData.originalScale.x,
                     y: hoveredSprite.userData.originalScale.y,
                     z: hoveredSprite.userData.originalScale.z,
-                    duration: 0.2
+                    duration: 0.2,
+                    ease: 'power2.out'
                 });
+                // Restore the dimmed opacity if it was dimmed
+                if (selectedSprite && originalOpacities.has(hoveredSprite)) {
+                    gsap.to(hoveredSprite.material, {
+                        opacity: 0.3, // Dimmed opacity
+                        duration: 0.2,
+                        ease: 'power2.out'
+                    });
+                }
             }
             hoveredSprite = sprite;
+            
+            // Only apply hover effects if the sprite is not currently selected
             if (hoveredSprite !== selectedSprite) {
                 // Calculate max allowed scale based on screen size
                 const dist = camera.position.distanceTo(hoveredSprite.position);
                 const vFOV = THREE.MathUtils.degToRad(camera.fov);
                 const screenHeight = 2 * Math.tan(vFOV / 2) * dist;
                 const maxScale = screenHeight * MAX_SPRITE_SCREEN_SIZE;
-                const aspect = hoveredSprite.scale.x / hoveredSprite.scale.y;
+                const aspect = hoveredSprite.userData.originalScale.x / hoveredSprite.userData.originalScale.y;
                 const targetY = Math.min(maxScale, hoveredSprite.userData.originalScale.y * 2.5);
                 const targetX = targetY * aspect;
+                
+                // Scale up the existing sprite
                 gsap.to(hoveredSprite.scale, {
                     x: targetX,
                     y: targetY,
                     z: 1,
-                    duration: 0.2
+                    duration: 0.2,
+                    ease: 'power2.out'
+                });
+                
+                // Set opacity based on whether there's a selected sprite
+                const targetOpacity = selectedSprite ? 0.6 : 1.0;
+                gsap.to(hoveredSprite.material, {
+                    opacity: targetOpacity,
+                    duration: 0.2,
+                    ease: 'power2.out'
                 });
             }
         }
     } else {
+        // Reset hover when mouse leaves all sprites
         if (hoveredSprite && hoveredSprite !== selectedSprite) {
             gsap.to(hoveredSprite.scale, {
                 x: hoveredSprite.userData.originalScale.x,
                 y: hoveredSprite.userData.originalScale.y,
                 z: hoveredSprite.userData.originalScale.z,
-                duration: 0.2
+                duration: 0.2,
+                ease: 'power2.out'
             });
+            // Restore the appropriate opacity based on selection state
+            if (selectedSprite && originalOpacities.has(hoveredSprite)) {
+                gsap.to(hoveredSprite.material, {
+                    opacity: 0.3, // Dimmed opacity when there's a selection
+                    duration: 0.2,
+                    ease: 'power2.out'
+                });
+            } else {
+                // Return to full opacity when no sprite is selected
+                gsap.to(hoveredSprite.material, {
+                    opacity: 1.0,
+                    duration: 0.2,
+                    ease: 'power2.out'
+                });
+            }
         }
         hoveredSprite = null;
     }
 }
 
 function onPointerDown(event: MouseEvent) {
-    const canvas = renderer.domElement;
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-
+    event.preventDefault();
+    
+    // Calculate mouse position in normalized device coordinates
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(imageSprites);
+    
     if (intersects.length > 0) {
-        const sprite = intersects[0].object as THREE.Sprite;
-        if (selectedSprite && selectedSprite !== hoveredSprite) {
-            // Reset previous selected
+        const clickedSprite = intersects[0].object as THREE.Sprite;
+        
+        // If clicking the same sprite, do nothing
+        if (selectedSprite === clickedSprite) {
+            return;
+        }
+        
+        // Reset previous selection
+        if (selectedSprite) {
+            // Restore original scale and opacity
             gsap.to(selectedSprite.scale, {
                 x: selectedSprite.userData.originalScale.x,
                 y: selectedSprite.userData.originalScale.y,
                 z: selectedSprite.userData.originalScale.z,
-                duration: 0.2
+                duration: 0.3,
+                ease: 'power2.out'
             });
+            
+            // Restore original opacity
+            if (originalOpacities.has(selectedSprite)) {
+                gsap.to(selectedSprite.material, {
+                    opacity: originalOpacities.get(selectedSprite),
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            }
         }
-        if (sprite) {
-            selectedSprite = sprite;
-            // Calculate max allowed scale based on screen size
-            const dist = camera.position.distanceTo(selectedSprite!.position);
-            const vFOV = THREE.MathUtils.degToRad(camera.fov);
-            const screenHeight = 2 * Math.tan(vFOV / 2) * dist;
-            const maxScale = screenHeight * MAX_SPRITE_SCREEN_SIZE;
-            const aspect = selectedSprite!.scale.x / selectedSprite!.scale.y;
-            const targetY = Math.min(maxScale, selectedSprite!.userData.originalScale.y * 2.5);
-            const targetX = targetY * aspect;
-            gsap.to(selectedSprite!.scale, {
-                x: targetX,
-                y: targetY,
-                z: 1,
-                duration: 0.3
-            });
-            // Animate camera and controls to focus on the sprite
-            const coverage = 0.6; // 60% of screen
-            const requiredDist = getCameraDistanceForScreenCoverage(selectedSprite!, coverage);
-            // Find a camera position with no overlap
-            const bestCamPos = findNonOverlappingCameraPosition(selectedSprite!, requiredDist, 36);
-            gsap.to(camera.position, {
-                x: bestCamPos.x,
-                y: bestCamPos.y,
-                z: bestCamPos.z,
-                duration: 0.8,
-                ease: 'power2.out',
-                onUpdate: () => { camera.lookAt(selectedSprite!.position); }
-            });
-            gsap.to(controls.target, {
-                x: selectedSprite!.position.x,
-                y: selectedSprite!.position.y,
-                z: selectedSprite!.position.z,
-                duration: 0.8,
-                ease: 'power2.out',
-                onUpdate: () => { controls.update(); }
-            });
+        
+        // Add to history if it's a new selection
+        if (selectedSprite) {
+            // Remove any history after current index (in case we went back and then selected new)
+            selectionHistory.splice(currentHistoryIndex + 1);
+            selectionHistory.push(selectedSprite);
+            currentHistoryIndex++;
+        } else {
+            // This is the very first selection, start the history
+            selectionHistory.push(clickedSprite);
+            currentHistoryIndex = 0;
         }
+        
+        selectedSprite = clickedSprite;
+        
+        // Scale up the selected sprite
+        const scaleFactor = 1.5;
+        gsap.to(selectedSprite.scale, {
+            x: selectedSprite.userData.originalScale.x * scaleFactor,
+            y: selectedSprite.userData.originalScale.y * scaleFactor,
+            z: selectedSprite.userData.originalScale.z * scaleFactor,
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+        
+        // Dim other sprites AND ensure selected sprite has full opacity
+        dimNonSelectedSprites(selectedSprite);
+        
+        // Ensure the selected sprite has full opacity
+        gsap.to(selectedSprite.material, {
+            opacity: 1.0,
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+        
+        // Calculate camera position for 80% screen coverage
+        const coverage = 0.8; // 80% of screen (increased from 0.6)
+        const requiredDist = getCameraDistanceForScreenCoverage(selectedSprite, coverage);
+        const bestCamPos = findNonOverlappingCameraPosition(selectedSprite, requiredDist, 36);
+        
+        // Animate camera to new position
+        gsap.to(camera.position, {
+            x: bestCamPos.x,
+            y: bestCamPos.y,
+            z: bestCamPos.z,
+            duration: 0.8,
+            ease: 'power2.out',
+            onUpdate: () => { camera.lookAt(selectedSprite!.position); }
+        });
+        
+        // Animate controls target to selected sprite
+        gsap.to(controls.target, {
+            x: selectedSprite.position.x,
+            y: selectedSprite.position.y,
+            z: selectedSprite.position.z,
+            duration: 0.8,
+            ease: 'power2.out',
+            onUpdate: () => { controls.update(); }
+        });
+        
+        // Update navigation button states
+        updateNavigationButtonStates();
+        
+        // Debug logging
+        console.log('Selection history:', selectionHistory.map(s => s.userData.id));
+        console.log('Current index:', currentHistoryIndex);
     }
 }
 
@@ -347,7 +441,7 @@ function createImageSprites() {
         console.error(`There was an error loading texture: ${url}`);
     };
     
-    const cloudName = 'dhivyxaxy';
+    const cloudName = 'damdbel4n';
     // Remove the version part entirely
     // const imageVersionPath = ''; // No longer needed
 
@@ -368,13 +462,25 @@ function createImageSprites() {
             imageUrl,
             (texture) => {
                 texture.colorSpace = THREE.SRGBColorSpace; 
-                const material = new THREE.SpriteMaterial({ map: texture, transparent: true, alphaTest: 0.1 });
+                const material = new THREE.SpriteMaterial({ 
+                    map: texture, 
+                    transparent: true, 
+                    alphaTest: 0.1,
+                    opacity: 1.0 // Explicitly set initial opacity
+                });
                 const sprite = new THREE.Sprite(material);
                 const aspectRatio = texture.image.width / texture.image.height;
                 sprite.scale.set(SPRITE_SCALE * aspectRatio, SPRITE_SCALE, 1);
                 sprite.userData = { id: index, embeddingItem: item, originalScale: sprite.scale.clone() };
-                imageSprites.push(sprite);
-                scene.add(sprite);
+                
+                // Ensure the sprite is unique and not duplicated
+                if (!imageSprites.some(existingSprite => existingSprite.userData.id === index)) {
+                    imageSprites.push(sprite);
+                    scene.add(sprite);
+                    console.log(`Created sprite ${index} for ${item.filename}`);
+                } else {
+                    console.warn(`Sprite ${index} already exists, skipping duplicate`);
+                }
             },
             undefined, 
             (error) => { 
@@ -640,59 +746,123 @@ function spritesOverlapOnScreen(spriteA: THREE.Sprite, spriteB: THREE.Sprite): b
 }
 
 function findNonOverlappingCameraPosition(targetSprite: THREE.Sprite, requiredDist: number, steps = 36): THREE.Vector3 {
-    // Try camera positions every 10 degrees around the sprite in XY and XZ planes
-    let bestPos = null;
+    const targetPos = targetSprite.position.clone();
+    let bestPosition = new THREE.Vector3();
     let minOverlaps = Infinity;
-    // First: XY plane
-    for (let i = 0; i < steps; i++) {
-        const angle = (i / steps) * Math.PI * 2;
-        const camPos = new THREE.Vector3(
-            targetSprite.position.x + requiredDist * Math.cos(angle),
-            targetSprite.position.y + requiredDist * Math.sin(angle),
-            targetSprite.position.z
-        );
-        camera.position.copy(camPos);
-        camera.lookAt(targetSprite.position);
-        let overlaps = 0;
-        for (const other of imageSprites) {
-            if (other !== targetSprite && spritesOverlapOnScreen(targetSprite, other)) {
-                overlaps++;
+    
+    // Spherical sampling parameters
+    const numLatitudes = 8; // Number of latitude rings
+    const numLongitudes = 12; // Number of longitude points per ring
+    
+    // Sample positions on a sphere around the target
+    for (let lat = 0; lat < numLatitudes; lat++) {
+        const phi = (lat / (numLatitudes - 1)) * Math.PI; // 0 to π (top to bottom)
+        
+        for (let lon = 0; lon < numLongitudes; lon++) {
+            const theta = (lon / numLongitudes) * 2 * Math.PI; // 0 to 2π (around the circle)
+            
+            // Convert spherical coordinates to Cartesian
+            const x = requiredDist * Math.sin(phi) * Math.cos(theta);
+            const y = requiredDist * Math.sin(phi) * Math.sin(theta);
+            const z = requiredDist * Math.cos(phi);
+            
+            // Position relative to target
+            const candidatePos = new THREE.Vector3(
+                targetPos.x + x,
+                targetPos.y + y,
+                targetPos.z + z
+            );
+            
+            // Count overlaps from this position
+            let overlapCount = 0;
+            for (const sprite of imageSprites) {
+                if (sprite === targetSprite) continue;
+                
+                if (spritesOverlapOnScreen(targetSprite, sprite)) {
+                    overlapCount++;
+                }
+            }
+            
+            // Update best position if this has fewer overlaps
+            if (overlapCount < minOverlaps) {
+                minOverlaps = overlapCount;
+                bestPosition.copy(candidatePos);
+            }
+            
+            // If we found a position with no overlaps, use it immediately
+            if (overlapCount === 0) {
+                return bestPosition;
             }
         }
-        if (overlaps === 0) {
-            return camPos.clone();
-        }
-        if (overlaps < minOverlaps) {
-            minOverlaps = overlaps;
-            bestPos = camPos.clone();
-        }
     }
-    // Second: XZ plane (vertical orbit)
-    for (let i = 0; i < steps; i++) {
-        const angle = (i / steps) * Math.PI * 2;
-        const camPos = new THREE.Vector3(
-            targetSprite.position.x + requiredDist * Math.cos(angle),
-            targetSprite.position.y,
-            targetSprite.position.z + requiredDist * Math.sin(angle)
-        );
-        camera.position.copy(camPos);
-        camera.lookAt(targetSprite.position);
-        let overlaps = 0;
-        for (const other of imageSprites) {
-            if (other !== targetSprite && spritesOverlapOnScreen(targetSprite, other)) {
-                overlaps++;
+    
+    // If we still have overlaps, try bringing the target sprite forward slightly
+    if (minOverlaps > 0) {
+        const cameraDirection = new THREE.Vector3()
+            .subVectors(bestPosition, targetPos)
+            .normalize();
+        
+        // Move the target sprite forward along the camera direction
+        const forwardOffset = 0.5; // Adjust this value as needed
+        targetSprite.position.add(cameraDirection.clone().multiplyScalar(forwardOffset));
+        
+        // Recalculate overlaps after moving the sprite
+        let finalOverlapCount = 0;
+        for (const sprite of imageSprites) {
+            if (sprite === targetSprite) continue;
+            
+            if (spritesOverlapOnScreen(targetSprite, sprite)) {
+                finalOverlapCount++;
             }
         }
-        if (overlaps === 0) {
-            return camPos.clone();
-        }
-        if (overlaps < minOverlaps) {
-            minOverlaps = overlaps;
-            bestPos = camPos.clone();
-        }
+        
+        console.log(`Moved sprite forward by ${forwardOffset} units. Final overlaps: ${finalOverlapCount}`);
     }
-    // If no perfect spot, return the one with the least overlap
-    return bestPos || camera.position.clone();
+    
+    return bestPosition;
+}
+
+function dimNonSelectedSprites(selectedSprite: THREE.Sprite) {
+    const dimOpacity = 0.3; // Opacity for dimmed sprites
+    console.log(`Dimming sprites. Selected sprite: ${selectedSprite.userData.id}, Total sprites: ${imageSprites.length}`);
+    
+    imageSprites.forEach(sprite => {
+        if (sprite !== selectedSprite) {
+            // Store original opacity if not already stored
+            if (!originalOpacities.has(sprite)) {
+                originalOpacities.set(sprite, sprite.material.opacity);
+                console.log(`Stored original opacity for sprite ${sprite.userData.id}: ${sprite.material.opacity}`);
+            }
+            
+            // Dim the sprite
+            console.log(`Dimming sprite ${sprite.userData.id} from ${sprite.material.opacity} to ${dimOpacity}`);
+            gsap.to(sprite.material, {
+                opacity: dimOpacity,
+                duration: 0.3,
+                ease: 'power2.out',
+                onUpdate: () => {
+                    console.log(`Sprite ${sprite.userData.id} opacity: ${sprite.material.opacity}`);
+                }
+            });
+        } else {
+            console.log(`Keeping sprite ${sprite.userData.id} at full opacity`);
+        }
+    });
+}
+
+function restoreAllSpriteOpacities() {
+    console.log('Restoring all sprite opacities');
+    imageSprites.forEach(sprite => {
+        if (originalOpacities.has(sprite)) {
+            const originalOpacity = originalOpacities.get(sprite);
+            console.log(`Restoring sprite ${sprite.userData.id} to opacity: ${originalOpacity}`);
+            gsap.to(sprite.material, {
+                opacity: originalOpacity,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        }
+    });
 }
 
 function adjustCameraForMode(mode: '3d' | '2d-scatter' | '2d-grid') {
@@ -795,11 +965,13 @@ function adjustCameraForMode(mode: '3d' | '2d-scatter' | '2d-grid') {
 let initialCameraPosition: THREE.Vector3;
 let initialControlsTarget: THREE.Vector3;
 let initialCameraFOV: number;
+let initialAutoRotate: boolean;
 
 function storeInitialState() {
     initialCameraPosition = camera.position.clone();
     initialControlsTarget = controls.target.clone();
     initialCameraFOV = camera.fov;
+    initialAutoRotate = controls.autoRotate;
 }
 
 function resetToInitialState() {
@@ -808,52 +980,60 @@ function resetToInitialState() {
         x: initialCameraPosition.x,
         y: initialCameraPosition.y,
         z: initialCameraPosition.z,
-        duration: 0.8,
+        duration: 1.0,
         ease: 'power2.out'
     });
+    
     gsap.to(controls.target, {
         x: initialControlsTarget.x,
         y: initialControlsTarget.y,
         z: initialControlsTarget.z,
-        duration: 0.8,
+        duration: 1.0,
         ease: 'power2.out',
         onUpdate: () => { controls.update(); }
     });
+    
+    // Reset camera FOV and auto-rotate
     gsap.to(camera, {
         fov: initialCameraFOV,
-        duration: 0.8,
+        duration: 1.0,
         ease: 'power2.out',
         onUpdate: () => { camera.updateProjectionMatrix(); }
     });
     
-    // Reset any selected or hovered sprites
-    if (selectedSprite) {
-        gsap.to(selectedSprite.scale, {
-            x: selectedSprite.userData.originalScale.x,
-            y: selectedSprite.userData.originalScale.y,
-            z: selectedSprite.userData.originalScale.z,
-            duration: 0.3
-        });
-        selectedSprite = null;
-    }
-    if (hoveredSprite) {
-        gsap.to(hoveredSprite.scale, {
-            x: hoveredSprite.userData.originalScale.x,
-            y: hoveredSprite.userData.originalScale.y,
-            z: hoveredSprite.userData.originalScale.z,
-            duration: 0.3
-        });
-        hoveredSprite = null;
-    }
+    controls.autoRotate = initialAutoRotate;
+    
+    // Reset all sprite scales and opacities
+    imageSprites.forEach(sprite => {
+        if (sprite.userData.originalScale) {
+            gsap.to(sprite.scale, {
+                x: sprite.userData.originalScale.x,
+                y: sprite.userData.originalScale.y,
+                z: sprite.userData.originalScale.z,
+                duration: 0.5,
+                ease: 'power2.out'
+            });
+        }
+    });
+    
+    // Restore all sprite opacities
+    restoreAllSpriteOpacities();
+    
+    // Clear selection and history
+    selectedSprite = null;
+    selectionHistory.length = 0;
+    currentHistoryIndex = -1;
+    updateNavigationButtonStates();
 }
 
 function createResetButton() {
     const resetButton = document.createElement('button');
     resetButton.textContent = 'Reset View';
+    resetButton.id = 'reset-button';
     resetButton.style.position = 'absolute';
     resetButton.style.top = '20px';
     resetButton.style.right = '20px';
-    resetButton.style.zIndex = '1000';
+    resetButton.style.zIndex = '9999'; // Much higher z-index to ensure it's on top
     resetButton.style.padding = '8px 15px';
     resetButton.style.backgroundColor = '#f0f0f0';
     resetButton.style.border = '1px solid #ccc';
@@ -875,9 +1055,255 @@ function createResetButton() {
     
     resetButton.addEventListener('click', resetToInitialState);
     
+    // Create Back button (left arrow)
+    const backButton = document.createElement('button');
+    backButton.innerHTML = '&#8592;'; // Left arrow
+    backButton.id = 'back-button';
+    backButton.style.position = 'absolute';
+    backButton.style.top = '60px';
+    backButton.style.right = '80px'; // Move further left to avoid overlap
+    backButton.style.zIndex = '9999'; // Much higher z-index to ensure it's on top
+    backButton.style.padding = '8px 12px';
+    backButton.style.backgroundColor = '#f0f0f0';
+    backButton.style.border = '1px solid #ccc';
+    backButton.style.borderRadius = '18px';
+    backButton.style.cursor = 'pointer';
+    backButton.style.fontSize = '1.1em';
+    backButton.style.fontFamily = "'Space Grotesk', sans-serif";
+    backButton.style.color = '#333';
+    backButton.style.transition = 'background-color 0.3s, color 0.3s, opacity 0.3s';
+    backButton.style.boxShadow = 'none';
+    backButton.style.opacity = '0.5'; // Initially disabled
+    backButton.style.pointerEvents = 'none'; // Initially disabled
+    
+    // Create Forward button (right arrow)
+    const forwardButton = document.createElement('button');
+    forwardButton.innerHTML = '&#8594;'; // Right arrow
+    forwardButton.id = 'forward-button';
+    forwardButton.style.position = 'absolute';
+    forwardButton.style.top = '60px';
+    forwardButton.style.right = '20px';
+    forwardButton.style.zIndex = '9999'; // Much higher z-index to ensure it's on top
+    forwardButton.style.padding = '8px 12px';
+    forwardButton.style.backgroundColor = '#f0f0f0';
+    forwardButton.style.border = '1px solid #ccc';
+    forwardButton.style.borderRadius = '18px';
+    forwardButton.style.cursor = 'pointer';
+    forwardButton.style.fontSize = '1.1em';
+    forwardButton.style.fontFamily = "'Space Grotesk', sans-serif";
+    forwardButton.style.color = '#333';
+    forwardButton.style.transition = 'background-color 0.3s, color 0.3s, opacity 0.3s';
+    forwardButton.style.boxShadow = 'none';
+    forwardButton.style.opacity = '0.5'; // Initially disabled
+    forwardButton.style.pointerEvents = 'none'; // Initially disabled
+    
+    // Add hover effects
+    backButton.addEventListener('mouseenter', () => {
+        if (currentHistoryIndex > 0) {
+            backButton.style.backgroundColor = '#ddd';
+        }
+    });
+    backButton.addEventListener('mouseleave', () => {
+        backButton.style.backgroundColor = '#f0f0f0';
+    });
+    
+    forwardButton.addEventListener('mouseenter', () => {
+        if (currentHistoryIndex < selectionHistory.length - 1) {
+            forwardButton.style.backgroundColor = '#ddd';
+        }
+    });
+    forwardButton.addEventListener('mouseleave', () => {
+        forwardButton.style.backgroundColor = '#f0f0f0';
+    });
+    
+    backButton.addEventListener('click', goToPreviousSelection);
+    forwardButton.addEventListener('click', goToNextSelection);
+    
     document.body.appendChild(resetButton);
+    document.body.appendChild(backButton);
+    document.body.appendChild(forwardButton);
 }
 
+function goToPreviousSelection() {
+    console.log('Back button clicked!');
+    console.log('Current history index:', currentHistoryIndex);
+    console.log('History length:', selectionHistory.length);
+    
+    if (currentHistoryIndex > 0) {
+        currentHistoryIndex--;
+        const previousSprite = selectionHistory[currentHistoryIndex];
+        console.log('Going to previous sprite:', previousSprite?.userData?.id);
+        
+        if (previousSprite && selectedSprite) {
+            // Reset current selection
+            gsap.to(selectedSprite.scale, {
+                x: selectedSprite.userData.originalScale.x,
+                y: selectedSprite.userData.originalScale.y,
+                z: selectedSprite.userData.originalScale.z,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+            
+            if (originalOpacities.has(selectedSprite)) {
+                gsap.to(selectedSprite.material, {
+                    opacity: originalOpacities.get(selectedSprite),
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            }
+            
+            // Set new selection
+            selectedSprite = previousSprite;
+            
+            // Scale up the previous sprite
+            const scaleFactor = 1.5;
+            gsap.to(selectedSprite.scale, {
+                x: selectedSprite.userData.originalScale.x * scaleFactor,
+                y: selectedSprite.userData.originalScale.y * scaleFactor,
+                z: selectedSprite.userData.originalScale.z * scaleFactor,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+            
+            // Dim other sprites and ensure selected sprite has full opacity
+            dimNonSelectedSprites(selectedSprite);
+            
+            gsap.to(selectedSprite.material, {
+                opacity: 1.0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+            
+            // Calculate camera position for 80% screen coverage
+            const coverage = 0.8;
+            const requiredDist = getCameraDistanceForScreenCoverage(selectedSprite, coverage);
+            const bestCamPos = findNonOverlappingCameraPosition(selectedSprite, requiredDist, 36);
+            
+            // Animate camera to new position
+            gsap.to(camera.position, {
+                x: bestCamPos.x,
+                y: bestCamPos.y,
+                z: bestCamPos.z,
+                duration: 0.8,
+                ease: 'power2.out',
+                onUpdate: () => { camera.lookAt(selectedSprite!.position); }
+            });
+            
+            // Animate controls target to selected sprite
+            gsap.to(controls.target, {
+                x: selectedSprite.position.x,
+                y: selectedSprite.position.y,
+                z: selectedSprite.position.z,
+                duration: 0.8,
+                ease: 'power2.out',
+                onUpdate: () => { controls.update(); }
+            });
+            
+            // Update navigation button states
+            updateNavigationButtonStates();
+        }
+    } else {
+        console.log('Cannot go back - already at beginning');
+    }
+}
+
+function goToNextSelection() {
+    console.log('Forward button clicked!');
+    console.log('Current history index:', currentHistoryIndex);
+    console.log('History length:', selectionHistory.length);
+    
+    if (currentHistoryIndex < selectionHistory.length - 1) {
+        currentHistoryIndex++;
+        const nextSprite = selectionHistory[currentHistoryIndex];
+        console.log('Going to next sprite:', nextSprite?.userData?.id);
+        
+        if (nextSprite && selectedSprite) {
+            // Reset current selection
+            gsap.to(selectedSprite.scale, {
+                x: selectedSprite.userData.originalScale.x,
+                y: selectedSprite.userData.originalScale.y,
+                z: selectedSprite.userData.originalScale.z,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+            
+            if (originalOpacities.has(selectedSprite)) {
+                gsap.to(selectedSprite.material, {
+                    opacity: originalOpacities.get(selectedSprite),
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            }
+            
+            // Set new selection
+            selectedSprite = nextSprite;
+            
+            // Scale up the next sprite
+            const scaleFactor = 1.5;
+            gsap.to(selectedSprite.scale, {
+                x: selectedSprite.userData.originalScale.x * scaleFactor,
+                y: selectedSprite.userData.originalScale.y * scaleFactor,
+                z: selectedSprite.userData.originalScale.z * scaleFactor,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+            
+            // Dim other sprites and ensure selected sprite has full opacity
+            dimNonSelectedSprites(selectedSprite);
+            
+            gsap.to(selectedSprite.material, {
+                opacity: 1.0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+            
+            // Calculate camera position for 80% screen coverage
+            const coverage = 0.8;
+            const requiredDist = getCameraDistanceForScreenCoverage(selectedSprite, coverage);
+            const bestCamPos = findNonOverlappingCameraPosition(selectedSprite, requiredDist, 36);
+            
+            // Animate camera to new position
+            gsap.to(camera.position, {
+                x: bestCamPos.x,
+                y: bestCamPos.y,
+                z: bestCamPos.z,
+                duration: 0.8,
+                ease: 'power2.out',
+                onUpdate: () => { camera.lookAt(selectedSprite!.position); }
+            });
+            
+            // Animate controls target to selected sprite
+            gsap.to(controls.target, {
+                x: selectedSprite.position.x,
+                y: selectedSprite.position.y,
+                z: selectedSprite.position.z,
+                duration: 0.8,
+                ease: 'power2.out',
+                onUpdate: () => { controls.update(); }
+            });
+            
+            // Update navigation button states
+            updateNavigationButtonStates();
+        }
+    } else {
+        console.log('Cannot go forward - already at end');
+    }
+}
+
+function updateNavigationButtonStates() {
+    const backButton = document.getElementById('back-button');
+    const forwardButton = document.getElementById('forward-button');
+    
+    if (backButton) {
+        backButton.style.opacity = currentHistoryIndex > 0 ? '1' : '0.5';
+        backButton.style.pointerEvents = currentHistoryIndex > 0 ? 'auto' : 'none';
+    }
+    
+    if (forwardButton) {
+        forwardButton.style.opacity = currentHistoryIndex < selectionHistory.length - 1 ? '1' : '0.5';
+        forwardButton.style.pointerEvents = currentHistoryIndex < selectionHistory.length - 1 ? 'auto' : 'none';
+    }
+}
 
 function onWindowResize() {
     if (camera && renderer) {
@@ -892,11 +1318,6 @@ function animate() {
     animationFrameId = requestAnimationFrame(animate);
     if (controls) controls.update(); 
     
-    imageSprites.forEach(sprite => {
-        if (sprite.material instanceof THREE.SpriteMaterial) {
-            sprite.material.opacity = 1.0; 
-        }
-    });
     if (renderer && scene && camera) {
         renderer.render(scene, camera);
     }
@@ -941,4 +1362,5 @@ function setupPreloader() {
 }
 
 // Start the application by setting up the preloader
+setupPreloader();
 setupPreloader();
