@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif; /* Changed to Space Grotesk */
+    color: #222; /* Darker text for light background */
+    background-color: #f0f0f0; /* Light grey for body */
+    overflow: hidden; /* Prevent scrollbars from canvas */
+}
+
+a {
+    color: #222;
+}
+
+#webgl-canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed; /* Ensure it's behind the modal */
+    top: 0;
+    left: 0;
+    z-index: 1; 
+}
+
+.controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Lighter background for controls */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 10;
+    color: #333; /* Ensure text inside controls is dark */
+}
+
+.controls label {
+    margin-right: 5px;
+    color: #333; /* Ensure label text is dark */
+}
+
+.controls select {
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #fff; /* White background for select */
+    color: #333; /* Dark text for select */
+    border: 1px solid #aaa;
+}
+
+/* Preloader Modal Styles */
+#preloader-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#preloader-modal h2 {
+    font-size: 2.5em;
+    margin-bottom: 0px;
+    color: #333;
+}
+
+#preloader-modal p {
+    width: 85vw; /* Use viewport width */
+    max-width: 550px; /* Cap the width on larger screens */
+    padding-left: 15px; /* Add some horizontal padding */
+    padding-right: 15px;
+    box-sizing: border-box; /* Include padding in the width calculation */
+    margin-left: auto; /* Center the paragraph if its max-width is reached */
+    margin-right: auto;
+}
+
+#preloader-interactive-area {
+    height: 60px; /* Fixed height to prevent collapse/expansion */
+    width: 100%; /* Allow content within to be centered easily */
+    display: flex;
+    flex-direction: column; /* Stack loading bar and start button if both were visible */
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px; /* Space below the paragraph */
+    margin-bottom: 15px; /* Space after this area, adjust as needed */
+}
+
+.loading-bar-container {
+    width: 60%;
+    max-width: 400px;
+    height: 10px;
+    background-color: #e0e0e0;
+    /* border-radius: 10px; */ /* Removed rounded ends for container */
+    overflow: hidden;
+    /* margin-bottom: 30px; */ /* Removed: Spacing handled by wrapper */
+}
+
+.loading-bar-fill {
+    width: 0%; /* Initial width */
+    height: 100%;
+    background-color: #000000; /* Black loading bar */
+    /* border-radius: 10px; */ /* Removed rounded ends for fill */
+    transition: width 0.2s ease-out;
+}
+
+#start-button {
+    display: none; /* Initially hidden */
+    font-size: 2em;
+    color: #333;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+#start-button:hover {
+    color: #007bff; /* Optional hover effect */
+}
+
+/* View Controls Container */
+.view-controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100; /* Ensure it's above canvas and other elements if any */
+    display: none; /* Initially hidden */
+    flex-direction: column; /* Stack visualization toggle above orbit toggle */
+    gap: 15px; /* Space between the two toggle groups */
+}
+
+/* Visualization Toggle Styles (Segmented Control) */
+.visualization-toggle {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 18px; /* Increased for pill shape */
+    overflow: hidden; /* To make sure child labels conform to border-radius */
+    background-color: #f0f0f0;
+}
+
+.visualization-toggle input[type="radio"] {
+    display: none; /* Hide the actual radio button */
+}
+
+.visualization-toggle label {
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #333;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    border-right: 1px solid #ccc; /* Separator line */
+}
+
+.visualization-toggle label:last-child {
+    border-right: none; /* No separator for the last button */
+}
+
+.visualization-toggle input[type="radio"]:checked + label {
+    background-color: #000; /* Black background for selected */
+    color: white;
+}
+
+.visualization-toggle label:hover {
+    background-color: #ddd; /* Light hover effect for non-selected items */
+}
+
+.visualization-toggle input[type="radio"]:checked + label:hover {
+    background-color: #333; /* Darker hover for selected item */
+}
+
+
+/* Toggle Switch Styles */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 120px; /* Width of the toggle - increased */
+    height: 34px; /* Height of the toggle */
+    /* margin-right: 15px; No longer needed as it's alone in nav-left */
+    vertical-align: middle; 
+    /* Added some margin for spacing, adjust as needed */
+    margin: 0px; 
+    z-index: 10; /* Ensure it's above the canvas */
+}
+
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Background of the toggle track */
+    border-radius: 34px; /* Make it rounded */
+    transition: .4s;
+    font-size: 0.8em; /* Smaller font for "Auto-play" text */
+    line-height: 34px; /* Center text vertically */
+    text-align: center;
+    color: #333; /* Text color for "Off" state */
+}
+
+.toggle-label:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Height of the slider button */
+    width: 26px; /* Width of the slider button */
+    left: 4px;
+    bottom: 4px;
+    background-color: white; /* Color of the slider button */
+    border-radius: 50%; /* Make it circular */
+    transition: .4s;
+}
+
+.toggle-input:checked + .toggle-label {
+    background-color: #000; /* Background when toggle is ON - changed to black */
+    color: white; /* Text color for "On" state - though text might be covered */
+}
+
+.toggle-input:checked + .toggle-label:before {
+    transform: translateX(86px); /* Move slider button to the right for 120px width */
+}
