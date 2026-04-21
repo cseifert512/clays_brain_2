@@ -178,7 +178,8 @@ function onPointerDown(event: MouseEvent) {
     
     if (intersects.length > 0) {
         const clickedSprite = intersects[0].object as THREE.Sprite;
-        
+        ensureFullResTexture(clickedSprite);
+
         // If clicking the same sprite, do nothing
         if (selectedSprite === clickedSprite) {
             return;
