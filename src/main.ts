@@ -402,7 +402,7 @@ const FULL_RES_BASE_URL = 'https://pub-a82af49674954b35bdefe1f6fb59201a.r2.dev';
 
 interface AtlasManifestItem { filename: string; x: number; y: number; w: number; h: number; }
 interface AtlasManifest {
-    atlasW: number; atlasH: number; cellW: number; cellH: number;
+    atlasW: number; atlasH: number; cell: number;
     cols: number; rows: number; items: AtlasManifestItem[];
 }
 
@@ -461,8 +461,6 @@ async function createImageSprites() {
     const cellByName = new Map<string, AtlasManifestItem>();
     for (const it of manifest.items) cellByName.set(it.filename, it);
 
-    const spriteAspect = manifest.cellW / manifest.cellH;
-
     loadedEmbeddings.forEach((item, index) => {
         const cell = cellByName.get(item.filename);
         if (!cell) { console.warn(`No atlas cell for ${item.filename}`); return; }
@@ -479,7 +477,8 @@ async function createImageSprites() {
             opacity: 1.0,
         });
         const sprite = new THREE.Sprite(material);
-        sprite.scale.set(SPRITE_SCALE * spriteAspect, SPRITE_SCALE, 1);
+        const aspect = cell.w / cell.h;
+        sprite.scale.set(SPRITE_SCALE * aspect, SPRITE_SCALE, 1);
         sprite.userData = {
             id: index,
             embeddingItem: item,

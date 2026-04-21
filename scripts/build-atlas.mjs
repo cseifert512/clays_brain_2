@@ -1,5 +1,9 @@
 #!/usr/bin/env node
-// Packs every PNG in ./originals/ into a single WebP atlas + manifest.
+// Packs every PNG in ./originals/ into a WebP atlas that preserves each
+// image's native aspect ratio. Images are placed top-left within a uniform
+// grid cell; the manifest stores the actual image rect (x, y, w, h) in atlas
+// pixels so the frontend can map UVs and sprite aspect correctly.
+//
 // Output: public/atlas/atlas.webp, public/atlas/manifest.json
 
 import { readdir, mkdir, writeFile } from 'node:fs/promises';
@@ -11,44 +15,46 @@ const ROOT = path.resolve(fileURLToPath(import.meta.url), '..', '..');
 const SRC_DIR = path.join(ROOT, 'originals');
 const OUT_DIR = path.join(ROOT, 'public', 'atlas');
 
-// Cell size preserves the 16:9 aspect of the source images.
-// 112 x 63 gives us clean packing into a 2048-wide atlas (18 cols).
-const CELL_W = 112;
-const CELL_H = 63;
-const ATLAS_W = 2048;
+// Uniform grid cell (each image fits inside a CELL x CELL square, preserving
+// aspect). 128 x 128 cells in 32 cols x 15 rows = 4096 x 1920 atlas — well
+// under the 4096 WebGL texture-size minimum.
+const CELL = 128;
+const COLS = 32;
 
 async function main() {
     const files = (await readdir(SRC_DIR)).filter(f => f.endsWith('.png')).sort();
-    const cols = Math.floor(ATLAS_W / CELL_W);
-    const rows = Math.ceil(files.length / cols);
-    const atlasH = rows * CELL_H;
+    const rows = Math.ceil(files.length / COLS);
+    const atlasW = COLS * CELL;
+    const atlasH = rows * CELL;
 
     await mkdir(OUT_DIR, { recursive: true });
-    console.log(`${files.length} images -> ${cols}x${rows} grid, atlas ${ATLAS_W}x${atlasH}`);
+    console.log(`${files.length} images -> ${COLS}x${rows} grid, atlas ${atlasW}x${atlasH}`);
 
     const composites = [];
-    const manifest = [];
+    const items = [];
 
     for (let i = 0; i < files.length; i++) {
         const filename = files[i];
-        const col = i % cols;
-        const row = Math.floor(i / cols);
-        const x = col * CELL_W;
-        const y = row * CELL_H;
+        const col = i % COLS;
+        const row = Math.floor(i / COLS);
+        const cellX = col * CELL;
+        const cellY = row * CELL;
 
-        const thumb = await sharp(path.join(SRC_DIR, filename))
-            .resize(CELL_W, CELL_H, { fit: 'fill' })
-            .toBuffer();
+        const img = sharp(path.join(SRC_DIR, filename)).resize(CELL, CELL, {
+            fit: 'inside',
+            withoutEnlargement: false,
+        });
+        const { data, info } = await img.toBuffer({ resolveWithObject: true });
 
-        composites.push({ input: thumb, top: y, left: x });
-        manifest.push({ filename, x, y, w: CELL_W, h: CELL_H });
+        composites.push({ input: data, top: cellY, left: cellX });
+        items.push({ filename, x: cellX, y: cellY, w: info.width, h: info.height });
 
         if ((i + 1) % 50 === 0) process.stdout.write(`\r  thumbnailed ${i + 1}/${files.length}`);
     }
     process.stdout.write(`\r  thumbnailed ${files.length}/${files.length}\n`);
 
     const atlas = sharp({
-        create: { width: ATLAS_W, height: atlasH, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } }
+        create: { width: atlasW, height: atlasH, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } }
     }).composite(composites);
 
     const outPng = path.join(OUT_DIR, 'atlas.webp');
@@ -56,7 +62,7 @@ async function main() {
 
     await writeFile(
         path.join(OUT_DIR, 'manifest.json'),
-        JSON.stringify({ atlasW: ATLAS_W, atlasH, cellW: CELL_W, cellH: CELL_H, cols, rows, items: manifest }, null, 2)
+        JSON.stringify({ atlasW, atlasH, cell: CELL, cols: COLS, rows, items }, null, 2)
     );
 
     console.log(`Wrote ${outPng} and manifest.json`);
