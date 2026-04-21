@@ -18,7 +18,6 @@ declare global {
 
 const IS_MOBILE = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
 const MAX_EMBEDDINGS_MOBILE = 1000; // Attempt to load all 1000 images on mobile with resizing
-const MOBILE_TEXTURE_WIDTH = 256; // Target width for textures on mobile
 
 let scene: THREE.Scene;
 let camera: THREE.PerspectiveCamera;
@@ -106,7 +105,8 @@ function onPointerMove(event: MouseEvent) {
                 }
             }
             hoveredSprite = sprite;
-            
+            ensureFullResTexture(sprite);
+
             // Only apply hover effects if the sprite is not currently selected
             if (hoveredSprite !== selectedSprite) {
                 // Calculate max allowed scale based on screen size
@@ -339,7 +339,7 @@ async function loadDataAndSetupUI() {
         calculateTsne3DBounds(); // For 3D Scatter
         calculateTsne2DBounds(); // For 2D Scatter
         calculateGridSnapBounds(); // For 2D Grid using tsne_2d_grid_snap
-        createImageSprites(); // This starts the loading process via LoadingManager
+        await createImageSprites();
 
         // const layoutSelect = document.getElementById('layout-algorithm') as HTMLSelectElement; // Removed as element no longer exists
         // if (layoutSelect) { // Added a null check for safety, though the block is removed
@@ -395,100 +395,131 @@ async function loadDataAndSetupUI() {
     }
 }
 
-function createImageSprites() {
-    imageSprites.forEach(sprite => scene.remove(sprite)); // Clear existing sprites if any
+// If set, hovered/selected sprites swap to a full-res PNG fetched from this base URL.
+// Leave empty to always use atlas textures.
+const FULL_RES_BASE_URL = 'https://pub-a82af49674954b35bdefe1f6fb59201a.r2.dev';
+
+interface AtlasManifestItem { filename: string; x: number; y: number; w: number; h: number; }
+interface AtlasManifest {
+    atlasW: number; atlasH: number; cellW: number; cellH: number;
+    cols: number; rows: number; items: AtlasManifestItem[];
+}
+
+function setLoadingProgress(percent: number) {
+    const bar = document.getElementById('loading-bar-fill');
+    if (bar) bar.style.width = `${percent}%`;
+}
+
+function finishLoadingUi() {
+    const container = document.querySelector('.loading-bar-container');
+    if (container) (container as HTMLElement).style.display = 'none';
+    const startButton = document.getElementById('start-button');
+    if (startButton) startButton.style.display = 'inline';
+}
+
+async function createImageSprites() {
+    imageSprites.forEach(sprite => scene.remove(sprite));
     imageSprites = [];
 
     if (loadedEmbeddings.length === 0) {
-        // Handle case where embeddings might be empty after filtering or error
-        const startButton = document.getElementById('start-button');
-        const loadingBarContainer = document.querySelector('.loading-bar-container');
-        if (loadingBarContainer) (loadingBarContainer as HTMLElement).style.display = 'none';
-        if (startButton) startButton.style.display = 'inline'; // Allow starting even if no images
+        finishLoadingUi();
         return;
     }
 
-    const loadingManager = new THREE.LoadingManager();
-    const localTextureLoader = new THREE.TextureLoader(loadingManager);
+    const base = import.meta.env.BASE_URL || '/';
+    const manifestUrl = `${base}atlas/manifest.json`;
+    const atlasUrl = `${base}atlas/atlas.webp`;
 
-    loadingManager.onProgress = (url, itemsLoaded, itemsTotal) => {
-        const progress = (itemsLoaded / itemsTotal) * 100;
-        const loadingBarFill = document.getElementById('loading-bar-fill');
-        if (loadingBarFill) {
-            loadingBarFill.style.width = `${progress}%`;
-        }
-    };
+    let manifest: AtlasManifest;
+    let atlasTexture: THREE.Texture;
+    try {
+        const [manifestRes, texture] = await Promise.all([
+            fetch(manifestUrl).then(r => {
+                if (!r.ok) throw new Error(`manifest: HTTP ${r.status}`);
+                setLoadingProgress(20);
+                return r.json() as Promise<AtlasManifest>;
+            }),
+            new THREE.TextureLoader().loadAsync(atlasUrl),
+        ]);
+        manifest = manifestRes;
+        atlasTexture = texture;
+    } catch (err) {
+        console.error('Failed to load atlas:', err);
+        finishLoadingUi();
+        return;
+    }
 
-    loadingManager.onLoad = () => {
-        console.log("All textures loaded (or attempted).");
-        const loadingBarContainer = document.querySelector('.loading-bar-container');
-        if (loadingBarContainer) (loadingBarContainer as HTMLElement).style.display = 'none';
-        
-        if (['kmeans', 'dbscan', 'agglom'].includes(currentLayoutAlgorithm)) { // This clustering logic might need to be re-evaluated with new viz modes
-            calculateAndStoreClusterEpicenters(currentLayoutAlgorithm as 'kmeans' | 'dbscan' | 'agglom');
-        }
-        updateSpritePositions(false); // Initial positioning without animation
+    atlasTexture.colorSpace = THREE.SRGBColorSpace;
+    atlasTexture.generateMipmaps = false;
+    atlasTexture.minFilter = THREE.LinearFilter;
+    atlasTexture.magFilter = THREE.LinearFilter;
+    atlasTexture.wrapS = THREE.ClampToEdgeWrapping;
+    atlasTexture.wrapT = THREE.ClampToEdgeWrapping;
+    setLoadingProgress(100);
 
-        if (renderer && scene && camera) {
-            renderer.render(scene, camera); // Pre-render the scene
-        }
-        
-        const startButton = document.getElementById('start-button');
-        if (startButton) startButton.style.display = 'inline';
-    };
+    const cellByName = new Map<string, AtlasManifestItem>();
+    for (const it of manifest.items) cellByName.set(it.filename, it);
 
-    loadingManager.onError = (url) => { 
-        console.error(`There was an error loading texture: ${url}`);
-    };
-    
-    const cloudName = 'damdbel4n';
-    // Remove the version part entirely
-    // const imageVersionPath = ''; // No longer needed
+    const spriteAspect = manifest.cellW / manifest.cellH;
 
     loadedEmbeddings.forEach((item, index) => {
-        const filenameWithoutExtension = item.filename.substring(0, item.filename.lastIndexOf('.'));
-        let imageUrl = '';
+        const cell = cellByName.get(item.filename);
+        if (!cell) { console.warn(`No atlas cell for ${item.filename}`); return; }
 
-        if (IS_MOBILE) {
-            // Construct URL with width transformation for mobile, no version
-            imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/w_${MOBILE_TEXTURE_WIDTH}/${filenameWithoutExtension}.png`;
-        } else {
-            // Original URL for desktop, no version
-            imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/${filenameWithoutExtension}.png`;
-        }
-        // console.log(`Loading image: ${imageUrl}`); // For debugging
+        const cellTex = atlasTexture.clone();
+        cellTex.needsUpdate = true;
+        cellTex.offset.set(cell.x / manifest.atlasW, 1 - (cell.y + cell.h) / manifest.atlasH);
+        cellTex.repeat.set(cell.w / manifest.atlasW, cell.h / manifest.atlasH);
 
-        localTextureLoader.load(
-            imageUrl,
-            (texture) => {
-                texture.colorSpace = THREE.SRGBColorSpace; 
-                const material = new THREE.SpriteMaterial({ 
-                    map: texture, 
-                    transparent: true, 
-                    alphaTest: 0.1,
-                    opacity: 1.0 // Explicitly set initial opacity
-                });
-                const sprite = new THREE.Sprite(material);
-                const aspectRatio = texture.image.width / texture.image.height;
-                sprite.scale.set(SPRITE_SCALE * aspectRatio, SPRITE_SCALE, 1);
-                sprite.userData = { id: index, embeddingItem: item, originalScale: sprite.scale.clone() };
-                
-                // Ensure the sprite is unique and not duplicated
-                if (!imageSprites.some(existingSprite => existingSprite.userData.id === index)) {
-                    imageSprites.push(sprite);
-                    scene.add(sprite);
-                    console.log(`Created sprite ${index} for ${item.filename}`);
-                } else {
-                    console.warn(`Sprite ${index} already exists, skipping duplicate`);
-                }
-            },
-            undefined, 
-            (error) => { 
-                console.error(`Failed to load texture for ${item.filename}:`, error);
-            }
-        );
+        const material = new THREE.SpriteMaterial({
+            map: cellTex,
+            transparent: true,
+            alphaTest: 0.1,
+            opacity: 1.0,
+        });
+        const sprite = new THREE.Sprite(material);
+        sprite.scale.set(SPRITE_SCALE * spriteAspect, SPRITE_SCALE, 1);
+        sprite.userData = {
+            id: index,
+            embeddingItem: item,
+            originalScale: sprite.scale.clone(),
+            atlasMaterial: material,
+            fullResLoaded: false,
+        };
+        imageSprites.push(sprite);
+        scene.add(sprite);
     });
+
+    if (['kmeans', 'dbscan', 'agglom'].includes(currentLayoutAlgorithm)) {
+        calculateAndStoreClusterEpicenters(currentLayoutAlgorithm as 'kmeans' | 'dbscan' | 'agglom');
+    }
+    updateSpritePositions(false);
+    if (renderer && scene && camera) renderer.render(scene, camera);
+
+    finishLoadingUi();
     enableSpriteInteraction();
+}
+
+function ensureFullResTexture(sprite: THREE.Sprite) {
+    if (!FULL_RES_BASE_URL) return;
+    if (sprite.userData.fullResLoaded || sprite.userData.fullResLoading) return;
+    const item = sprite.userData.embeddingItem as EmbeddingItem;
+    sprite.userData.fullResLoading = true;
+    new THREE.TextureLoader().load(
+        `${FULL_RES_BASE_URL}/${item.filename}`,
+        (tex) => {
+            tex.colorSpace = THREE.SRGBColorSpace;
+            (sprite.material as THREE.SpriteMaterial).map = tex;
+            (sprite.material as THREE.SpriteMaterial).needsUpdate = true;
+            sprite.userData.fullResLoaded = true;
+            sprite.userData.fullResLoading = false;
+        },
+        undefined,
+        (err) => {
+            console.warn(`full-res load failed for ${item.filename}:`, err);
+            sprite.userData.fullResLoading = false;
+        }
+    );
 }
 
 function calculatePCABounds() {

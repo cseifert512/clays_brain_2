@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Downloaded source images (pulled from Cloudinary; not committed)
+originals/
+scripts/failed-downloads.txt
+
+# Claude Code local state
+.claude/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
