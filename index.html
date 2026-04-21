@@ -3,7 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clays_brain</title>
+
+    <title>Clay Seifert — Architecture, AI & Construction Robotics</title>
+    <meta name="description" content="Clay Seifert — working at the intersection of architecture, AI, and construction robotics. An interactive visualization of a creative latent space.">
+    <meta name="author" content="Clay Seifert">
+    <link rel="canonical" href="https://claysbrain.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://claysbrain.com/">
+    <meta property="og:title" content="Clay Seifert — Architecture, AI & Construction Robotics">
+    <meta property="og:description" content="An interactive latent-space visualization by Clay Seifert. Architecture × AI × construction robotics.">
+    <meta property="og:image" content="https://claysbrain.com/headshot.jpg">
+    <meta property="og:site_name" content="Clay Seifert">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Clay Seifert — Architecture, AI & Construction Robotics">
+    <meta name="twitter:description" content="An interactive latent-space visualization by Clay Seifert.">
+    <meta name="twitter:image" content="https://claysbrain.com/headshot.jpg">
+
+    <!-- Person schema: feeds Google's Knowledge Graph and disambiguates the name -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Clay Seifert",
+        "alternateName": ["Clay H. Seifert", "Clay H Seifert"],
+        "givenName": "Clay",
+        "additionalName": "H",
+        "familyName": "Seifert",
+        "url": "https://claysbrain.com/",
+        "image": "https://claysbrain.com/headshot.jpg",
+        "description": "Working at the intersection of architecture, AI, and construction robotics.",
+        "sameAs": [
+            "https://github.com/cseifert512"
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/jpeg" href="/headshot.jpg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
 
@@ -70,10 +109,43 @@
             font-family: 'Space Grotesk', sans-serif;
         }
 
-        #preloader-modal h2 {
+        #preloader-modal h1 {
             font-size: 2.5em;
-            margin-bottom: 0px;
+            margin: 0 0 4px;
             color: #333;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        #preloader-modal .tagline {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 560px;
+            margin: 0 auto 14px;
+            padding: 0 15px;
+            line-height: 1.4;
+        }
+
+        #preloader-modal .socials {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            margin: 0 0 20px;
+            flex-wrap: wrap;
+        }
+
+        #preloader-modal .socials a {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95em;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        #preloader-modal .socials a:hover {
+            color: #007bff;
+            border-color: #007bff;
         }
 
         #preloader-modal p {
@@ -282,13 +354,23 @@
             background-color: #ddd;
         }
     </style>
-  <script type="module" crossorigin src="/clays_brain_2/assets/index-DPfsye5B.js"></script>
+  <script type="module" crossorigin src="/assets/index-CxY2fCPZ.js"></script>
 </head>
 <body>
     <div id="preloader-modal">
-        <h2>Hello!</h2>
-        <p id="description">This is a visualization of my brain. It's a work in progress, and I'm not sure what it's going to look like when it's done.<br><br>Enjoy!</p>
-        
+        <h1>Clay Seifert</h1>
+        <p class="tagline">Working at the intersection of architecture, AI, and construction robotics.</p>
+        <div class="socials">
+            <a href="https://github.com/cseifert512" target="_blank" rel="noopener me">GitHub</a>
+            <a href="mailto:clayhseifert@gmail.com">Email</a>
+            <!-- Add when ready:
+            <a href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener me">LinkedIn</a>
+            <a href="https://x.com/YOUR-HANDLE" target="_blank" rel="noopener me">X</a>
+            <a href="https://instagram.com/YOUR-HANDLE" target="_blank" rel="noopener me">Instagram</a>
+            -->
+        </div>
+        <p id="description">This is a visualization of my brain — an interactive latent space of images I've been working on. It's a work in progress.<br><br>Enjoy!</p>
+
         <div id="preloader-interactive-area">
             <div class="loading-bar-container">
                 <div class="loading-bar-fill" id="loading-bar-fill"></div>
