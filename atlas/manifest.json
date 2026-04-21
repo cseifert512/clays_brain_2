@@ -1,3328 +1,3327 @@
 {
-  "atlasW": 2048,
-  "atlasH": 1701,
-  "cellW": 112,
-  "cellH": 63,
-  "cols": 18,
-  "rows": 27,
+  "atlasW": 4096,
+  "atlasH": 1920,
+  "cell": 128,
+  "cols": 32,
+  "rows": 15,
   "items": [
     {
       "filename": "512clay_A_30-foot_tall_organic_structure_dominates_a_grassy_f_9c513be6-5bcb-43a6-9a63-1aabb837463f_0.png",
       "x": 0,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_circle_of_robed_humanoid_figures_carved_in_solemn_r_e4be0362-de9c-4291-9dbd-32a6187a3065_1.png",
-      "x": 112,
+      "x": 128,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_cityscape_where_buildings_have_kinetic_facades_that_0b972170-aac1-48e4-86f5-4714a728c57a_1.png",
-      "x": 224,
+      "x": 256,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_desert_community_where_buildings_are_designed_to_lo_3ecc894d-8500-4d79-ae33-42a913dad64c_3.png",
-      "x": 336,
+      "x": 384,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_desert_community_where_buildings_are_designed_to_look_0d404802-58ec-46da-ab84-fe397d095abe.png",
-      "x": 448,
+      "x": 512,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_fractured_human_face_carved_in_high_relief_into_den_21eca214-2aa8-43c0-be01-40bf562cfee6_0.png",
-      "x": 560,
+      "x": 640,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_fractured_human_face_carved_in_high_relief_into_den_21eca214-2aa8-43c0-be01-40bf562cfee6_2.png",
-      "x": 672,
+      "x": 768,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_fully-formed_living_building_100_feet_tall_stands_a_83cb43c3-d076-4500-8b16-2f768fe5d20c_0.png",
-      "x": 784,
+      "x": 896,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_futuristic_park_pavilion_constructed_from_self-asse_1d829e45-ef0b-48f1-a367-105b4293625d_3.png",
-      "x": 896,
+      "x": 1024,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_handcrafted_architectural_model_showcasing_an_innov_171e5148-d07d-4428-8cd3-a4bdbbc77e54_2.png",
-      "x": 1008,
+      "x": 1152,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_handcrafted_architectural_model_showcasing_an_innov_171e5148-d07d-4428-8cd3-a4bdbbc77e54_3.png",
-      "x": 1120,
+      "x": 1280,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_handcrafted_architectural_model_showcasing_an_innov_ab3295d4-a933-457a-b74a-54a0341d8f8a_3.png",
-      "x": 1232,
+      "x": 1408,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_handcrafted_architectural_model_showcasing_an_innov_bc1f7a41-cbcb-4026-b029-d9b590b9fb74_0.png",
-      "x": 1344,
+      "x": 1536,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_handcrafted_architectural_model_showcasing_an_innov_bc1f7a41-cbcb-4026-b029-d9b590b9fb74_1.png",
-      "x": 1456,
+      "x": 1664,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_handcrafted_architectural_model_showcasing_an_innov_bc1f7a41-cbcb-4026-b029-d9b590b9fb74_2.png",
-      "x": 1568,
+      "x": 1792,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_handcrafted_architectural_site_model_viewed_from_ab_047af926-ca59-4587-8c0e-67093754a7aa_3.png",
-      "x": 1680,
+      "x": 1920,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_highly_detailed_architectural_cutaway_model_showcas_0487aa26-22aa-4496-9fba-62f2b8a67147_3.png",
-      "x": 1792,
+      "x": 2048,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_highly_detailed_architectural_cutaway_model_showcasin_73bedb64-6e6d-46f5-8b3b-659e143e4b2c.png",
-      "x": 1904,
+      "x": 2176,
       "y": 0,
-      "w": 112,
-      "h": 63
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_physical_architectural_site_model_of_a_futuristic_v_01dfcf6b-9cc9-4c4b-b4cc-708f6001573e_2.png",
-      "x": 0,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 0,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_physical_architectural_site_model_of_a_futuristic_v_01dfcf6b-9cc9-4c4b-b4cc-708f6001573e_3.png",
-      "x": 112,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 0,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_physical_architectural_site_model_of_a_futuristic_v_03697227-05cb-48a0-a1ea-69a1afcc7393_0.png",
-      "x": 224,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 0,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_physical_architectural_site_model_of_a_futuristic_v_03697227-05cb-48a0-a1ea-69a1afcc7393_3.png",
-      "x": 336,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 0,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_physical_architectural_site_model_of_a_futuristic_v_f2a84da6-fbba-4365-b2c0-06c726842a3b_0.png",
-      "x": 448,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 0,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_physical_architectural_site_model_of_a_futuristic_v_f2a84da6-fbba-4365-b2c0-06c726842a3b_1.png",
-      "x": 560,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 0,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_tall_Gothic_arch_embedded_beneath_a_weathered_wall__2856dc54-04ee-4da3-8a2d-8a5799968de6_0.png",
-      "x": 672,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 0,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_tall_Gothic_arch_embedded_beneath_a_weathered_wall__2856dc54-04ee-4da3-8a2d-8a5799968de6_3.png",
-      "x": 784,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 0,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_tall_Gothic_arch_embedded_beneath_a_weathered_wall__f317da09-2276-4393-ad0e-efde5773fa85_0.png",
-      "x": 896,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 0,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_tall_Gothic_arch_embedded_beneath_a_weathered_wall__f317da09-2276-4393-ad0e-efde5773fa85_3.png",
-      "x": 1008,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 0,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_A_top-down_view_of_a_meticulously_crafted_architectur_68bccb74-7f63-4df3-8ab8-0f086ac8a91a_0.png",
-      "x": 1120,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 0,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_A_top-down_view_of_a_meticulously_crafted_architectur_68bccb74-7f63-4df3-8ab8-0f086ac8a91a_3.png",
-      "x": 1232,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 0,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Above-view_photograph_of_a_handcrafted_architectural__cd3104fd-128a-444d-a3c4-81b99084fd07_1.png",
-      "x": 1344,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 0,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Above-view_photograph_of_a_handcrafted_architectural__cd3104fd-128a-444d-a3c4-81b99084fd07_2.png",
-      "x": 1456,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 0,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Aerial_view_of_modular_floating_gardens_geometric_and_c67df175-00ba-4557-a0d2-693cf438fd2e_0.png",
-      "x": 1568,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Aerial_view_of_modular_floating_gardens_geometric_and_c67df175-00ba-4557-a0d2-693cf438fd2e_1.png",
-      "x": 1680,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Aerial_view_of_modular_floating_gardens_geometric_and_c67df175-00ba-4557-a0d2-693cf438fd2e_2.png",
-      "x": 1792,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Aerial_view_of_modular_floating_gardens_geometric_and_c67df175-00ba-4557-a0d2-693cf438fd2e_3.png",
-      "x": 1904,
-      "y": 63,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Aerial_view_of_modular_floating_gardens_geometric_and_dfdb1d0c-b928-41c2-b9eb-f70eb2d472e2_1.png",
-      "x": 0,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Aerial_view_of_modular_floating_gardens_geometric_and_dfdb1d0c-b928-41c2-b9eb-f70eb2d472e2_2.png",
-      "x": 112,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Aerial_view_of_modular_floating_gardens_geometric_and_dfdb1d0c-b928-41c2-b9eb-f70eb2d472e2_3.png",
-      "x": 224,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_103618aa-7067-4823-ba28-8bc46209ff25_1.png",
-      "x": 336,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_103618aa-7067-4823-ba28-8bc46209ff25_3.png",
-      "x": 448,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_17dfad7c-2f87-4d14-bf05-edfeaeed9e9b_0.png",
-      "x": 560,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_17dfad7c-2f87-4d14-bf05-edfeaeed9e9b_1.png",
-      "x": 672,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_17dfad7c-2f87-4d14-bf05-edfeaeed9e9b_2.png",
-      "x": 784,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_17dfad7c-2f87-4d14-bf05-edfeaeed9e9b_3.png",
-      "x": 896,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_1bffce8e-96af-4631-ac1a-1b4ce087ad3f_2.png",
-      "x": 1008,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_1bffce8e-96af-4631-ac1a-1b4ce087ad3f_3.png",
-      "x": 1120,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_bb70d5a6-b993-4403-9933-a7ea323c2d76_0.png",
-      "x": 1232,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_c71087b5-d20b-41fe-b43f-db49e6409f4c_2.png",
-      "x": 1344,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_wate_c71087b5-d20b-41fe-b43f-db49e6409f4c_3.png",
-      "x": 1456,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_water__a39f671a-0d73-4741-85f7-c27b928dd008.png",
-      "x": 1568,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_CLT_limestone_organic_building_that_extends_from_water__ee0a2e1b-5a46-4605-b004-5ebfffe24fc3.png",
-      "x": 1680,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Close-up_of_vertical_farm_tower_connection_point_biom_ebcd5639-1794-4013-bf11-a73d475d306f_0.png",
-      "x": 1792,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Close-up_of_vertical_farm_tower_connection_point_biom_ebcd5639-1794-4013-bf11-a73d475d306f_1.png",
-      "x": 1904,
-      "y": 126,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Close-up_of_vertical_farm_tower_connection_point_biom_ebcd5639-1794-4013-bf11-a73d475d306f_2.png",
-      "x": 0,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Close-up_of_vertical_farm_tower_connection_point_biom_ebcd5639-1794-4013-bf11-a73d475d306f_3.png",
-      "x": 112,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Cluster_of_interconnected_floating_farm_modules_varyi_3626c249-62b6-4de4-8db4-c064e34479a6_0.png",
-      "x": 224,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Cluster_of_interconnected_floating_farm_modules_varyi_3626c249-62b6-4de4-8db4-c064e34479a6_1.png",
-      "x": 336,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Cluster_of_interconnected_floating_farm_modules_varyi_3626c249-62b6-4de4-8db4-c064e34479a6_2.png",
-      "x": 448,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 128,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Drought-Resistant_Module_Architectural_illustration_o_07de6839-21c2-4899-a51e-3d6609b8d570_1.png",
-      "x": 560,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 128,
+      "w": 128,
+      "h": 96
     },
     {
       "filename": "512clay_Dusk_scene_sectional_perspective_of_vertical_farm_bri_5e2f77d3-34b3-4ae5-9b4a-a0c15bcfcf9c_0.png",
-      "x": 672,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Dusk_scene_sectional_perspective_of_vertical_farm_bri_5e2f77d3-34b3-4ae5-9b4a-a0c15bcfcf9c_1.png",
-      "x": 784,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Dusk_scene_sectional_perspective_of_vertical_farm_bri_5e2f77d3-34b3-4ae5-9b4a-a0c15bcfcf9c_2.png",
-      "x": 896,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Dusk_scene_sectional_perspective_of_vertical_farm_bri_5e2f77d3-34b3-4ae5-9b4a-a0c15bcfcf9c_3.png",
-      "x": 1008,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 128,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Elevation_Design_Overall_Form_The_tallest_and_most_dr_f3f28f2d-0f05-4a56-b0ca-66a055c9a208_0.png",
-      "x": 1120,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Elevation_Design_Overall_Form_The_tallest_and_most_dr_f3f28f2d-0f05-4a56-b0ca-66a055c9a208_1.png",
-      "x": 1232,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Elevation_Design_Overall_Form_The_tallest_and_most_dr_f3f28f2d-0f05-4a56-b0ca-66a055c9a208_2.png",
-      "x": 1344,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Futuristic_vertical_farm_bridge_spans_river_biomimeti_56055070-3887-4f6c-ae5c-c9268f68b466_0.png",
-      "x": 1456,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 256,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_Generate_a_colorful_and_cultural_detailed_diagram_ill_e763b48b-d733-40d3-9dc8-5cc3a3fbd8c9_0.png",
-      "x": 1568,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Gothic_style_apartment_building_architectural_interio_8eb026cc-7aa9-4f8a-a330-31f313b47b81_1.png",
-      "x": 1680,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Gothic_style_apartment_building_architectural_interio_8eb026cc-7aa9-4f8a-a330-31f313b47b81_2.png",
-      "x": 1792,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Microgreens_Module_High-detail_technical_drawing_of_c_da9b2649-1088-4c09-94cf-395a7350bcea_0.png",
-      "x": 1904,
-      "y": 189,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 256,
+      "w": 128,
+      "h": 96
     },
     {
       "filename": "512clay_Microgreens_Module_High-detail_technical_drawing_of_c_da9b2649-1088-4c09-94cf-395a7350bcea_1.png",
-      "x": 0,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 256,
+      "w": 128,
+      "h": 96
     },
     {
       "filename": "512clay_Microgreens_Module_High-detail_technical_drawing_of_c_da9b2649-1088-4c09-94cf-395a7350bcea_2.png",
-      "x": 112,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 256,
+      "w": 128,
+      "h": 96
     },
     {
       "filename": "512clay_Modern_biomorphic_tower_with_cascading_levels_featuri_b8534de1-3f42-4098-ab8e-ae1c5df645f9_1.png",
-      "x": 224,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Self-assembling_bioluminescent_materials_--raw_--styl_fdc63b83-15c5-4fc9-a3bc-dd821a8e9870_0.png",
-      "x": 336,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Synthetic_biology_for_adaptive_urban_systems_--raw_--_a00ca955-d795-44e7-99fe-15c363561338_0.png",
-      "x": 448,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_The_bridge_connection_or_heart_would_be_architectural_41f5cdfc-c260-442e-86b6-c98679e91268_0.png",
-      "x": 560,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_The_bridge_connection_or_heart_would_be_architectural_41f5cdfc-c260-442e-86b6-c98679e91268_2.png",
-      "x": 672,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_The_living_building_reacts_to_an_extreme_heatwave._La_c89953d7-90a2-4d0d-a9b8-116ed1c2aadb_0.png",
-      "x": 784,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_The_living_building_reacts_to_an_extreme_heatwave._La_c89953d7-90a2-4d0d-a9b8-116ed1c2aadb_1.png",
-      "x": 896,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_The_living_building_reacts_to_an_extreme_heatwave._La_c89953d7-90a2-4d0d-a9b8-116ed1c2aadb_2.png",
-      "x": 1008,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_The_living_building_reacts_to_an_extreme_heatwave._La_c89953d7-90a2-4d0d-a9b8-116ed1c2aadb_3.png",
-      "x": 1120,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_The_tower_manifests_as_a_helical_form_that_appears_to_890bab70-2044-492f-bc1c-b14411ba7b8c_0.png",
-      "x": 1232,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_To_create_a_unique_form_that_mimics_the_properties_of_ff86793e-9dd5-4482-934a-6e1f34aca67d_2.png",
-      "x": 1344,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Two_human_hands_reaching_toward_one_another_in_shallo_173560d0-1d61-419b-a1d5-bb546a824322_0.png",
-      "x": 1456,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Two_human_hands_reaching_toward_one_another_in_shallo_173560d0-1d61-419b-a1d5-bb546a824322_1.png",
-      "x": 1568,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Two_human_hands_reaching_toward_one_another_in_shallo_173560d0-1d61-419b-a1d5-bb546a824322_2.png",
-      "x": 1680,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_Vertical_agricultural_tower_with_a_deconstructed_oute_b896a130-6753-4783-9928-711f5d9ab5ba_1.png",
-      "x": 1792,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_a_series_of_gothic_facades_retrofitted_to_the_front_o_70ef50d9-c756-4e1c-832d-e281c04d95cc_0.png",
-      "x": 1904,
-      "y": 252,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_a_series_of_gothic_facades_retrofitted_to_the_front_o_70ef50d9-c756-4e1c-832d-e281c04d95cc_2.png",
-      "x": 0,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_a_series_of_translucent_structures_that_gradually_bec_39c0bb07-195e-41f8-b5a7-765743cc9b05_1.png",
-      "x": 112,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_above-model_perspective_birds-eye_view_of_handcrafted_4378c5b7-3d8e-4998-b692-cb711fb198cc_0.png",
-      "x": 224,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 256,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_above-model_perspective_birds-eye_view_of_handcrafted_4378c5b7-3d8e-4998-b692-cb711fb198cc_3.png",
-      "x": 336,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 256,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_an_architectural_site_plan_of_a_linear_housing_developm_ff51a2cb-0a3b-4e8e-96a2-dfbd1c198cd9.png",
-      "x": 448,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 256,
+      "w": 128,
+      "h": 64
     },
     {
       "filename": "512clay_ancient_gothic_arch_emerging_from_concrete_partial_co_4a2f6bf8-44de-4ab1-a68d-285dee3193ab_1.png",
-      "x": 560,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 256,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ancient_gothic_arch_emerging_from_concrete_partial_co_4a2f6bf8-44de-4ab1-a68d-285dee3193ab_2.png",
-      "x": 672,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ancient_gothic_arch_emerging_from_concrete_partial_co_4a2f6bf8-44de-4ab1-a68d-285dee3193ab_3.png",
-      "x": 784,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_architectural_cross_section_of_pedestrian_bridge_made_07fab252-fb3c-4b8d-9c4f-a648203c62fe_0.png",
-      "x": 896,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 384,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_architectural_cross_section_of_pedestrian_bridge_made_07fab252-fb3c-4b8d-9c4f-a648203c62fe_1.png",
-      "x": 1008,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 384,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_architectural_cross_section_of_pedestrian_bridge_made_07fab252-fb3c-4b8d-9c4f-a648203c62fe_2.png",
-      "x": 1120,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 384,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_architectural_cross_section_of_pedestrian_bridge_made_07fab252-fb3c-4b8d-9c4f-a648203c62fe_3.png",
-      "x": 1232,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 384,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_architectural_cross_section_of_pedestrian_bridge_made_cbb4f7ee-49df-4887-a346-c24c5b2ca07a_0.png",
-      "x": 1344,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_architectural_cross_section_of_series_of_flowers_span_a278c2ce-c147-455b-a5da-909ae17acc77_1.png",
-      "x": 1456,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_architectural_cross_section_of_series_of_flowers_span_a278c2ce-c147-455b-a5da-909ae17acc77_2.png",
-      "x": 1568,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_architectural_cross_section_of_series_of_vertical_far_660ed934-d680-4e5f-9808-6508ffec085f_1.png",
-      "x": 1680,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_architectural_cross_section_of_series_of_vertical_far_660ed934-d680-4e5f-9808-6508ffec085f_3.png",
-      "x": 1792,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_architecture_model_of_bridge_made_of_flowers_architec_0e8d5018-13f7-4ea5-bb8b-2118680dc158_1.png",
-      "x": 1904,
-      "y": 315,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_architecture_model_of_bridge_made_of_flowers_architec_0e8d5018-13f7-4ea5-bb8b-2118680dc158_2.png",
-      "x": 0,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ariel_view_wood_CLT_limestone_organic_building_that_e_e9fd7de1-900b-4f7f-8021-240b5c640a1f_0.png",
-      "x": 112,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ariel_view_wood_CLT_limestone_organic_building_that_e_e9fd7de1-900b-4f7f-8021-240b5c640a1f_1.png",
-      "x": 224,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ariel_view_wood_CLT_limestone_organic_building_that_e_e9fd7de1-900b-4f7f-8021-240b5c640a1f_2.png",
-      "x": 336,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ariel_view_wood_CLT_limestone_organic_building_that_e_e9fd7de1-900b-4f7f-8021-240b5c640a1f_3.png",
-      "x": 448,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ariel_view_wood_CLT_limestone_organic_buildings_that__b501e574-e3f7-478c-a14d-cb7c1a753f7f_0.png",
-      "x": 560,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ariel_view_wood_CLT_limestone_organic_buildings_that__b501e574-e3f7-478c-a14d-cb7c1a753f7f_1.png",
-      "x": 672,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ariel_view_wood_CLT_limestone_organic_buildings_that__b501e574-e3f7-478c-a14d-cb7c1a753f7f_2.png",
-      "x": 784,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ariel_view_wood_CLT_limestone_organic_buildings_that__b501e574-e3f7-478c-a14d-cb7c1a753f7f_3.png",
-      "x": 896,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_axonometric_drawing_of_a_micro-neighborhood_with_10-1_ca5af66e-d808-4808-9977-87aeeb670be1_1.png",
-      "x": 1008,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 384,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_axonometric_vector_map_of_urban_neighborhood_in_Austi_0fd7ed2e-c20f-45fd-a892-1025a3303713_0.png",
-      "x": 1120,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_axonometric_vector_map_of_urban_neighborhood_in_Austi_0fd7ed2e-c20f-45fd-a892-1025a3303713_2.png",
-      "x": 1232,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_axonometric_vector_map_of_urban_neighborhood_in_Austi_377e9e25-f42f-4dbb-973e-e8b5d00b592e_3.png",
-      "x": 1344,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_axonometric_vector_map_of_urban_neighborhood_in_Austi_aac0c83c-1e9a-44d5-b333-50015cadcf60_1.png",
-      "x": 1456,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_axonometric_vector_map_of_urban_neighborhood_in_Austi_af18efe3-6eb6-4fe2-a2d8-5971492f41bc_0.png",
-      "x": 1568,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_axonometric_vector_map_of_urban_neighborhood_in_Austi_dec52be0-f8d8-4898-bd31-a14031376e1f_0.png",
-      "x": 1680,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_axonometric_vector_map_of_urban_neighborhood_in_Austi_dec52be0-f8d8-4898-bd31-a14031376e1f_3.png",
-      "x": 1792,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_axonometric_vector_map_of_walkable_urban_neighborhood_edffb1af-4bc5-4969-b86c-4cb5cbe3b8f0_0.png",
-      "x": 1904,
-      "y": 378,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_biophilic_structure_on_lady_bird_lake_in_austin_verti_e49d7035-8786-4fc0-b30f-aa9d0f24a3cb_2.png",
-      "x": 0,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_biophilic_structure_on_lady_bird_lake_in_austin_verti_e49d7035-8786-4fc0-b30f-aa9d0f24a3cb_3.png",
-      "x": 112,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 384,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_birds-eye_above_view_of_A_handcrafted_architectural_m_0f9a0f91-e0a8-4d01-9dd5-73cd5958d649_0.png",
-      "x": 224,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_birds-eye_above_view_of_A_handcrafted_architectural_m_0f9a0f91-e0a8-4d01-9dd5-73cd5958d649_1.png",
-      "x": 336,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_birds-eye_above_view_of_A_handcrafted_architectural_m_0f9a0f91-e0a8-4d01-9dd5-73cd5958d649_3.png",
-      "x": 448,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_birds-eye_above_view_of_A_handcrafted_architectural_m_a0f6d92d-4f7c-4d90-9438-48d35355bb96_0.png",
-      "x": 560,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_birds-eye_above_view_of_A_handcrafted_architectural_m_a0f6d92d-4f7c-4d90-9438-48d35355bb96_1.png",
-      "x": 672,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_birds-eye_above_view_of_A_handcrafted_architectural_m_a0f6d92d-4f7c-4d90-9438-48d35355bb96_2.png",
-      "x": 784,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_blend_of_brutalism_and_gothic_architecture_--raw_--st_46d0fe64-c1e2-48c6-ab33-021a2cc0484e_1.png",
-      "x": 896,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_blend_of_brutalism_and_gothic_architecture_--raw_--st_46d0fe64-c1e2-48c6-ab33-021a2cc0484e_2.png",
-      "x": 1008,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_blend_of_brutalism_and_gothic_architecture_--raw_--st_46d0fe64-c1e2-48c6-ab33-021a2cc0484e_3.png",
-      "x": 1120,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_bridge_covered_by_wooden_lattice_structure_that_looks_28028926-0310-496a-abf6-4b66b1eecd50_0.png",
-      "x": 1232,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_bridge_from_one_tower_on_land_to_another_on_water_und_c8aa92e4-4521-4261-b103-bbd2c15f1fd2_0.png",
-      "x": 1344,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_bridge_from_one_tower_on_land_to_another_on_water_und_c8aa92e4-4521-4261-b103-bbd2c15f1fd2_1.png",
-      "x": 1456,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_bridge_from_one_tower_on_land_to_another_on_water_und_c8aa92e4-4521-4261-b103-bbd2c15f1fd2_2.png",
-      "x": 1568,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_bridge_from_one_tower_on_land_to_another_on_water_und_c8aa92e4-4521-4261-b103-bbd2c15f1fd2_3.png",
-      "x": 1680,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_bridge_towards_vertical_farming_tower_on_lady_bird_la_662884d0-6f2c-42f2-a4a5-56c0123fadce_0.png",
       "x": 1792,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_bridge_towards_vertical_farming_tower_on_lady_bird_la_662884d0-6f2c-42f2-a4a5-56c0123fadce_1.png",
-      "x": 1904,
-      "y": 441,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_bridge_towards_vertical_farming_tower_on_lady_bird_la_662884d0-6f2c-42f2-a4a5-56c0123fadce_2.png",
-      "x": 0,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_clear_view_of_beautiful_tudor_home_frontal_ariel_view_739e1b5d-ecb0-47ca-8e3a-c10a4eab8ef7_0.png",
-      "x": 112,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_clear_view_of_beautiful_tudor_home_frontal_ariel_view_739e1b5d-ecb0-47ca-8e3a-c10a4eab8ef7_3.png",
-      "x": 224,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_cliff-side_vertical_farms_limestone_cave_architecture_9cfcfcfe-afa8-4fb6-a882-bd9c9b90254b_0.png",
-      "x": 336,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_cliff-side_vertical_farms_limestone_cave_architecture_9cfcfcfe-afa8-4fb6-a882-bd9c9b90254b_1.png",
-      "x": 448,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_cliff-side_vertical_farms_limestone_cave_architecture_9cfcfcfe-afa8-4fb6-a882-bd9c9b90254b_2.png",
-      "x": 560,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_cliff-side_vertical_farms_limestone_cave_architecture_9cfcfcfe-afa8-4fb6-a882-bd9c9b90254b_3.png",
-      "x": 672,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_club_spacezen_garden_that_is_half_brualtist_architect_997f25e4-e3ad-465f-9069-7eb757172f81_2.png",
-      "x": 784,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_cross_section_of_a_water_lily_--raw_--stylize_50_--v__cce44264-2047-4bd8-9b64-8834fec7ed4c_0.png",
-      "x": 896,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_cross_section_of_a_water_lily_--raw_--stylize_50_--v__cce44264-2047-4bd8-9b64-8834fec7ed4c_1.png",
-      "x": 1008,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_cross_section_of_a_water_lily_--raw_--stylize_50_--v__cce44264-2047-4bd8-9b64-8834fec7ed4c_2.png",
-      "x": 1120,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_cross_section_of_a_water_lily_--raw_--stylize_50_--v__cce44264-2047-4bd8-9b64-8834fec7ed4c_3.png",
-      "x": 1232,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_cross_section_of_flowers_spanning_across_river_series_07d4ce05-7f80-46ea-8b88-4c8f6c149b9a_3.png",
-      "x": 1344,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 512,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_davinci_sketch_of_series_of_vertical_farming_towers_t_98189632-5490-4efe-9a88-1e1d1e473dfb_0.png",
-      "x": 1456,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_davinci_sketch_of_series_of_vertical_farming_towers_t_df0442ea-1a2b-41ab-a748-1a8c064b949a_2.png",
-      "x": 1568,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_davinci_sketch_of_series_of_vertical_farming_towers_t_df0442ea-1a2b-41ab-a748-1a8c064b949a_3.png",
-      "x": 1680,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 512,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_davinci_sketch_of_vertical_farming_modules_that_look__49035965-6cf7-4a37-9690-0bc2f71fb09a_1.png",
-      "x": 1792,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_davinci_sketch_of_vertical_farming_modules_that_look__49035965-6cf7-4a37-9690-0bc2f71fb09a_2.png",
-      "x": 1904,
-      "y": 504,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_davinci_sketch_of_vertical_farming_modules_that_look__49035965-6cf7-4a37-9690-0bc2f71fb09a_3.png",
-      "x": 0,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_door_carved_into_a_concrete_wall_milled_sto_6f42b362-0c0c-4532-85d5-b79ba0c327d5_2.png",
-      "x": 112,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_door_carved_into_a_concrete_wall_milled_sto_6f42b362-0c0c-4532-85d5-b79ba0c327d5_3.png",
-      "x": 224,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_doorway_outline_carved_into_la_56526382-4f82-41c3-85e4-0ceafeeeb5fb_0.png",
-      "x": 336,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_doorway_outline_carved_into_la_56526382-4f82-41c3-85e4-0ceafeeeb5fb_1.png",
-      "x": 448,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_doorway_outline_carved_into_la_56526382-4f82-41c3-85e4-0ceafeeeb5fb_2.png",
-      "x": 560,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_doorway_outline_carved_into_la_77b1535c-b91b-4700-a1a4-d7416b28203d_0.png",
-      "x": 672,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_doorway_outline_carved_into_la_77b1535c-b91b-4700-a1a4-d7416b28203d_1.png",
-      "x": 784,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_doorway_outline_carved_into_la_77b1535c-b91b-4700-a1a4-d7416b28203d_2.png",
-      "x": 896,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_doorway_outline_carved_into_la_77b1535c-b91b-4700-a1a4-d7416b28203d_3.png",
-      "x": 1008,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_filigree_doorway_carved_into_l_14d1f856-8b44-41f5-a7c7-0140d622190e_1.png",
-      "x": 1120,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_filigree_doorway_carved_into_l_14d1f856-8b44-41f5-a7c7-0140d622190e_2.png",
-      "x": 1232,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_filigree_doorway_carved_into_l_14d1f856-8b44-41f5-a7c7-0140d622190e_3.png",
-      "x": 1344,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_filigree_doorway_carved_into_l_f9b64102-2ff6-40e7-a3a3-12ccd5afd74b_0.png",
-      "x": 1456,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_filigree_doorway_carved_into_l_f9b64102-2ff6-40e7-a3a3-12ccd5afd74b_1.png",
-      "x": 1568,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_filigree_doorway_carved_into_l_f9b64102-2ff6-40e7-a3a3-12ccd5afd74b_2.png",
-      "x": 1680,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_detail_of_gothic-style_filigree_doorway_carved_into_l_f9b64102-2ff6-40e7-a3a3-12ccd5afd74b_3.png",
-      "x": 1792,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_distributed_network_of_flowers_techincal_drawing_archit_80509d48-024a-4e1e-943d-1b6017e41868.png",
-      "x": 1904,
-      "y": 567,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_distributed_network_of_large_artificial_trees_sharing_18e1858a-f467-4928-ab6f-d547bcb5039e_0.png",
-      "x": 0,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_distributed_network_of_large_artificial_trees_sharing_3af39a27-b5e6-4dbe-83bb-711fde905c76_1.png",
-      "x": 112,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_distributed_network_of_large_artificial_trees_sharing_8e2c38ca-acb9-4526-9e45-ab415cfde27f_1.png",
-      "x": 224,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_distributed_network_of_large_artificial_trees_sharing_8e2c38ca-acb9-4526-9e45-ab415cfde27f_3.png",
-      "x": 336,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floating_greenhouse_on_Colorado_river_in_Austin_Texas_c0a3cd41-5da3-4044-a968-ca2d4ac8603f_0.png",
-      "x": 448,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floating_greenhouse_on_Colorado_river_in_Austin_Texas_c0a3cd41-5da3-4044-a968-ca2d4ac8603f_3.png",
-      "x": 560,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floating_greenhouse_on_Colorado_river_in_Austin_Texas_db17c31e-e328-47d9-8cf3-63389515ce87_0.png",
-      "x": 672,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floating_greenhouse_on_Colorado_river_in_Austin_Texas_db17c31e-e328-47d9-8cf3-63389515ce87_1.png",
-      "x": 784,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floating_greenhouse_on_Colorado_river_in_Austin_Texas_db17c31e-e328-47d9-8cf3-63389515ce87_2.png",
-      "x": 896,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floating_greenhouse_on_Colorado_river_in_Austin_Texas_db17c31e-e328-47d9-8cf3-63389515ce87_3.png",
-      "x": 1008,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floating_greenhouse_platforms_cascading_water_gardens_eb81cbbb-2c50-4a5e-9971-7698e0160022_1.png",
-      "x": 1120,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floating_greenhouse_platforms_cascading_water_gardens_eb81cbbb-2c50-4a5e-9971-7698e0160022_2.png",
-      "x": 1232,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 640,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floating_greenhouse_platforms_cascading_water_gardens_eb81cbbb-2c50-4a5e-9971-7698e0160022_3.png",
-      "x": 1344,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floorplan_of_boardwalk_made_of_vertical_farming_modul_37fb12d6-d953-4dba-9a54-99e2f4a00b51_0.png",
-      "x": 1456,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floorplan_of_boardwalk_made_of_vertical_farming_modul_37fb12d6-d953-4dba-9a54-99e2f4a00b51_1.png",
-      "x": 1568,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floorplan_of_boardwalk_made_of_vertical_farming_modul_37fb12d6-d953-4dba-9a54-99e2f4a00b51_2.png",
-      "x": 1680,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floorplan_of_boardwalk_made_of_vertical_farming_modul_37fb12d6-d953-4dba-9a54-99e2f4a00b51_3.png",
-      "x": 1792,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floorplan_of_boardwalk_made_of_vertical_farming_modul_606205f4-91b4-4f04-adf5-43979df4a23b_3.png",
-      "x": 1904,
-      "y": 630,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floorplan_of_modular_bridge_made_up_of_pentagonal_ver_d054cdaf-dd10-4c89-9ef8-deb80f445a66_2.png",
-      "x": 0,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_floorplan_of_modular_bridge_made_up_of_pentagonal_ver_d054cdaf-dd10-4c89-9ef8-deb80f445a66_3.png",
-      "x": 112,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-fut_307318f7-1bb5-403b-8a78-9def87b3be9d_0.png",
-      "x": 224,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-fut_307318f7-1bb5-403b-8a78-9def87b3be9d_1.png",
-      "x": 336,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-fut_307318f7-1bb5-403b-8a78-9def87b3be9d_3.png",
-      "x": 448,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-fut_d4a04c6a-b03f-4191-b20b-dfbc1f33df75_1.png",
-      "x": 560,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-fut_d4a04c6a-b03f-4191-b20b-dfbc1f33df75_2.png",
-      "x": 672,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-fut_d4a04c6a-b03f-4191-b20b-dfbc1f33df75_3.png",
-      "x": 784,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-fut_dd7d8561-9bcd-4bb5-942c-5744f32b4331_0.png",
-      "x": 896,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-fut_dd7d8561-9bcd-4bb5-942c-5744f32b4331_2.png",
-      "x": 1008,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-fut_e04bf030-2ff9-4412-b967-412f190e4da9_0.png",
-      "x": 1120,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-fut_e04bf030-2ff9-4412-b967-412f190e4da9_1.png",
-      "x": 1232,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_flowers_aggregating_in_field_looking_up_at_techno-futur_76c615fe-0deb-490d-b06c-ac378a4f855d.png",
-      "x": 1344,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_carved_relief_of_a_network_of_pipes_a_941817a8-020e-43e4-8447-373746e240f1_3.png",
-      "x": 1456,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_deep_gouges_in_weathered_brick_beneat_54c041d7-3587-4d16-a1f6-ce84a5ff8e5b_1.png",
-      "x": 1568,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_deep_gouges_in_weathered_brick_beneat_54c041d7-3587-4d16-a1f6-ce84a5ff8e5b_3.png",
-      "x": 1680,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_half-buried_relief_of_a_classical_faa_b360be14-1b26-4fb5-92ba-182c6dd182b3_0.png",
-      "x": 1792,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_half-buried_relief_of_a_classical_faa_b360be14-1b26-4fb5-92ba-182c6dd182b3_3.png",
-      "x": 1904,
-      "y": 693,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_layered_concrete_and_scorched_stone_w_d87f2b29-dcda-4023-be0d-3cfc3b4c1b80_3.png",
-      "x": 0,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_layered_wall_with_red_oxidized_steel__50daade1-141d-428f-b18a-1972c4fd1371_0.png",
-      "x": 112,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_layered_wall_with_red_oxidized_steel_ou_1bb76072-7816-45e2-8dec-c088c940b518.png",
-      "x": 224,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_low_relief_of_layered_geological_stra_b49b2d26-4a7f-4d2d-8533-4dc393f54a3b_3.png",
-      "x": 336,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_of_giant_industrial_garage_door_gothi_21ace0fa-5d85-4632-b419-53f2cdeba6ef_2.png",
-      "x": 448,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_of_giant_industrial_garage_door_gothi_21ace0fa-5d85-4632-b419-53f2cdeba6ef_3.png",
-      "x": 560,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_ultra-fine_relief_of_data_streams_bin_10ef5f18-53f7-468d-a182-925886e1ac22_1.png",
-      "x": 672,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_ultra-fine_relief_of_data_streams_bin_10ef5f18-53f7-468d-a182-925886e1ac22_3.png",
-      "x": 784,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 768,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_view_german_gothic_church_front_facad_749960fd-a042-46d5-abce-0d90d7a9fabd_2.png",
-      "x": 896,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_front_elevation_view_german_gothic_church_front_facad_749960fd-a042-46d5-abce-0d90d7a9fabd_3.png",
-      "x": 1008,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_frontal_view_german_gothic_church_front_facade_photog_07b74af9-f178-4fc2-a277-f68ac0495a2b_1.png",
-      "x": 1120,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_frontal_view_german_gothic_church_front_facade_photog_07b74af9-f178-4fc2-a277-f68ac0495a2b_2.png",
-      "x": 1232,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_frontal_view_german_gothic_church_front_facade_photog_b49dae52-d27d-40bd-9e22-c9db1353f6fb_0.png",
-      "x": 1344,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_frontal_view_german_gothic_church_front_facade_photog_b49dae52-d27d-40bd-9e22-c9db1353f6fb_2.png",
-      "x": 1456,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_building_that_is_a_computer_made_of_synthe_36ff31d5-428e-4ed6-97d9-615c24fc02e7_0.png",
-      "x": 1568,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_building_that_is_a_computer_made_of_synthe_36ff31d5-428e-4ed6-97d9-615c24fc02e7_1.png",
-      "x": 1680,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_building_that_is_a_computer_made_of_synthe_f4e98003-40f3-47da-9dd3-c2c674cb674d_1.png",
-      "x": 1792,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_building_that_is_a_computer_made_of_synthe_f4e98003-40f3-47da-9dd3-c2c674cb674d_2.png",
-      "x": 1904,
-      "y": 756,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_building_that_is_a_computer_made_of_synthe_f4e98003-40f3-47da-9dd3-c2c674cb674d_3.png",
-      "x": 0,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodlogies_inspired_by_achi_0a1bf480-3a1d-4ce6-a530-a82dd240ff74_1.png",
-      "x": 112,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodlogies_inspired_by_achi_0a1bf480-3a1d-4ce6-a530-a82dd240ff74_2.png",
-      "x": 224,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodlogies_inspired_by_achi_68c8c9dd-5f47-47ce-8be0-3c5fe56de807_0.png",
-      "x": 336,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodlogies_inspired_by_achi_68c8c9dd-5f47-47ce-8be0-3c5fe56de807_2.png",
-      "x": 448,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodlogies_inspired_by_achi_caf288b8-d2ad-4a6c-9bd7-5f46325931ac_1.png",
-      "x": 560,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodlogies_inspired_by_achim__8a8327ef-19f0-4fc2-909e-1d65da947909.png",
-      "x": 672,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodlogies_skylar_tibbits_x_cdd432de-a71e-412d-8fac-0cd3dd4e6a22_0.png",
-      "x": 784,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodlogies_skylar_tibbits_x_cdd432de-a71e-412d-8fac-0cd3dd4e6a22_1.png",
-      "x": 896,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodlogies_skylar_tibbits_x_cdd432de-a71e-412d-8fac-0cd3dd4e6a22_2.png",
-      "x": 1008,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodologies_bioluminescent__83970c1b-2c27-485b-afc4-12def0080302_1.png",
-      "x": 1120,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodologies_bioluminescent__f9931121-8077-4543-9067-a7a47221767d_1.png",
-      "x": 1232,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodologies_bioluminescent__f9931121-8077-4543-9067-a7a47221767d_3.png",
-      "x": 1344,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodologies_bioluminescent_se_1311f0fc-9d11-4377-bec0-de6703b5805d.png",
-      "x": 1456,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_futuristic_construction_methodologies_inspired_by_neil__c1ddc7b3-dc2f-4cb3-abab-88bbf254f6cf.png",
-      "x": 1568,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gear_systems_and_fan_blades_carved_into_stone_embedde_14ffcdf3-71ba-42a1-a480-6cb41054d729_0.png",
-      "x": 1680,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gear_systems_and_fan_blades_carved_into_stone_embedde_14ffcdf3-71ba-42a1-a480-6cb41054d729_1.png",
-      "x": 1792,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gear_systems_and_fan_blades_carved_into_stone_embedde_14ffcdf3-71ba-42a1-a480-6cb41054d729_2.png",
-      "x": 1904,
-      "y": 819,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gear_systems_and_fan_blades_carved_into_stone_embedde_16df98d9-aaf5-4a8a-8764-3f542d6b626b_0.png",
-      "x": 0,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gear_systems_and_fan_blades_carved_into_stone_embedde_16df98d9-aaf5-4a8a-8764-3f542d6b626b_3.png",
-      "x": 112,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gear_systems_and_fan_blades_carved_into_stone_embedde_230f3a57-4085-43ff-8325-b4b7a9052f24_2.png",
-      "x": 224,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gear_systems_and_fan_blades_carved_into_stone_embedde_230f3a57-4085-43ff-8325-b4b7a9052f24_3.png",
-      "x": 336,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 896,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_german_gothic_church_front_facade_photograph_biophili_80f2e131-fa53-43b2-a59a-7f68e5e55aee_0.png",
-      "x": 448,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_german_gothic_church_front_facade_photograph_biophili_80f2e131-fa53-43b2-a59a-7f68e5e55aee_1.png",
-      "x": 560,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_german_gothic_church_front_facade_photograph_biophili_80f2e131-fa53-43b2-a59a-7f68e5e55aee_2.png",
-      "x": 672,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_german_gothic_church_front_facade_photograph_biophili_ab2950a6-7e99-48e3-97ad-9c892fde7e0d_3.png",
-      "x": 784,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 1024,
+      "w": 88,
+      "h": 128
     },
     {
       "filename": "512clay_german_gothic_church_front_facade_photograph_biophili_d3c5196b-b592-42fc-a8ee-d537e51d6720_0.png",
-      "x": 896,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 1024,
+      "w": 88,
+      "h": 128
     },
     {
       "filename": "512clay_giant_engine_diagrams_as_low_relief_deeply_etched_pis_041c95c4-a710-4a5f-b57d-8a0730260e91_0.png",
-      "x": 1008,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_giant_engine_diagrams_as_low_relief_deeply_etched_pis_041c95c4-a710-4a5f-b57d-8a0730260e91_2.png",
-      "x": 1120,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gothic_architectural_detail_plain_white_backround_arc_7743db8a-b4d1-41fe-b907-67a3c49eb40f_0.png",
-      "x": 1232,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gothic_architectural_detail_plain_white_backround_arc_7743db8a-b4d1-41fe-b907-67a3c49eb40f_1.png",
-      "x": 1344,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gothic_architectural_detail_plain_white_backround_arc_7743db8a-b4d1-41fe-b907-67a3c49eb40f_2.png",
-      "x": 1456,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gothic_architectural_detail_plain_white_backround_arc_7743db8a-b4d1-41fe-b907-67a3c49eb40f_3.png",
-      "x": 1568,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gothic_architecture_peter_zumthor_style_industrial_el_75a494dc-3f3b-49bf-85e2-404a60b8b5e2_0.png",
-      "x": 1680,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gothic_architecture_peter_zumthor_style_industrial_el_75a494dc-3f3b-49bf-85e2-404a60b8b5e2_1.png",
-      "x": 1792,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_gothic_architecture_peter_zumthor_style_industrial_el_75a494dc-3f3b-49bf-85e2-404a60b8b5e2_2.png",
-      "x": 1904,
-      "y": 882,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ground_view_of_vertical_farming_tower_in_austin_texas_49c8bf31-8e53-433c-a2bb-2bcef20cff90_3.png",
-      "x": 0,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_hanging_garden_of_babylon_but_with_gothic_architectur_862095cc-8e5f-4a77-a12d-8dfb3c9dfac4_0.png",
-      "x": 112,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_hanging_garden_of_babylon_but_with_gothic_architectur_862095cc-8e5f-4a77-a12d-8dfb3c9dfac4_2.png",
-      "x": 224,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_hanging_garden_of_babylon_but_with_gothic_architectur_9332cf79-015a-4049-b346-432b31ef1cae_1.png",
-      "x": 336,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_hanging_garden_of_babylon_but_with_gothic_architectur_9332cf79-015a-4049-b346-432b31ef1cae_2.png",
-      "x": 448,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_hanging_garden_of_babylon_but_with_gothic_architectur_bc867334-de69-4922-b606-265b5d238409_0.png",
-      "x": 560,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_hanging_garden_of_babylon_but_with_gothic_architectur_bc867334-de69-4922-b606-265b5d238409_2.png",
-      "x": 672,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_hanging_garden_of_babylon_but_with_gothic_architectur_e9050645-67d9-49c5-9d17-84c449a8c766_0.png",
-      "x": 784,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_hanging_garden_of_babylon_but_with_gothic_architectur_e9050645-67d9-49c5-9d17-84c449a8c766_2.png",
-      "x": 896,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_horizontal_section_cut_of_bridge_of_very_very_large_f_96edf9b1-de6b-4e04-b8f0-207ae707667a_0.png",
-      "x": 1008,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_horizontal_section_cut_of_bridge_of_very_very_large_f_96edf9b1-de6b-4e04-b8f0-207ae707667a_1.png",
-      "x": 1120,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_horizontal_section_cut_of_bridge_of_very_very_large_f_96edf9b1-de6b-4e04-b8f0-207ae707667a_2.png",
-      "x": 1232,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_horizontal_section_of_flowers_crossing_water_with_hum_cc92ba55-1dde-429e-9008-b59a2c8f4f00_1.png",
-      "x": 1344,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_horizontal_section_of_flowers_crossing_water_with_hum_cc92ba55-1dde-429e-9008-b59a2c8f4f00_2.png",
-      "x": 1456,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_horizontal_section_of_flowers_crossing_water_with_hum_e0a53f98-532c-443c-ba3b-f86aaf1e7f6f_0.png",
-      "x": 1568,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_horizontal_section_of_flowers_crossing_water_with_hum_e0a53f98-532c-443c-ba3b-f86aaf1e7f6f_1.png",
-      "x": 1680,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_horizontal_section_of_flowers_crossing_water_with_hum_e0a53f98-532c-443c-ba3b-f86aaf1e7f6f_2.png",
-      "x": 1792,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_horizontal_section_of_flowers_crossing_water_with_hum_e0a53f98-532c-443c-ba3b-f86aaf1e7f6f_3.png",
-      "x": 1904,
-      "y": 945,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 1024,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_horizontal_section_of_flowers_crossing_water_with_human_2e23b339-8de3-48d2-8106-39fe88879b05.png",
       "x": 0,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_house_inspired_by_gothic_cathedral_designed_by_daniel_cedea06a-dbff-4deb-bba8-ab47ec63c718_0.png",
-      "x": 112,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_house_inspired_by_gothic_cathedral_designed_by_daniel_cedea06a-dbff-4deb-bba8-ab47ec63c718_1.png",
-      "x": 224,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_house_inspired_by_gothic_cathedral_designed_by_daniel_cedea06a-dbff-4deb-bba8-ab47ec63c718_3.png",
-      "x": 336,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_housing_courtyard_interior_space_housing_units_adjace_cfda07ce-3709-45f5-baf4-54b1a97584c4_2.png",
-      "x": 448,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_housing_courtyard_interior_space_housing_units_adjace_cfda07ce-3709-45f5-baf4-54b1a97584c4_3.png",
-      "x": 560,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_housing_interior_courtyard_with_greenhouses_sou_fujim_a1d75a40-8eb0-4ea3-a492-87f7e66175e5_2.png",
-      "x": 672,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_httpss.mj.runFLJVfSQANz8_httpss.mj.runwazfezDb9r0_htt_0d115738-cc76-46fa-b054-da356fa30775_3.png",
-      "x": 784,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runMJsfGYzPnlM_httpss.mj.runkb0OpPklu3U_htt_ecaac907-dd20-4ae7-877b-19815e0a9e49_0.png",
-      "x": 896,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runMJsfGYzPnlM_httpss.mj.runkb0OpPklu3U_htt_ecaac907-dd20-4ae7-877b-19815e0a9e49_1.png",
-      "x": 1008,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runMJsfGYzPnlM_httpss.mj.runkb0OpPklu3U_htt_ecaac907-dd20-4ae7-877b-19815e0a9e49_3.png",
-      "x": 1120,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runYewI-LbQ9Jc_httpss.mj.runvbJhXTBLf_c_htt_336bfe43-2135-4418-bcfc-47ce402aa1b8_0.png",
-      "x": 1232,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_httpss.mj.runYewI-LbQ9Jc_httpss.mj.runvbJhXTBLf_c_htt_336bfe43-2135-4418-bcfc-47ce402aa1b8_1.png",
-      "x": 1344,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_httpss.mj.runYewI-LbQ9Jc_httpss.mj.runvbJhXTBLf_c_htt_336bfe43-2135-4418-bcfc-47ce402aa1b8_2.png",
-      "x": 1456,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_httpss.mj.runYewI-LbQ9Jc_httpss.mj.runvbJhXTBLf_c_htt_336bfe43-2135-4418-bcfc-47ce402aa1b8_3.png",
-      "x": 1568,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_httpss.mj.rungpzYu07yS8k_httpss.mj.runBt8mkRO6yiY_htt_d861d8c9-7c5c-4612-a6ee-f5294daf39c3_0.png",
-      "x": 1680,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.rungpzYu07yS8k_httpss.mj.runBt8mkRO6yiY_htt_d861d8c9-7c5c-4612-a6ee-f5294daf39c3_1.png",
-      "x": 1792,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.rungpzYu07yS8k_httpss.mj.runBt8mkRO6yiY_htt_d861d8c9-7c5c-4612-a6ee-f5294daf39c3_2.png",
-      "x": 1904,
-      "y": 1008,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runjngH0xWuKRg_httpss.mj.rundHHHIPnLnKA_htt_1bffed28-e1fe-4667-a0c4-0343ad4280a0_1.png",
-      "x": 0,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runjngH0xWuKRg_httpss.mj.rundHHHIPnLnKA_htt_1bffed28-e1fe-4667-a0c4-0343ad4280a0_2.png",
-      "x": 112,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runjngH0xWuKRg_httpss.mj.rundHHHIPnLnKA_htt_1bffed28-e1fe-4667-a0c4-0343ad4280a0_3.png",
-      "x": 224,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runo9O6GMIeLZc_Cutaway_technical_illustration_b1f3e888-d568-4969-8a3c-b459d11df368.png",
-      "x": 336,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 1152,
+      "w": 128,
+      "h": 71
     },
     {
       "filename": "512clay_httpss.mj.runrPMbU1rZgCE_httpss.mj.runKqPbsU1EtZY_htt_26a83e8f-1d55-4896-88b6-8c3e7bf562e0_2.png",
-      "x": 448,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runrPMbU1rZgCE_httpss.mj.runKqPbsU1EtZY_htt_26a83e8f-1d55-4896-88b6-8c3e7bf562e0_3.png",
-      "x": 560,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runrPMbU1rZgCE_httpss.mj.runKqPbsU1EtZY_htt_97e08e5a-21e7-42b7-98e4-acca21624bcb_0.png",
-      "x": 672,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runrPMbU1rZgCE_httpss.mj.runKqPbsU1EtZY_htt_97e08e5a-21e7-42b7-98e4-acca21624bcb_1.png",
-      "x": 784,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runrPMbU1rZgCE_httpss.mj.runKqPbsU1EtZY_htt_97e08e5a-21e7-42b7-98e4-acca21624bcb_2.png",
-      "x": 896,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runrPMbU1rZgCE_httpss.mj.runKqPbsU1EtZY_htt_97e08e5a-21e7-42b7-98e4-acca21624bcb_3.png",
-      "x": 1008,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 1152,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_httpss.mj.runvbJhXTBLf_c_httpss.mj.runP4HYN1sBOTI_--r_a42977d3-b18f-4420-b2be-237da6d6f2b4_1.png",
-      "x": 1120,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_httpss.mj.runvbJhXTBLf_c_httpss.mj.runP4HYN1sBOTI_--r_d8b70e03-13a5-43d9-8bb6-d3b4e59bb2f8_2.png",
-      "x": 1232,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_httpss.mj.runvbJhXTBLf_c_httpss.mj.runP4HYN1sBOTI_--r_d8b70e03-13a5-43d9-8bb6-d3b4e59bb2f8_3.png",
-      "x": 1344,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_of_futuristic_plant_nursery_on_water_high_te_1546f011-a0ba-40ce-b426-5100ab0d5d12_0.png",
-      "x": 1456,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 1152,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_of_futuristic_plant_nursery_on_water_high_te_1546f011-a0ba-40ce-b426-5100ab0d5d12_1.png",
-      "x": 1568,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_of_futuristic_plant_nursery_on_water_high_te_1546f011-a0ba-40ce-b426-5100ab0d5d12_2.png",
-      "x": 1680,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_rendered_gothic_cathedral_building_section_c_a33bc5a5-b42d-4e69-b196-9dc64c153276_0.png",
-      "x": 1792,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_rendered_gothic_cathedral_building_section_cut_cfd115a1-a057-4f18-aa2a-2112588a45e4.png",
-      "x": 1904,
-      "y": 1071,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_of_giant_concrete_bay_that_has_gothic_a_5aea9129-fef8-4a06-a35f-07093bcb65ed_0.png",
-      "x": 0,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_of_giant_concrete_bay_that_has_gothic_a_5aea9129-fef8-4a06-a35f-07093bcb65ed_1.png",
-      "x": 112,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_of_giant_concrete_bay_that_has_gothic_a_5aea9129-fef8-4a06-a35f-07093bcb65ed_2.png",
-      "x": 224,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_of_giant_concrete_bay_that_has_gothic_a_5aea9129-fef8-4a06-a35f-07093bcb65ed_3.png",
-      "x": 336,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_of_giant_concrete_bay_that_has_gothic_a_68bf1e60-350c-4697-bc46-153701630b44_0.png",
-      "x": 448,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_of_giant_concrete_bay_that_has_gothic_a_68bf1e60-350c-4697-bc46-153701630b44_1.png",
-      "x": 560,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_of_giant_concrete_bay_that_has_gothic_a_68bf1e60-350c-4697-bc46-153701630b44_2.png",
-      "x": 672,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_of_giant_concrete_bay_that_has_gothic_a_e5ea7f68-3be4-4c36-b1a0-74fc0ccd4cdf_0.png",
-      "x": 784,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_of_giant_concrete_bay_that_has_gothic_a_e5ea7f68-3be4-4c36-b1a0-74fc0ccd4cdf_1.png",
-      "x": 896,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_of_giant_concrete_bay_that_has_gothic_a_e5ea7f68-3be4-4c36-b1a0-74fc0ccd4cdf_3.png",
-      "x": 1008,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_14b372ba-6bfa-40ea-8aac-6467427bac26_1.png",
-      "x": 1120,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_14b372ba-6bfa-40ea-8aac-6467427bac26_2.png",
-      "x": 1232,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_14b372ba-6bfa-40ea-8aac-6467427bac26_3.png",
-      "x": 1344,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_72c4df8e-a6d0-4da2-93bf-93f8b532d3d2_0.png",
-      "x": 1456,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_72c4df8e-a6d0-4da2-93bf-93f8b532d3d2_1.png",
-      "x": 1568,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_72c4df8e-a6d0-4da2-93bf-93f8b532d3d2_2.png",
-      "x": 1680,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_72c4df8e-a6d0-4da2-93bf-93f8b532d3d2_3.png",
-      "x": 1792,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_8b4c0589-c87b-4cfe-8c3f-ff7fba3ae9bb_2.png",
-      "x": 1904,
-      "y": 1134,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_f363f845-4c0d-473a-8614-1a0cd48decb7_0.png",
-      "x": 0,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_f363f845-4c0d-473a-8614-1a0cd48decb7_1.png",
-      "x": 112,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_f363f845-4c0d-473a-8614-1a0cd48decb7_2.png",
-      "x": 224,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_interior_shot_wood_CLT_limestone_organic_building_tha_f363f845-4c0d-473a-8614-1a0cd48decb7_3.png",
-      "x": 336,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_layered_hanging_gardens_floating_agricultural_pods_tw_3cb148fe-e60f-412c-970a-fe4519f2e3af_0.png",
-      "x": 448,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_layered_hanging_gardens_floating_agricultural_pods_tw_3cb148fe-e60f-412c-970a-fe4519f2e3af_1.png",
-      "x": 560,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_layered_hanging_gardens_floating_agricultural_pods_tw_3cb148fe-e60f-412c-970a-fe4519f2e3af_2.png",
-      "x": 672,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_layered_hanging_gardens_floating_agricultural_pods_tw_3cb148fe-e60f-412c-970a-fe4519f2e3af_3.png",
-      "x": 784,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_layered_mycelium_towers_living_limestone_walls_biolum_d13035c6-85d7-4a30-8988-10f1ec14e67c_0.png",
-      "x": 896,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_layered_mycelium_towers_living_limestone_walls_biolum_d13035c6-85d7-4a30-8988-10f1ec14e67c_1.png",
-      "x": 1008,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 1280,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_mixed-use_neighborhood_building_city_block_that_is_colo_7a7496c4-936e-4e33-aba9-295280ab4766.png",
-      "x": 1120,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_model_of_building_made_up_of_an_supported_by_trees_pe_53c7506f-3c6d-4e99-abf8-8c1a9968625d_3.png",
-      "x": 1232,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_model_of_building_made_up_of_an_supported_by_trees_pe_ab882434-974f-40ea-8347-f57606a207d2_3.png",
-      "x": 1344,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_model_of_gothic_architecture_interior_negative_space__00bd1c27-439c-4a6a-8776-974d6488508d_0.png",
-      "x": 1456,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_multipurpose_biophilic_vertical_farm_building_CLT_con_97f0ee46-33ba-4081-9045-f22ae8d831d8_0.png",
-      "x": 1568,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_multipurpose_biophilic_vertical_farm_building_CLT_con_97f0ee46-33ba-4081-9045-f22ae8d831d8_1.png",
-      "x": 1680,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_mushroom-like_concrete_structures_branching_CLT_frame_f7f8ac9c-6552-4370-9c20-4575b7d2ec8f_0.png",
-      "x": 1792,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_mushroom-like_concrete_structures_branching_CLT_frame_f7f8ac9c-6552-4370-9c20-4575b7d2ec8f_1.png",
-      "x": 1904,
-      "y": 1197,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_mushroom-like_concrete_structures_branching_CLT_frame_f7f8ac9c-6552-4370-9c20-4575b7d2ec8f_2.png",
-      "x": 0,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_mushroom-like_concrete_structures_branching_CLT_frame_f7f8ac9c-6552-4370-9c20-4575b7d2ec8f_3.png",
-      "x": 112,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_old_coal_storage_bay_renovated_Elevation_Design_Overa_7e223da5-b47b-4901-a388-05436702b1d7_0.png",
-      "x": 224,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_old_coal_storage_bay_renovated_Elevation_Design_Overa_7e223da5-b47b-4901-a388-05436702b1d7_2.png",
-      "x": 336,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_open_corridor_space_carved_fluid_biopmorphic_limeston_b9f0d4a7-8a68-476a-8020-cc350af5ae5c_0.png",
-      "x": 448,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_open_corridor_space_carved_fluid_biopmorphic_limeston_b9f0d4a7-8a68-476a-8020-cc350af5ae5c_1.png",
-      "x": 560,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_open_corridor_space_carved_fluid_biopmorphic_limeston_b9f0d4a7-8a68-476a-8020-cc350af5ae5c_2.png",
-      "x": 672,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_open_corridor_space_carved_fluid_biopmorphic_limeston_b9f0d4a7-8a68-476a-8020-cc350af5ae5c_3.png",
-      "x": 784,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_organic_building_that_is_a_living_computer_futuristic_ffc34ae9-b331-4f80-9bd0-d87edb0f447d_0.png",
-      "x": 896,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_organic_building_that_is_a_living_computer_futuristic_ffc34ae9-b331-4f80-9bd0-d87edb0f447d_2.png",
-      "x": 1008,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_organic_flowing_building_on_land_and_water_part_stere_7cf8b3b1-dff6-4a75-8c8c-08cf9545564b_0.png",
-      "x": 1120,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_organic_flowing_building_on_land_and_water_part_stere_7cf8b3b1-dff6-4a75-8c8c-08cf9545564b_1.png",
-      "x": 1232,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_organic_flowing_building_on_land_and_water_part_stere_7cf8b3b1-dff6-4a75-8c8c-08cf9545564b_3.png",
-      "x": 1344,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_pan_of_vertical_farming_flowers_as_buildings_flower_f_547c0848-6235-4c28-96a0-e1d17065d492_3.png",
-      "x": 1456,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_polychromy_farnese_heraclese_--raw_--stylize_50_--v_6_4dc3246d-b10e-4204-85a4-ba3b54de7882_0.png",
-      "x": 1568,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_polychromy_farnese_heraclese_--raw_--stylize_50_--v_6_4dc3246d-b10e-4204-85a4-ba3b54de7882_3.png",
-      "x": 1680,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_relief_of_a_machine_god_mechanical_halo_hydraulic_lim_5c0f82bd-5954-4df9-8175-526db212c8d0_2.png",
-      "x": 1792,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 1408,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_8693ae57-2255-46d8-aa6d-274472806951_1.png",
-      "x": 1904,
-      "y": 1260,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 1408,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_8693ae57-2255-46d8-aa6d-274472806951_2.png",
-      "x": 0,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 1408,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_8df45ffd-dea3-4d98-babe-49ae083eb5fa_0.png",
-      "x": 112,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 1408,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_8df45ffd-dea3-4d98-babe-49ae083eb5fa_1.png",
-      "x": 224,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 1408,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_8df45ffd-dea3-4d98-babe-49ae083eb5fa_2.png",
-      "x": 336,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 1408,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_8df45ffd-dea3-4d98-babe-49ae083eb5fa_3.png",
-      "x": 448,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 1408,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_8f120ad0-fa73-416b-9f6b-395e76289c83_2.png",
-      "x": 560,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 1408,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_8f120ad0-fa73-416b-9f6b-395e76289c83_3.png",
-      "x": 672,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 1536,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_b760fab4-8d59-48f9-a18a-dfe8ae49401c_0.png",
-      "x": 784,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 1536,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_b760fab4-8d59-48f9-a18a-dfe8ae49401c_1.png",
-      "x": 896,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 1536,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_retro-futurist_ecobrutalist_vertical_farm_bridge_span_b760fab4-8d59-48f9-a18a-dfe8ae49401c_2.png",
-      "x": 1008,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 1536,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_ritual_circle_of_figures_in_stone_bowed_heads_robed_s_022a4a9c-e4a2-413b-91a3-8b83467b935c_1.png",
-      "x": 1120,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ritual_circle_of_figures_in_stone_bowed_heads_robed_s_022a4a9c-e4a2-413b-91a3-8b83467b935c_2.png",
-      "x": 1232,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_ritual_circle_of_figures_in_stone_bowed_heads_robed_s_022a4a9c-e4a2-413b-91a3-8b83467b935c_3.png",
-      "x": 1344,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_small_gothic_architectural_detail_plain_white_backrou_6d511ee0-e23e-43c2-87e3-4a271c9211c2_2.png",
-      "x": 1456,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_small_gothic_architectural_detail_plain_white_backrou_6d511ee0-e23e-43c2-87e3-4a271c9211c2_3.png",
-      "x": 1568,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_small_gothic_architectural_detail_plain_white_backround_32ca7a73-ffcf-4447-9b2b-55d8517d2984.png",
-      "x": 1680,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_sou_fujimoto_thomas_heatherwick_junya_ishigami_--v_6._e7ca79df-e93b-4478-ab47-334ce83f77b8_2.png",
-      "x": 1792,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_soundwave_patterns_in_stone_relief_flowing_across_wal_3155d8ff-22cb-4d5a-8799-7d7f7c50abe3_3.png",
-      "x": 1904,
-      "y": 1323,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__0307b8cc-690a-4b63-970b-b1d1459f3aa1_0.png",
-      "x": 0,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__0307b8cc-690a-4b63-970b-b1d1459f3aa1_1.png",
-      "x": 112,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__127c181a-10eb-4308-b01e-f57708d82adc_3.png",
-      "x": 224,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__900bf931-4822-44e9-a7b8-397d768881a5_0.png",
-      "x": 336,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 1536,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__900bf931-4822-44e9-a7b8-397d768881a5_1.png",
-      "x": 448,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 1536,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__900bf931-4822-44e9-a7b8-397d768881a5_2.png",
-      "x": 560,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 1536,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__a30e077c-8e77-4c74-ad62-521af6ec8b73_2.png",
-      "x": 672,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__a30e077c-8e77-4c74-ad62-521af6ec8b73_3.png",
-      "x": 784,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__d1bf9ecf-9096-45d9-b029-c37fac19c26f_3.png",
-      "x": 896,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 1536,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__d99dcc48-9ebb-4bdb-9596-ea1d14e1954d_0.png",
-      "x": 1008,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 1536,
+      "w": 72,
+      "h": 128
     },
     {
       "filename": "512clay_span_of_vertical_farming_flowers_as_buildings_flower__d99dcc48-9ebb-4bdb-9596-ea1d14e1954d_1.png",
-      "x": 1120,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 1536,
+      "w": 72,
+      "h": 128
     },
     {
       "filename": "512clay_sprouting_limestone_towers_mycelium_web_structures_fo_e9e3abb7-e1c2-4dfc-810e-13faca1701b3_0.png",
-      "x": 1232,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_sprouting_limestone_towers_mycelium_web_structures_fo_e9e3abb7-e1c2-4dfc-810e-13faca1701b3_1.png",
-      "x": 1344,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_sprouting_limestone_towers_mycelium_web_structures_fo_e9e3abb7-e1c2-4dfc-810e-13faca1701b3_2.png",
-      "x": 1456,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_sprouting_limestone_towers_mycelium_web_structures_fo_e9e3abb7-e1c2-4dfc-810e-13faca1701b3_3.png",
-      "x": 1568,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_terraced_vertical_farms_flowing_green_walls_transpare_c3be3f00-0aeb-4998-abce-a152c666aebb_0.png",
-      "x": 1680,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_terraced_vertical_farms_flowing_green_walls_transpare_c3be3f00-0aeb-4998-abce-a152c666aebb_2.png",
-      "x": 1792,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_topographic_relief_carved_into_stone_wall_contours_of_d88b340a-3391-4f05-bb8b-ab5c366716b3_0.png",
-      "x": 1904,
-      "y": 1386,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_topographic_relief_carved_into_stone_wall_contours_of_d88b340a-3391-4f05-bb8b-ab5c366716b3_1.png",
-      "x": 0,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_topographic_relief_carved_into_stone_wall_contours_of_d88b340a-3391-4f05-bb8b-ab5c366716b3_2.png",
-      "x": 112,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 1536,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_twin_vertical_farming_buildings_that_look_like_trees__742118d9-149f-4d98-8b0a-72d4fe26da2e_0.png",
-      "x": 224,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_unfolding_wholeness_--chaos_100_--ar_169_--raw_--styl_594b0d45-14f6-4466-b76c-67070275e8b0_2.png",
-      "x": 336,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 1664,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_unfolding_wholeness_--chaos_100_--ar_169_--raw_--styl_594b0d45-14f6-4466-b76c-67070275e8b0_3.png",
-      "x": 448,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 1664,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_unfolding_wholeness_natural_growth_--chaos_100_--ar_1_ea7f2431-d36c-450e-9ce7-03ab7e24c13c_0.png",
-      "x": 560,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 1664,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_unfolding_wholeness_natural_growth_strong_centers_--c_345522cb-4d32-4196-b504-f82e6b1ba25f_2.png",
-      "x": 672,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 1664,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_unfolding_wholeness_natural_growth_strong_centers_arc_5df6958f-ce1d-446f-9f35-6cf79c3023fc_1.png",
-      "x": 784,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 1664,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_unfolding_wholeness_natural_growth_strong_centers_arc_5df6958f-ce1d-446f-9f35-6cf79c3023fc_3.png",
-      "x": 896,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 1664,
+      "w": 128,
+      "h": 85
     },
     {
       "filename": "512clay_unfolding_wholeness_natural_growth_strong_centers_beg_cc683d38-cdb5-476a-988f-32467b61df56_2.png",
-      "x": 1008,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 1664,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_unfolding_wholeness_overlayed_on_top_of_one_another_e_5c19b67a-c2a5-455f-8e08-1abd7f955807_1.png",
-      "x": 1120,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 1664,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_unfolding_wholeness_overlayed_on_top_of_one_another_e_8e852af6-b73d-4c06-9caf-2feb5466d6f0_3.png",
-      "x": 1232,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 1664,
+      "w": 128,
+      "h": 72
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_14d08a78-f290-46dc-be92-026437c4c362_0.png",
-      "x": 1344,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_14d08a78-f290-46dc-be92-026437c4c362_1.png",
-      "x": 1456,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_14d08a78-f290-46dc-be92-026437c4c362_2.png",
-      "x": 1568,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_14d08a78-f290-46dc-be92-026437c4c362_3.png",
-      "x": 1680,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_346e4fb3-509a-4415-85d6-cfa5df594404_0.png",
       "x": 1792,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_346e4fb3-509a-4415-85d6-cfa5df594404_1.png",
-      "x": 1904,
-      "y": 1449,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_346e4fb3-509a-4415-85d6-cfa5df594404_2.png",
-      "x": 0,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_346e4fb3-509a-4415-85d6-cfa5df594404_3.png",
-      "x": 112,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_965e0eb0-0f5d-4186-87e0-b2065d7a3ce3_0.png",
-      "x": 224,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_965e0eb0-0f5d-4186-87e0-b2065d7a3ce3_1.png",
-      "x": 336,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_965e0eb0-0f5d-4186-87e0-b2065d7a3ce3_2.png",
-      "x": 448,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_d11cba66-6e84-45bc-af6d-8b130729083e_0.png",
-      "x": 560,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_d11cba66-6e84-45bc-af6d-8b130729083e_2.png",
-      "x": 672,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_b_d11cba66-6e84-45bc-af6d-8b130729083e_3.png",
-      "x": 784,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_lady_bird_lake_wood_CLT_limestone_organic_bui_569ea8f3-5710-4fe3-a65d-06b819854674.png",
-      "x": 896,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_trail_moving_into_above-water_vertical_farm_d41ce666-2171-4ca8-aa8b-06977641368b_2.png",
-      "x": 1008,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_trail_moving_into_above-water_vertical_farm_d41ce666-2171-4ca8-aa8b-06977641368b_3.png",
-      "x": 1120,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 3328,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_trail_moving_into_above-water_vertical_farm_ec1bd910-beb8-4c1b-948f-003e076663cb_1.png",
-      "x": 1232,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 3456,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_trail_moving_into_above-water_vertical_farm_ec1bd910-beb8-4c1b-948f-003e076663cb_2.png",
-      "x": 1344,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 3584,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_from_trail_moving_into_above-water_vertical_farm_ec1bd910-beb8-4c1b-948f-003e076663cb_3.png",
-      "x": 1456,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 3712,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_inside_architectural_ecodistrict_biophilic-gothi_39d249a3-7638-4d2e-93de-d875b2ca5ecd_0.png",
-      "x": 1568,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 3840,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_inside_architectural_ecodistrict_biophilic-gothi_39d249a3-7638-4d2e-93de-d875b2ca5ecd_1.png",
-      "x": 1680,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 3968,
+      "y": 1664,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_inside_architectural_ecodistrict_lowrise_biophil_63e4f301-5d90-462c-8f59-061b0f071128_2.png",
-      "x": 1792,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 0,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_looking_from_lady_bird_lake_to_building_extendin_d60974db-9e58-4f6d-b3d9-ae69c33fe743_0.png",
-      "x": 1904,
-      "y": 1512,
-      "w": 112,
-      "h": 63
+      "x": 128,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_looking_from_lady_bird_lake_to_building_extendin_d60974db-9e58-4f6d-b3d9-ae69c33fe743_1.png",
-      "x": 0,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 256,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_looking_from_lady_bird_lake_to_building_extendin_d60974db-9e58-4f6d-b3d9-ae69c33fe743_3.png",
-      "x": 112,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 384,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_of_proto-ecological_architectural_village_biophi_6a099273-32e3-457b-a004-fa3e14d1182d_0.png",
-      "x": 224,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 512,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_view_of_proto-ecological_architectural_village_neo-cl_dd77842f-3ff4-4ed7-a7cf-bc3d39c5921a_3.png",
-      "x": 336,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 640,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_184b3198-d401-4290-bafe-7b49fe66f201_0.png",
-      "x": 448,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 768,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_2e93af43-1c1e-4c1b-8574-ec253df847b3_0.png",
-      "x": 560,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 896,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_2e93af43-1c1e-4c1b-8574-ec253df847b3_1.png",
-      "x": 672,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 1024,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_4735178a-1242-47d5-8db2-44db061d56e9_0.png",
-      "x": 784,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 1152,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_4735178a-1242-47d5-8db2-44db061d56e9_2.png",
-      "x": 896,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 1280,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_47cfcbd4-f64e-43a7-b375-48240692edbf_0.png",
-      "x": 1008,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 1408,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_47cfcbd4-f64e-43a7-b375-48240692edbf_1.png",
-      "x": 1120,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 1536,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_73db041b-29e0-4b6c-a99c-e00f49d57432_2.png",
-      "x": 1232,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 1664,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_a04b0432-30c9-4193-882e-718481ac5467_0.png",
-      "x": 1344,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 1792,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_ce324480-7616-4dfb-90a9-a88b4f7b87e0_0.png",
-      "x": 1456,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 1920,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_e28a0e06-9abc-495e-9375-6c169233ccf4_1.png",
-      "x": 1568,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 2048,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_e28a0e06-9abc-495e-9375-6c169233ccf4_2.png",
-      "x": 1680,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 2176,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_e28a0e06-9abc-495e-9375-6c169233ccf4_3.png",
-      "x": 1792,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 2304,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_e64848f7-8fc3-4198-be4e-98a0b86c0386_1.png",
-      "x": 1904,
-      "y": 1575,
-      "w": 112,
-      "h": 63
+      "x": 2432,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_e64848f7-8fc3-4198-be4e-98a0b86c0386_2.png",
-      "x": 0,
-      "y": 1638,
-      "w": 112,
-      "h": 63
+      "x": 2560,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_building_that_extends_from_f49ecdf5-dc12-4936-9c4c-99742a42cb52_3.png",
-      "x": 112,
-      "y": 1638,
-      "w": 112,
-      "h": 63
+      "x": 2688,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_buildings_that_extend_from_fffb4a7c-5052-427c-91b9-cd5dba0ec79f_0.png",
-      "x": 224,
-      "y": 1638,
-      "w": 112,
-      "h": 63
+      "x": 2816,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_buildings_that_extend_from_fffb4a7c-5052-427c-91b9-cd5dba0ec79f_1.png",
-      "x": 336,
-      "y": 1638,
-      "w": 112,
-      "h": 63
+      "x": 2944,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_buildings_that_extend_from_fffb4a7c-5052-427c-91b9-cd5dba0ec79f_2.png",
-      "x": 448,
-      "y": 1638,
-      "w": 112,
-      "h": 63
+      "x": 3072,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     },
     {
       "filename": "512clay_wood_CLT_limestone_organic_buildings_that_extend_from_fffb4a7c-5052-427c-91b9-cd5dba0ec79f_3.png",
-      "x": 560,
-      "y": 1638,
-      "w": 112,
-      "h": 63
+      "x": 3200,
+      "y": 1792,
+      "w": 128,
+      "h": 128
     }
   ]
 }
