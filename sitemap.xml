@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://claysbrain.com/</loc>
+        <image:image>
+            <image:loc>https://claysbrain.com/headshot.jpg</image:loc>
+            <image:title>Clay Seifert — Atticus Seas</image:title>
+            <image:caption>Clay Seifert, founder of Atticus Seas — a speculative architecture and object practice working between machine vision, memory, ornament, ruins, and domestic futures.</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://claysbrain.com/gallery.html</loc>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/a-cityscape-where-buildings-have-kinetic-facades-that-0b972170.webp</image:loc>
+            <image:title>Stratified White Tower Canyon</image:title>
+            <image:caption>Tightly packed towers rise in sinuous, horizontally stratified ribbons of white composite, their fluted surfaces folding into a tight vertical canyon. Diffuse overcast light flattens shadows, emphasizing the ridged contour lines and sculptural mass.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/a-desert-community-where-buildings-are-designed-to-look-0d404802.webp</image:loc>
+            <image:title>Lotus Pavilions in Desert Plain</image:title>
+            <image:caption>Bulbous pavilions formed from overlapping leaf-like panels open at their apex to reveal warmly lit timber interiors. Their metallic, veined surfaces sit on sandy ground among small succulents under a pale sky.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/ancient-gothic-arch-emerging-from-concrete-partial-co-4a2f6bf8.webp</image:loc>
+            <image:title>Gothic Arch in Ruined Wall</image:title>
+            <image:caption>A pointed Gothic arch with paired colonnettes and carved capitals pierces a weathered plaster wall, exposing brick at its edges. Through the opening, a slender tree and fallen leaves occupy a quiet, overgrown interior.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/ariel-view-wood-clt-limestone-organic-buildings-that-b501e574.webp</image:loc>
+            <image:title>Riverfront Biophilic Terraced Tower</image:title>
+            <image:caption>Sinuous timber-clad terraces wrap a glazed tower, each tier overflowing with trees and planting that spill toward a limestone base along the water. The organic stratification contrasts with the rectilinear city blocks beyond.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/axonometric-vector-map-of-walkable-urban-neighborhood-edffb1af.webp</image:loc>
+            <image:title>Isometric Neighborhood Block Study</image:title>
+            <image:caption>An isometric diagram of a walkable neighborhood organized on an orthogonal street grid, with tree-lined blocks, community gardens, playgrounds, sports courts, and a mid-rise tan building anchoring one quadrant.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/bridge-from-one-tower-on-land-to-another-on-water-und-c8aa92e4.webp</image:loc>
+            <image:title>Branching Canopy Waterfront Promenade</image:title>
+            <image:caption>Slender biomorphic columns splay into interlocking canopies of perforated shells, sheltering a linear bridge above still water. Diffused daylight filters through lace-like openings, casting soft patterns across the pale structure and reflective surface below.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/cliff-side-vertical-farms-limestone-cave-architecture-9cfcfcfe.webp</image:loc>
+            <image:title>Cliffside Pavilion Beneath Limestone Overhang</image:title>
+            <image:caption>A glazed living pavilion is tucked onto a weathered limestone shelf, sheltered by a cantilevered rock mass above. Warm interior light spills across the stone while oak canopies frame the cliff edge.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/close-up-of-vertical-farm-tower-connection-point-biom-ebcd5639.webp</image:loc>
+            <image:title>Branching Timber Column Detail</image:title>
+            <image:caption>A biomimetic column of CNC-milled pale timber splits into organic branches, joined by exposed steel bolts and tension rods. Dark glazed panels behind reveal machinery, contrasting smooth wood with industrial metal.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/clt-limestone-organic-building-that-extends-from-wate-17dfad7c.webp</image:loc>
+            <image:title>Limestone Canyon Water Passage</image:title>
+            <image:caption>Stratified limestone walls rise on either side of a calm channel, framed by a broad natural arch draped with vines and flowering shrubs. A slim timber walkway hugs the cliff base, meeting still water beneath open sky.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/detail-of-gothic-style-filigree-doorway-carved-into-l-14d1f856.webp</image:loc>
+            <image:title>Gothic Tracery on Industrial Wall</image:title>
+            <image:caption>A filigreed pointed arch carved with vegetal tracery is embedded within a stained, bolt-pocked concrete facade. A narrow red steel guardrail fronts the niche, juxtaposing ecclesiastical ornament against raw industrial surfaces.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/elevation-design-overall-form-the-tallest-and-most-dr-f3f28f2d.webp</image:loc>
+            <image:title>Parametric Cathedral on Urban Corner</image:title>
+            <image:caption>Sharply peaked concrete shells fold upward around a tall stained glass window and rose oculus, reinterpreting Gothic tracery in fluid cast forms wedged between masonry and glass towers at twilight.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/flowers-aggregating-in-field-looking-up-at-techno-fut-307318f7.webp</image:loc>
+            <image:title>Cellular Canopy Over Wildflower Meadow</image:title>
+            <image:caption>A cellular membrane structure spans the meadow on thin tendril supports, its rounded apertures framing views of sky and distant hills. Lavender, yellow, and red wildflowers carpet the ground beneath the biomorphic shell.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/flowers-aggregating-in-field-looking-up-at-techno-fut-dd7d8561.webp</image:loc>
+            <image:title>Branching Canopy Over Wildflower Meadow</image:title>
+            <image:caption>Slim white tree-like columns bifurcate into a vast cellular canopy of translucent membranes, casting dappled light across a rolling meadow dense with orange, pink, and red blossoms under a bright cloud-streaked sky.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/front-elevation-ultra-fine-relief-of-data-streams-bin-10ef5f18.webp</image:loc>
+            <image:title>Perforated Concrete Facade Wall</image:title>
+            <image:caption>A monolithic concrete facade is articulated with a dense, map-like pattern of recessed pockets and pierced openings, casting dappled shadows across the pavement. A recessed window and flanking timber stair anchor the wall to its sloped, tree-lined setting.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/futuristic-construction-methodlogies-inspired-by-achi-0a1bf480.webp</image:loc>
+            <image:title>Skeletal Concrete Lattice Tower</image:title>
+            <image:caption>Sinuous concrete ribs weave into a porous exoskeleton, wrapping glazed interior volumes within ovoid openings. The coarse, fibrous surface contrasts with dark curtain walls, producing a cavernous, bone-like urban mass.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/futuristic-construction-methodlogies-inspired-by-achi-caf288b8.webp</image:loc>
+            <image:title>Biomorphic White Atrium Interior</image:title>
+            <image:caption>Sinuous white columns merge into a canopy of curved shells perforated by lens-shaped openings, filtering daylight across a polished floor. The monolithic forms blur structure and skin into a single continuous surface at civic scale.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/gear-systems-and-fan-blades-carved-into-stone-embedde-230f3a57.webp</image:loc>
+            <image:title>Embedded Gears in Stone Facade</image:title>
+            <image:caption>Three large cast gears emerge from an ashlar limestone facade, their teeth caked in calcified residue that blurs the boundary between machinery and masonry. The pale stone coursing frames the mechanisms in harsh sunlight.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/ground-view-of-vertical-farming-tower-in-austin-texas-49c8bf31.webp</image:loc>
+            <image:title>Branching Timber Canopy Plaza</image:title>
+            <image:caption>A dendritic timber structure spreads across the plaza, its layered laminated branches forming oculi that frame the sky. Glazed facades and stone paving ground the organic canopy within a crisp urban setting.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/hanging-garden-of-babylon-but-with-gothic-architectur-862095cc.webp</image:loc>
+            <image:title>Vaulted Glass Conservatory Corridor</image:title>
+            <image:caption>A symmetrical conservatory walkway lined with Corinthian columns supports a barrel-vaulted iron and glass canopy. Climbing greenery threads between the piers while dappled light falls across the terracotta-pink floor.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/hanging-garden-of-babylon-but-with-gothic-architectur-e9050645.webp</image:loc>
+            <image:title>Gothic Glass Conservatory Atrium</image:title>
+            <image:caption>A cathedral-scale conservatory where pointed sandstone arches and slender tracery meet an arched glass roof. Ivy climbs the columns and floods the floor, softening the carved stonework in diffused daylight.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/horizontal-section-cut-of-bridge-of-very-very-large-f-96edf9b1.webp</image:loc>
+            <image:title>Boardwalk Through Giant Leaves</image:title>
+            <image:caption>A slender timber boardwalk with thin metal railings threads between colossal radial leaves, its zigzag path suspended over reflective shallows. The monochrome composition collapses scale, turning botanical forms into architectural canopies.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/horizontal-section-cut-of-bridge-of-very-very-large-f-96edf9b1-10ee.webp</image:loc>
+            <image:title>Botanical Canopy Pedestrian Bridge</image:title>
+            <image:caption>Oversized petal canopies in ochre, rose, and jade shelter a slender walkway that arcs over still water. Trailing vines and flowering edges soften the bridge deck, merging botanical mass with light structural framing.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/horizontal-section-cut-of-bridge-of-very-very-large-f-96edf9b1-42f5.webp</image:loc>
+            <image:title>Floral Arch Pedestrian Bridge</image:title>
+            <image:caption>An arched footbridge spans a slow river, its balustrade engulfed by outsized magenta and crimson blooms. Figures cross in silhouette while flowering banks frame the water in a soft, washed atmosphere.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/horizontal-section-of-flowers-crossing-water-with-hum-e0a53f98.webp</image:loc>
+            <image:title>Floral Bridge Above The Sea</image:title>
+            <image:caption>A sloping walkway is entirely enveloped in a cascade of blooms—roses, sunflowers, anemones, and trailing vines—arching above calm sea water. The saturated botanical mass contrasts with the expansive sky, dissolving the boundary between structure and landscape.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/horizontal-section-of-flowers-crossing-water-with-hum-e0a53f98-3f2b.webp</image:loc>
+            <image:title>Floral Boardwalk Across Still Sea</image:title>
+            <image:caption>A timber plank walkway cuts a straight axis over glassy open water, its edges overflowing with ranunculus, roses, and wildflowers. Scattered single blooms float on the surface, blurring the threshold between path, garden, and sea under a pale sky.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/house-inspired-by-gothic-cathedral-designed-by-daniel-cedea06a.webp</image:loc>
+            <image:title>Gothic Expressionist Forest Residence</image:title>
+            <image:caption>Sharply pointed glass gables rise between curling copper-toned roofs and blackened timber walls, framed by tall conifers. Warm interior light glows through leaded glazing onto a stone paver court at twilight.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/httpss-mj-runvbjhxtblf-c-httpss-mj-runp4hyn1sboti-r-d8b70e03.webp</image:loc>
+            <image:title>Cliffside Cavern Dwelling With Timber Arches</image:title>
+            <image:caption>Sculpted limestone cliffs host layered terraces of ribbed timber screens and a large arched opening, cascading vegetation softening the rock face. A slender wooden footbridge spans still green water toward the carved dwellings.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/httpss-mj-runyewi-lbq9jc-httpss-mj-runvbjhxtblf-c-htt-336bfe43.webp</image:loc>
+            <image:title>Rammed Earth Pavilion Over Water</image:title>
+            <image:caption>Massive rammed earth forms with visible sedimentary layers cantilever over a timber boardwalk and still water, while terraced gardens and glazed pavilions wrap the base beneath a clear sky.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/httpss-mj-runyewi-lbq9jc-httpss-mj-runvbjhxtblf-c-htt-336bfe43-9e3c.webp</image:loc>
+            <image:title>Curved Timber Pavilion Over Water</image:title>
+            <image:caption>A sinuous pavilion combines ribbed timber soffits with sculpted concrete piers, its planted upper terraces spilling ferns over the edge. A curved boardwalk threads across shallow water between the supports, framing glazed interiors beyond.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-of-futuristic-plant-nursery-on-water-high-te-1546f011.webp</image:loc>
+            <image:title>Waterfront Vertical Garden Walkway</image:title>
+            <image:caption>A cable-stayed boardwalk runs along a river&apos;s edge beneath a faceted white steel canopy, with tiered aluminum planters forming a living wall of herbs and greenery on the opposite side.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-rendered-gothic-cathedral-building-section-cut-cfd115a1.webp</image:loc>
+            <image:title>Gothic Cathedral Sectional Study</image:title>
+            <image:caption>A cutaway study of a Gothic cathedral reveals layered nave arcades, pointed arches, and ribbed vaulting beneath steep gables. Slender spires and delicate tracery frame tall lancet windows carved into pale limestone.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-of-giant-concrete-bay-that-has-gothic-a-5aea9129.webp</image:loc>
+            <image:title>Subterranean Concrete Cathedral</image:title>
+            <image:caption>Monolithic board-formed concrete walls rise around a cavernous void, their stacked volumes and pointed arches framing a circular excavation below. Weathered surfaces, taut cables, and dim overhead light give the space an industrial, cathedral-like gravity.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-of-giant-concrete-bay-that-has-gothic-a-5aea9129-ec8b.webp</image:loc>
+            <image:title>Vaulted Industrial Nave</image:title>
+            <image:caption>A cathedral-scaled industrial interior combines masonry groin vaults and tiered arcaded galleries with steel walkways, ladders, and trusses. A luminous oculus anchors the far wall, washing the stone in cool daylight against warm lamp glow below.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-of-giant-concrete-bay-that-has-gothic-a-5aea9129-f863.webp</image:loc>
+            <image:title>Cavernous Concrete Vault Interior</image:title>
+            <image:caption>Massive board-formed concrete piers rise into ribbed arches and vaulted bays, their surfaces streaked by age and moisture. Slender pipe runs climb the walls while narrow slit openings admit pale daylight across the cavernous floor.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-of-giant-concrete-bay-that-has-gothic-a-5aea9129-e845.webp</image:loc>
+            <image:title>Vaulted Industrial Hall Interior</image:title>
+            <image:caption>A monumental concrete hall rises through weathered vaulted arches, its center occupied by a suspended conical structure and tiered circular platforms. Steel catwalks and ladders thread along stained walls under dim, raking light.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-of-giant-concrete-bay-that-has-gothic-a-68bf1e60.webp</image:loc>
+            <image:title>Cavernous Concrete Construction Interior</image:title>
+            <image:caption>Monolithic board-formed concrete walls rise into a cavernous volume punctuated by arched openings and oculi, where steel walkways, suspended chains, and scaffolding trace the scale of an unfinished structural shell.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-of-giant-concrete-bay-that-has-gothic-a-e5ea7f68.webp</image:loc>
+            <image:title>Industrial Cathedral Interior Retrofit</image:title>
+            <image:caption>A soaring concrete hall with pointed arches and clerestory windows is overlaid with steel stairs, catwalks, and exposed conduit. An ornamental perforated balustrade contrasts the raw industrial armature and muted gray light.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-14b372ba.webp</image:loc>
+            <image:title>Timber And Stone Riverside Pavilion</image:title>
+            <image:caption>A sweeping wooden soffit meets rough-hewn stone arches above a boardwalk and glazed corridor, with planted banks and a shallow waterway threading beneath the structure&apos;s organic, biomorphic forms.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-14b372ba-c24b.webp</image:loc>
+            <image:title>Curved Timber Walkway Over Grotto Pool</image:title>
+            <image:caption>A sweeping arched passage lined in warm timber planks follows the edge of a sunken water channel, with weathered limestone walls and cascading greenery forming the opposite side. Diffuse light filters through full-height glazing onto the wooden deck.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-14b372ba-a242.webp</image:loc>
+            <image:title>Biomorphic Timber Interior Garden</image:title>
+            <image:caption>A continuous biomorphic shell of CNC-milled plywood panels wraps floor, walls, and ceiling, framing sinuous planter beds and a living tree. Floor-to-ceiling glazing draws in filtered forest light across the polished terrazzo floor.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-72c4df8e.webp</image:loc>
+            <image:title>Timber Canyon Boardwalk Pavilion</image:title>
+            <image:caption>Laminated timber slabs ripple along a weathered limestone canyon, carving circular skylights above tiered balconies spilling with greenery. A slatted boardwalk follows the cliff line, meeting still water and scattered lily pads below.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-72c4df8e-6d61.webp</image:loc>
+            <image:title>Timber Canopy Over Water Garden</image:title>
+            <image:caption>A radiating canopy of timber slats hovers over a calm interior waterway, meeting rough limestone outcrops and lush planting. A laminated wood arch spans the channel while a slatted boardwalk leads toward daylight through tall glazing.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-72c4df8e-eb26.webp</image:loc>
+            <image:title>Curved Boardwalk Beneath Concrete Arches</image:title>
+            <image:caption>A curvilinear timber deck threads between massive concrete arches and a porous limestone wall, its undulating wooden soffit softening the heavy viaduct structure. Trailing vegetation and still water below temper the infrastructural scale.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-72c4df8e-8310.webp</image:loc>
+            <image:title>Timber Vault and Rammed Earth Pavilion</image:title>
+            <image:caption>A curving timber-clad vault springs from massive rammed earth piers, sheltering winding wooden walkways that thread between reflecting pools planted with lilies. Diffuse daylight filters through full-height glazing, highlighting the stratified earth and grain of the ceiling.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-f363f845.webp</image:loc>
+            <image:title>Curving Timber Riverwalk Canopy</image:title>
+            <image:caption>A curving boardwalk threads along a river&apos;s edge beneath a sweeping timber canopy whose ribbed underside arcs into tunnel-like openings. Slender columns, limestone outcrops, and planted beds mediate between the soft wood surfaces and the water.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-f363f845-3313.webp</image:loc>
+            <image:title>Curved Timber Canopy Walkway</image:title>
+            <image:caption>A sinuous timber boardwalk threads between a fully glazed facade and a stratified stone outcrop, its sculpted slat ceiling sweeping overhead while ferns cascade and still water reflects the scene below.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-f363f845-0d26.webp</image:loc>
+            <image:title>Grotto Pavilion With Timber Walkway</image:title>
+            <image:caption>A timber and glass pavilion tucks beneath a sculpted limestone arch, its cedar ceiling and walkway threading past cascading ferns toward a quiet pond. Layered stone strata and planted ledges frame the interior dining space.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-f363f845-61b2.webp</image:loc>
+            <image:title>Timber Vaulted Waterway Passage</image:title>
+            <image:caption>Sweeping timber shell vaults form a continuous canopy over a plank boardwalk that threads across still water. A weathered limestone wall tufted with ferns anchors one side, while sunlight filters through the arched opening.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/layered-hanging-gardens-floating-agricultural-pods-tw-3cb148fe.webp</image:loc>
+            <image:title>Biomorphic Terraced Garden Pavilions</image:title>
+            <image:caption>Flowing biomorphic volumes in pale sculpted concrete stack into terraced levels, pierced by mature trees and framed by recessed glazing. A stone basin spills into a still pond, binding the architecture to its cultivated landscape.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/model-of-building-made-up-of-an-supported-by-trees-pe-ab882434.webp</image:loc>
+            <image:title>Stacked Timber Terraces Study Model</image:title>
+            <image:caption>A sectional study model shows stacked timber floor plates with open-air terraces, slender columns, and miniature trees weaving between levels. Scale figures populate balconies and the ground plane, emphasizing porous circulation and layered public space.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/mushroom-like-concrete-structures-branching-clt-frame-f7f8ac9c.webp</image:loc>
+            <image:title>Skeletal Concrete Canopy in Open Grassland</image:title>
+            <image:caption>A bone-like concrete structure branches upward into a lattice of ovoid voids, its weathered surfaces catching low sun. The biomorphic supports root into tall grasses and scrub, bridging engineered mass with open pastoral terrain.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/mushroom-like-concrete-structures-branching-clt-frame-f7f8ac9c-6098.webp</image:loc>
+            <image:title>Cellular Concrete Canopy Pavilion</image:title>
+            <image:caption>A biomorphic structure lifts a glazed viewing volume above limestone terrain on branching concrete legs. The honeycombed shell dissolves into the surrounding canopy, its porous geometry framing fragments of sky and foliage.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/mushroom-like-concrete-structures-branching-clt-frame-f7f8ac9c-c531.webp</image:loc>
+            <image:title>Biomorphic Concrete Canopy Pavilion</image:title>
+            <image:caption>Branching concrete columns splay upward into a porous, cell-like canopy riddled with rounded openings. Low-angle sunlight filters through the woodland edge, casting warm highlights across the mottled gray surfaces and stone plaza below.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/old-coal-storage-bay-renovated-elevation-design-overa-7e223da5.webp</image:loc>
+            <image:title>Brutalist Concrete Arched Hall</image:title>
+            <image:caption>Monolithic board-formed concrete walls rise into pointed parabolic arches, punctured by oversized circular openings that reveal internal ribbed structure. The cavernous scale and cool evening light emphasize the raw industrial mass.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/open-corridor-space-carved-fluid-biopmorphic-limeston-b9f0d4a7.webp</image:loc>
+            <image:title>Sculpted Earthen Corridor</image:title>
+            <image:caption>A linear passage pairs a rhythmic wall of biomorphic rammed-earth columns with a glazed timber facade, the pale wood floor and soft daylight emphasizing the sculptural mass and organic contours of the earthen surface.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/open-corridor-space-carved-fluid-biopmorphic-limeston-b9f0d4a7-b159.webp</image:loc>
+            <image:title>Undulating Rammed Earth Corridor</image:title>
+            <image:caption>A linear passage framed by undulating rammed earth partitions whose stratified, rough-textured surfaces contrast with the precise grid of exposed softwood joists overhead and the warm polished plank floor below.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/organic-flowing-building-on-land-and-water-part-stere-7cf8b3b1.webp</image:loc>
+            <image:title>Curvilinear Cliffside Pavilion</image:title>
+            <image:caption>Layered concrete terraces ripple across a hillside, their undersides washed in warm amber light above full-height glazing. The structure cantilevers over eroded limestone outcrops and a still pool, framed by dense tropical foliage.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/polychromy-farnese-heraclese-raw-stylize-50-v-6-4dc3246d.webp</image:loc>
+            <image:title>Polychrome Marble Figure in Niche</image:title>
+            <image:caption>A polychrome marble figure occupies a shallow arched niche, framed by pilasters carved with trailing acanthus foliage and backed by veined green and ochre stone inlays. Gilded detailing on the drapery catches low interior light.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/retro-futurist-ecobrutalist-vertical-farm-bridge-span-8df45ffd.webp</image:loc>
+            <image:title>Elevated Canopy Walkways Over Misted Water</image:title>
+            <image:caption>Branching metal columns flare into circular canopies carrying elevated walkways and lush planters above a reflective waterway. Low sun filters through rising mist, softening the structure&apos;s ribbed stems and the surrounding foliage.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/retro-futurist-ecobrutalist-vertical-farm-bridge-span-8f120ad0.webp</image:loc>
+            <image:title>Arched Garden Viaduct Over Mist</image:title>
+            <image:caption>Sweeping laminated timber arches span a still pond, their piers wrapped in trailing greenery while a planted deck above supports flowering shrubs. Morning mist drifts across the water, softening reflections beneath the structure.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/retro-futurist-ecobrutalist-vertical-farm-bridge-span-b760fab4.webp</image:loc>
+            <image:title>Elevated Wetland Pavilions at Dawn</image:title>
+            <image:caption>Disc-shaped canopies supported on slim columns rise above a still wetland, linked by a thin pedestrian bridge. Morning mist and low sun filter through surrounding foliage, reflecting across lily pads and calm water.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/sprouting-limestone-towers-mycelium-web-structures-fo-e9e3abb7.webp</image:loc>
+            <image:title>Porous Pavilion Among Oaks</image:title>
+            <image:caption>A sprawling, bone-like structure of porous concrete arches and cavities threads between gnarled oak trunks, its perforated shell catching low sun through the canopy. The rough cellular surfaces contrast with the surrounding woodland floor.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/sprouting-limestone-towers-mycelium-web-structures-fo-e9e3abb7-a984.webp</image:loc>
+            <image:title>Woven Stone Forest Dwelling</image:title>
+            <image:caption>A biomorphic tower of horizontally stratified stone twists upward through a canopy of oaks, its cavernous voids fitted with diamond-patterned metal mesh. Eroded ledges host moss and ferns, blurring mass with forest.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/synthetic-biology-for-adaptive-urban-systems-raw-a00ca955.webp</image:loc>
+            <image:title>Lattice Biome City</image:title>
+            <image:caption>A layered landscape of white voronoi and hexagonal lattice shells hosts cultivated trees and flowering plants, connected by elevated walkways. Spherical filigree bodies hover above, amplifying the botanical-architectural hybrid.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/unfolding-wholeness-overlayed-on-top-of-one-another-e-5c19b67a.webp</image:loc>
+            <image:title>Radial Mineral Veil Composition</image:title>
+            <image:caption>Translucent sheets fan outward from a weathered, rust-toned core, layering mineral textures of oxidized copper, marble, and sandstone. The radial geometry suggests a sectional study of stratified material under diffused light.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/view-from-lady-bird-lake-wood-clt-limestone-organic-b-14d08a78.webp</image:loc>
+            <image:title>Riverside Boardwalk Beneath Limestone Cliff</image:title>
+            <image:caption>A timber-slatted boardwalk traces the water&apos;s edge beside a tall glazed pavilion set into a natural limestone escarpment. Trailing ferns spill from the rock soffit while cantilevered planter balconies extend toward the river.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/view-from-lady-bird-lake-wood-clt-limestone-organic-b-14d08a78-ac77.webp</image:loc>
+            <image:title>Timber Arches Over Urban River</image:title>
+            <image:caption>Sweeping mass timber arches shelter a riverside boardwalk, their grain and dowel joinery exposed overhead. Hanging planters spill greenery toward the water as kayakers pass beneath distant glass towers.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/view-from-lady-bird-lake-wood-clt-limestone-organic-b-965e0eb0.webp</image:loc>
+            <image:title>Riverside Timber Biophilic Tower</image:title>
+            <image:caption>A mass timber riverside structure carves circular apertures into a vertical facade, layering terraces with spilling vines and wildflowers. Across the water, a concrete arch bridge leads toward glass towers under a soft midday sky.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/view-from-lady-bird-lake-wood-clt-limestone-organic-b-965e0eb0-45a2.webp</image:loc>
+            <image:title>Timber Riverfront Pavilion With Hammock Terrace</image:title>
+            <image:caption>Stacked arched balconies carved from laminated timber cantilever over a placid river, with hammocks slung beneath vaulted wood ceilings and planted edges spilling toward the water. Across the channel, glass towers rise above a tree-lined bank.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/view-from-lady-bird-lake-wood-clt-limestone-organic-b-965e0eb0-d604.webp</image:loc>
+            <image:title>Timber Arch Riverside Pavilion</image:title>
+            <image:caption>Layered mass timber arches shelter planted terraces and an intimate reading nook above a stone retaining wall, opening toward a river where kayakers pass beneath distant high-rise towers.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/view-from-lady-bird-lake-wood-clt-limestone-organic-bui-569ea8f3.webp</image:loc>
+            <image:title>Timber Arcade Along Urban River</image:title>
+            <image:caption>Vaulted mass-timber arches shelter a riverside boardwalk, their laminated ribs peeling open to cantilevered planters and hanging greenery. Across the calm water, glass residential towers rise behind a wooded shoreline.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/view-inside-architectural-ecodistrict-lowrise-biophil-63e4f301.webp</image:loc>
+            <image:title>Terraced Atrium With Cascading Gardens</image:title>
+            <image:caption>Stacked tiers of pale stone arches frame an open-air atrium where vines spill from every balcony and a central planted courtyard anchors the ground plane. Soft daylight filters through oculi and vaulted openings, washing the porous walls in warm tones.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/wood-clt-limestone-organic-building-that-extends-from-47cfcbd4.webp</image:loc>
+            <image:title>Timber Pavilion Within Stone Grotto</image:title>
+            <image:caption>A ribbed timber structure threads beneath a massive eroded limestone arch, its vertical slats framing circular openings. A curved boardwalk traces the edge of a reflective pond while ferns and vines soften the stone.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/wood-clt-limestone-organic-building-that-extends-from-4735178a.webp</image:loc>
+            <image:title>Cliffside Timber Arches Over Water</image:title>
+            <image:caption>Curving laminated timber vaults spring from weathered limestone outcrops, their ribbed undersides draped with trailing greenery. A plank boardwalk traces the water&apos;s edge, where arch forms mirror into a quiet reflecting pool.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/wood-clt-limestone-organic-building-that-extends-from-a04b0432.webp</image:loc>
+            <image:title>Curved Timber Riverside Walkway</image:title>
+            <image:caption>A sweeping timber walkway traces the edge of a river, its curved wooden canopy sheltering pedestrians while a living wall of ferns and moss colonizes the adjacent limestone face. Linear lighting emphasizes the arc of the soffit.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/wood-clt-limestone-organic-building-that-extends-from-e28a0e06.webp</image:loc>
+            <image:title>Timber Cliffside Walkway Over Quarry Lake</image:title>
+            <image:caption>A stacked-timber walkway rises from weathered limestone, its vertical slat balustrades wrapping a scalloped underside that frames the water below. Vines climb the stone base, tying the laminated wood volume to the quarry&apos;s forested edge.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/wood-clt-limestone-organic-building-that-extends-from-e64848f7.webp</image:loc>
+            <image:title>Timber Canopy Over Canyon Walkway</image:title>
+            <image:caption>A sweeping timber-planked canopy vaults over a light wood boardwalk threading through a limestone gorge. Hanging vines, cascading ferns, and a quiet reflecting pool soften the stratified rock walls under open sky.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/wood-clt-limestone-organic-building-that-extends-from-f49ecdf5.webp</image:loc>
+            <image:title>Timber Boardwalk Beneath Stone Arches</image:title>
+            <image:caption>Layered timber planks form a sinuous walkway over a reflective pool, framed by weathered stone vaults and a rippled wooden canopy. Cascading greenery softens the masonry, creating a shaded grotto-like passage.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://claysbrain.com/portfolio/wood-clt-limestone-organic-buildings-that-extend-from-fffb4a7c.webp</image:loc>
+            <image:title>Cliffside Timber Terraces</image:title>
+            <image:caption>A stacked timber facade with deep balconies and overflowing greenery rises from a limestone escarpment above water. Vertical wood louvers, glazed corners, and layered planters soften the building&apos;s edge against a hazy urban horizon.</image:caption>
+        </image:image>
+    </url>
+</urlset>

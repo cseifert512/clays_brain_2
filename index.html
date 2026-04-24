@@ -4,45 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Clay Seifert — Architecture, AI & Construction Robotics</title>
-    <meta name="description" content="Clay Seifert — working at the intersection of architecture, AI, and construction robotics. An interactive visualization of a creative latent space.">
+    <title>Atticus Seas — Speculative Architecture and Objects by Clay Seifert</title>
+    <meta name="description" content="Atticus Seas is a speculative architecture and object practice by Clay Seifert, working between machine vision, memory, ornament, ruins, and domestic futures.">
     <meta name="author" content="Clay Seifert">
     <link rel="canonical" href="https://claysbrain.com/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://claysbrain.com/">
-    <meta property="og:title" content="Clay Seifert — Architecture, AI & Construction Robotics">
-    <meta property="og:description" content="An interactive latent-space visualization by Clay Seifert. Architecture × AI × construction robotics.">
+    <meta property="og:title" content="Atticus Seas — Speculative Architecture and Objects by Clay Seifert">
+    <meta property="og:description" content="Atticus Seas is a speculative architecture and object practice by Clay Seifert, working between machine vision, memory, ornament, ruins, and domestic futures.">
     <meta property="og:image" content="https://claysbrain.com/headshot.jpg">
-    <meta property="og:site_name" content="Clay Seifert">
+    <meta property="og:site_name" content="Atticus Seas">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Clay Seifert — Architecture, AI & Construction Robotics">
-    <meta name="twitter:description" content="An interactive latent-space visualization by Clay Seifert.">
+    <meta name="twitter:title" content="Atticus Seas — Speculative Architecture and Objects by Clay Seifert">
+    <meta name="twitter:description" content="A speculative architecture and object practice by Clay Seifert — machine vision, memory, ornament, ruins, domestic futures.">
     <meta name="twitter:image" content="https://claysbrain.com/headshot.jpg">
 
-    <!-- Person schema: feeds Google's Knowledge Graph and disambiguates the name -->
+    <!-- schema.org: Person + Organization in one @graph for Knowledge Graph disambiguation -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Clay Seifert",
-        "alternateName": ["Clay H. Seifert", "Clay H Seifert"],
-        "givenName": "Clay",
-        "additionalName": "H",
-        "familyName": "Seifert",
-        "url": "https://claysbrain.com/",
-        "image": "https://claysbrain.com/headshot.jpg",
-        "description": "Working at the intersection of architecture, AI, and construction robotics.",
-        "sameAs": [
-            "https://github.com/cseifert512"
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://claysbrain.com/#clay",
+                "name": "Clay Seifert",
+                "alternateName": ["Clay H. Seifert", "Clay H Seifert"],
+                "givenName": "Clay",
+                "additionalName": "H",
+                "familyName": "Seifert",
+                "url": "https://claysbrain.com/",
+                "image": "https://claysbrain.com/headshot.jpg",
+                "description": "Architect working at the intersection of architecture, AI, and construction robotics. Founder of Atticus Seas.",
+                "sameAs": ["https://github.com/cseifert512"]
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://claysbrain.com/#atticus-seas",
+                "name": "Atticus Seas",
+                "url": "https://claysbrain.com/",
+                "logo": "https://claysbrain.com/headshot.jpg",
+                "description": "A speculative architecture and object practice by Clay Seifert, working between machine vision, memory, ornament, ruins, and domestic futures.",
+                "founder": { "@id": "https://claysbrain.com/#clay" },
+                "member": { "@id": "https://claysbrain.com/#clay" }
+            }
         ]
     }
     </script>
 
-    <link rel="icon" type="image/jpeg" href="/headshot.jpg">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111'/%3E%3Ctext x='50%25' y='50%25' dy='.1em' text-anchor='middle' dominant-baseline='middle' font-family='Space Grotesk, system-ui, sans-serif' font-size='30' font-weight='700' fill='%23fff' letter-spacing='-1'%3EAS%3C/text%3E%3C/svg%3E">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
 
@@ -111,10 +124,24 @@
 
         #preloader-modal h1 {
             font-size: 2.5em;
-            margin: 0 0 4px;
+            margin: 0 0 2px;
             color: #333;
             font-weight: 700;
             letter-spacing: -0.01em;
+        }
+
+        #preloader-modal .byline {
+            font-size: 1em;
+            color: #666;
+            margin: 0 0 12px;
+            letter-spacing: 0.02em;
+        }
+
+        #preloader-modal .byline a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid #999;
+            padding-bottom: 1px;
         }
 
         #preloader-modal .tagline {
@@ -353,14 +380,28 @@
         #back-button:hover, #forward-button:hover {
             background-color: #ddd;
         }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
   <script type="module" crossorigin src="/assets/index-BV7xOAtd.js"></script>
 </head>
 <body>
     <div id="preloader-modal">
-        <h1>Clay Seifert</h1>
-        <p class="tagline">Working at the intersection of architecture, AI, and construction robotics.</p>
+        <h1>Atticus Seas</h1>
+        <p class="byline">by Clay Seifert</p>
+        <p class="tagline">A speculative architecture and object practice — working between machine vision, memory, ornament, ruins, and domestic futures.</p>
         <div class="socials">
+            <a href="/gallery.html">Gallery</a>
             <a href="https://github.com/cseifert512" target="_blank" rel="noopener me">GitHub</a>
             <a href="mailto:clayhseifert@gmail.com">Email</a>
             <!-- Add when ready:
@@ -393,6 +434,12 @@
         </div>
     </div>
 
-    <canvas id="webgl-canvas"></canvas>
+    <canvas id="webgl-canvas"></canvas>
+
+    <figure class="visually-hidden" aria-hidden="true">
+        <img src="/headshot.jpg" alt="Clay Seifert — founder of Atticus Seas, a speculative architecture and object practice." width="600" height="600">
+        <figcaption>Clay Seifert, founder of Atticus Seas</figcaption>
+    </figure>
+
 </body>
 </html>
