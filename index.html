@@ -4,45 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Clay Seifert — Architecture, AI & Construction Robotics</title>
-    <meta name="description" content="Clay Seifert — working at the intersection of architecture, AI, and construction robotics. An interactive visualization of a creative latent space.">
+    <title>%VITE_BRAND_TITLE%</title>
+    <meta name="description" content="%VITE_BRAND_DESCRIPTION%">
     <meta name="author" content="Clay Seifert">
-    <link rel="canonical" href="https://claysbrain.com/">
+    <link rel="canonical" href="%VITE_BRAND_SITE_URL%/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://claysbrain.com/">
-    <meta property="og:title" content="Clay Seifert — Architecture, AI & Construction Robotics">
-    <meta property="og:description" content="An interactive latent-space visualization by Clay Seifert. Architecture × AI × construction robotics.">
-    <meta property="og:image" content="https://claysbrain.com/headshot.jpg">
-    <meta property="og:site_name" content="Clay Seifert">
+    <meta property="og:url" content="%VITE_BRAND_SITE_URL%/">
+    <meta property="og:title" content="%VITE_BRAND_OG_TITLE%">
+    <meta property="og:description" content="%VITE_BRAND_OG_DESCRIPTION%">
+    <meta property="og:image" content="%VITE_BRAND_SITE_URL%/headshot.jpg">
+    <meta property="og:site_name" content="%VITE_BRAND_SITE_NAME%">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Clay Seifert — Architecture, AI & Construction Robotics">
-    <meta name="twitter:description" content="An interactive latent-space visualization by Clay Seifert.">
-    <meta name="twitter:image" content="https://claysbrain.com/headshot.jpg">
+    <meta name="twitter:title" content="%VITE_BRAND_OG_TITLE%">
+    <meta name="twitter:description" content="%VITE_BRAND_OG_DESCRIPTION%">
+    <meta name="twitter:image" content="%VITE_BRAND_SITE_URL%/headshot.jpg">
 
-    <!-- Person schema: feeds Google's Knowledge Graph and disambiguates the name -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Clay Seifert",
-        "alternateName": ["Clay H. Seifert", "Clay H Seifert"],
-        "givenName": "Clay",
-        "additionalName": "H",
-        "familyName": "Seifert",
-        "url": "https://claysbrain.com/",
-        "image": "https://claysbrain.com/headshot.jpg",
-        "description": "Working at the intersection of architecture, AI, and construction robotics.",
-        "sameAs": [
-            "https://github.com/cseifert512"
-        ]
-    }
+    { "@context": "https://schema.org", "@graph": %VITE_BRAND_SCHEMA_GRAPH% }
     </script>
 
-    <link rel="icon" type="image/jpeg" href="/headshot.jpg">
+    <link rel="icon" type="image/svg+xml" href="%VITE_BRAND_FAVICON_HREF%">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
 
@@ -111,10 +96,29 @@
 
         #preloader-modal h1 {
             font-size: 2.5em;
-            margin: 0 0 4px;
+            margin: 0 0 2px;
             color: #333;
             font-weight: 700;
             letter-spacing: -0.01em;
+        }
+
+        #preloader-modal .byline {
+            font-size: 1em;
+            color: #666;
+            margin: 0 0 12px;
+            letter-spacing: 0.02em;
+        }
+
+        #preloader-modal .byline:empty,
+        #preloader-modal .tagline:empty {
+            display: none;
+        }
+
+        #preloader-modal .byline a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid #999;
+            padding-bottom: 1px;
         }
 
         #preloader-modal .tagline {
@@ -351,12 +355,25 @@
         #back-button:hover, #forward-button:hover {
             background-color: #ddd;
         }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body>
     <div id="preloader-modal">
-        <h1>Clay Seifert</h1>
-        <p class="tagline">Working at the intersection of architecture, AI, and construction robotics.</p>
+        <h1>%VITE_BRAND_H1%</h1>
+        <p class="byline">%VITE_BRAND_BYLINE%</p>
+        <p class="tagline">%VITE_BRAND_TAGLINE%</p>
         <div class="socials">
             <a href="https://github.com/cseifert512" target="_blank" rel="noopener me">GitHub</a>
             <a href="mailto:clayhseifert@gmail.com">Email</a>
@@ -391,6 +408,15 @@
     </div>
 
     <canvas id="webgl-canvas"></canvas>
+
+    <figure class="visually-hidden" aria-hidden="true">
+        <img src="/headshot.jpg" alt="%VITE_BRAND_HEADSHOT_ALT%" width="600" height="600">
+        <figcaption>%VITE_BRAND_HEADSHOT_CAPTION%</figcaption>
+    </figure>
+    <nav class="visually-hidden" aria-hidden="true">
+        <a href="/gallery.html">%VITE_BRAND_SITE_NAME% — image gallery</a>
+    </nav>
+
     <script type="module" src="./src/main.ts"></script>
 </body>
 </html>

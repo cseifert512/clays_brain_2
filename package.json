@@ -5,11 +5,17 @@
   "type": "module",
   "homepage": "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME",
   "scripts": {
-    "dev": "vite",
-    "build": "rimraf dist && vite build",
+    "dev": "vite --mode clay",
+    "dev:atticus": "vite --mode atticus",
+    "build": "npm run build:clay",
+    "build:clay": "rimraf dist && node scripts/build-site.mjs clay",
+    "build:atticus": "rimraf dist && node scripts/build-site.mjs atticus",
     "serve": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run deploy:clay",
+    "deploy:clay": "npm run build:clay && gh-pages -d dist -m \"Deploy Clay Seifert site\"",
+    "deploy:atticus": "node --env-file=.env.local scripts/deploy-atticus.mjs",
+    "caption": "node --env-file=.env.local scripts/caption-portfolio.mjs",
+    "build:gallery": "node --env-file=.env.clay scripts/build-gallery.mjs"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.1033.0",
@@ -21,6 +27,7 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.91.0",
     "gsap": "^3.13.0",
     "three": "^0.176.0"
   }
