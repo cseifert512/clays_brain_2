@@ -85,11 +85,14 @@
 
         .deck-slide {
             position: relative;
+            height: 100vh;
+            height: 100svh;
             min-height: 100vh;
             min-height: 100svh;
             padding: 76px 76px 64px;
             display: flex;
             align-items: center;
+            overflow: hidden;
             scroll-snap-align: start;
             isolation: isolate;
         }
@@ -106,6 +109,10 @@
         .slide-inner {
             width: min(1180px, 100%);
             margin: 0 auto;
+            transform: scale(var(--fit-scale, 1));
+            transform-origin: center center;
+            transition: transform 180ms ease;
+            will-change: transform;
         }
 
         .slide-grid {
@@ -1071,23 +1078,28 @@
 
         @media (max-width: 1020px) {
             body {
-                overflow: auto;
+                overflow: hidden;
             }
 
             .deck-shell {
-                height: auto;
+                height: 100vh;
+                height: 100svh;
                 min-height: 100vh;
             }
 
             .deck {
-                height: auto;
-                overflow: visible;
-                scroll-snap-type: none;
+                height: 100%;
+                overflow-y: auto;
+                scroll-snap-type: y mandatory;
             }
 
             .deck-slide {
-                min-height: auto;
+                height: 100vh;
+                height: 100svh;
+                min-height: 100vh;
+                min-height: 100svh;
                 padding: 98px 24px 58px;
+                overflow: hidden;
             }
 
             .deck-slide::before {
@@ -1246,6 +1258,10 @@
                 transform: none;
             }
 
+            .slide-inner {
+                transform: none !important;
+            }
+
             .info-card,
             .media-card,
             .hypothesis-card,
@@ -1283,16 +1299,10 @@
         <main class="deck" id="deck" tabindex="-1">
             <section class="deck-slide is-active" id="slide-1" aria-labelledby="slide-1-title">
                 <div class="slide-inner">
-                    <p class="slide-kicker reveal" style="--i: 0">Why I think I fit this role</p>
-                    <div class="hero-meta reveal" style="--i: 1">
-                        <span>Clay Seifert</span>
-                        <span>Heatherwick Studio Interview</span>
-                        <span>Machine Learning Specialist</span>
-                    </div>
-                    <h1 class="reveal" id="slide-1-title" style="--i: 2">Applied Machine Learning for Design Workflows</h1>
-                    <p class="subtitle reveal" style="--i: 3">Turning architectural knowledge, geometry, and studio process into usable AI systems.</p>
-                    <p class="thesis reveal" style="--i: 4">I build applied AI systems for architecture: tools that make precedent, geometry, and design reasoning searchable, usable, and integrated into real workflows.</p>
-                    <div class="card-grid reveal" style="--i: 5">
+                    <h1 class="reveal" id="slide-1-title" style="--i: 0">Applied Machine Learning for Design Workflows</h1>
+                    <p class="subtitle reveal" style="--i: 1">Turning architectural knowledge, geometry, and studio process into usable AI systems.</p>
+                    <p class="thesis reveal" style="--i: 2">I build applied AI systems for architecture: tools that make precedent, geometry, and design reasoning searchable, usable, and integrated into real workflows.</p>
+                    <div class="card-grid reveal" style="--i: 3">
                         <article class="info-card">
                             <h3 class="accent-teal">Architecture</h3>
                             <p>B.Arch, design culture, precedent, geometry, studio workflows.</p>
@@ -1639,10 +1649,32 @@
             }
         }
 
+        function fitSlidesToViewport() {
+            const naturalLayout = window.matchMedia("print").matches;
+            slides.forEach((slide) => {
+                const inner = slide.querySelector(".slide-inner");
+                if (!inner) return;
+                inner.style.setProperty("--fit-scale", "1");
+                if (naturalLayout) return;
+
+                const styles = window.getComputedStyle(slide);
+                const availableWidth = slide.clientWidth - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight);
+                const availableHeight = slide.clientHeight - parseFloat(styles.paddingTop) - parseFloat(styles.paddingBottom);
+                const rect = inner.getBoundingClientRect();
+                const scale = Math.min(1, availableWidth / rect.width, availableHeight / rect.height);
+                inner.style.setProperty("--fit-scale", scale.toFixed(3));
+            });
+        }
+
+        function requestFit() {
+            requestAnimationFrame(fitSlidesToViewport);
+        }
+
         function goTo(index) {
             const target = slides[Math.max(0, Math.min(slides.length - 1, index))];
             target.scrollIntoView({ behavior: "smooth", block: "start" });
             setActive(slides.indexOf(target), true);
+            requestFit();
         }
 
         prev.addEventListener("click", () => goTo(activeIndex - 1));
@@ -1679,12 +1711,22 @@
 
         slides.forEach((slide) => observer.observe(slide));
 
+        window.addEventListener("resize", requestFit);
+        window.addEventListener("load", requestFit);
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(requestFit);
+        }
+        document.querySelectorAll("img").forEach((img) => {
+            if (!img.complete) img.addEventListener("load", requestFit, { once: true });
+        });
+
         const hashIndex = slides.findIndex((slide) => `#${slide.id}` === window.location.hash);
         if (hashIndex >= 0) {
             requestAnimationFrame(() => goTo(hashIndex));
         } else {
             setActive(0, false);
         }
+        requestFit();
     </script>
 </body>
 </html>
