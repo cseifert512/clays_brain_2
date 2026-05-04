@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume — Clay H. Seifert</title>
+    <meta name="description" content="Clay H. Seifert — product engineer and computational designer building ML systems at the intersection of architectural geometry and real-world design workflow.">
+    <meta name="author" content="Clay Seifert">
+    <link rel="canonical" href="https://claysbrain.com/resume/">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://claysbrain.com/resume/">
+    <meta property="og:title" content="Clay H. Seifert — Resume">
+    <meta property="og:description" content="Product engineer and computational designer at the intersection of architectural geometry, ML, and real-world design workflow.">
+    <meta property="og:image" content="https://claysbrain.com/headshot.jpg">
+    <link rel="stylesheet" href="https://use.typekit.net/tnt2ozq.css">
+    <style>
+        :root {
+            --bg: #f0f0f0;
+            --paper: #fafafa;
+            --ink: #1a1a1a;
+            --body: #2c2c2c;
+            --muted: #6a6a6a;
+            --hairline: #d4d4d4;
+            --accent: #1a1a1a;
+            --max-width: 780px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--body);
+            font-family: "neue-haas-grotesk-text", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            font-feature-settings: "kern" 1, "liga" 1;
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 48px) 120px;
+        }
+
+        a { color: inherit; }
+
+        /* ── Masthead ───────────────────────────────────────── */
+        .masthead {
+            margin-bottom: 64px;
+        }
+
+        .masthead h1 {
+            font-family: "freight-big-pro", serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(3.5em, 10vw, 6.25em);
+            margin: 0;
+            line-height: 0.95;
+            letter-spacing: -0.012em;
+            color: var(--ink);
+        }
+
+        .masthead .contact {
+            margin: 28px 0 0;
+            color: var(--muted);
+            font-size: 0.95em;
+            letter-spacing: 0.01em;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 4px 14px;
+        }
+
+        .masthead .contact a {
+            text-decoration: none;
+            border-bottom: 1px solid var(--hairline);
+            padding-bottom: 1px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .masthead .contact a:hover {
+            color: var(--ink);
+            border-color: var(--ink);
+        }
+
+        .masthead .contact .sep {
+            color: #b5b5b5;
+            user-select: none;
+        }
+
+        .masthead .locations {
+            margin: 8px 0 0;
+            font-size: 0.9em;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        /* ── Profile / Lede ─────────────────────────────────── */
+        .profile {
+            margin: 0 0 64px;
+            padding: 56px 0 0;
+            border-top: 1px solid var(--hairline);
+        }
+
+        .profile .lede {
+            font-family: "freight-big-pro", serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(1.25em, 2.4vw, 1.5em);
+            line-height: 1.42;
+            color: var(--ink);
+            margin: 0;
+            max-width: 680px;
+        }
+
+        /* ── Sections ───────────────────────────────────────── */
+        section {
+            margin: 0 0 64px;
+            padding-top: 56px;
+            border-top: 1px solid var(--hairline);
+        }
+
+        section > h2 {
+            font-family: "neue-haas-grotesk-text", sans-serif;
+            font-weight: 500;
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 0.24em;
+            color: #555;
+            margin: 0 0 36px;
+        }
+
+        /* ── Roles & Projects ───────────────────────────────── */
+        .role,
+        .project {
+            margin: 0 0 36px;
+        }
+
+        .role:last-child,
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .role > header,
+        .project > header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px 16px;
+            margin-bottom: 4px;
+        }
+
+        .role h3,
+        .project h3 {
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 700;
+            font-size: 1.18em;
+            margin: 0;
+            color: var(--ink);
+            letter-spacing: -0.005em;
+        }
+
+        .role h3 .company-link,
+        .project h3 .company-link {
+            cursor: default;
+            border-bottom: 0;
+        }
+
+        .role .meta,
+        .project .meta {
+            font-size: 0.9em;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .role .title,
+        .project .subtitle {
+            margin: 0 0 14px;
+            font-weight: 500;
+            color: #333;
+            font-size: 1em;
+        }
+
+        .role ul,
+        .project ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .role li,
+        .project li {
+            position: relative;
+            margin: 0 0 8px;
+            padding-left: 22px;
+            color: var(--body);
+        }
+
+        .role li::before,
+        .project li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--muted);
+        }
+
+        .tech {
+            margin: 14px 0 0;
+            font-size: 0.92em;
+            color: var(--muted);
+            letter-spacing: 0.01em;
+        }
+
+        /* ── Publications ───────────────────────────────────── */
+        .pub {
+            margin: 0 0 16px;
+            line-height: 1.55;
+            color: var(--body);
+        }
+
+        .pub:last-child {
+            margin-bottom: 0;
+        }
+
+        .pub em {
+            font-family: "freight-big-pro", serif;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--ink);
+        }
+
+        /* ── Skills ─────────────────────────────────────────── */
+        .skills {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 16px 36px;
+            margin: 0;
+        }
+
+        .skills dt {
+            font-weight: 500;
+            color: #444;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: 0.78em;
+            padding-top: 2px;
+        }
+
+        .skills dd {
+            margin: 0;
+            color: var(--body);
+            font-size: 0.96em;
+            line-height: 1.55;
+        }
+
+        /* ── Other ──────────────────────────────────────────── */
+        .other p {
+            margin: 0;
+            color: var(--body);
+        }
+
+        /* ── Footer ─────────────────────────────────────────── */
+        footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid var(--hairline);
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9em;
+            letter-spacing: 0.04em;
+            border-bottom: 1px solid var(--hairline);
+            padding-bottom: 2px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--ink);
+            border-color: var(--ink);
+        }
+
+        /* ── Responsive ─────────────────────────────────────── */
+        @media (max-width: 600px) {
+            body { font-size: 15.5px; }
+            .role > header,
+            .project > header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .role .meta,
+            .project .meta {
+                white-space: normal;
+            }
+            .skills {
+                grid-template-columns: 1fr;
+                gap: 4px 0;
+            }
+            .skills dt {
+                margin-top: 14px;
+            }
+            .skills dt:first-child {
+                margin-top: 0;
+            }
+        }
+
+        /* ── Print ──────────────────────────────────────────── */
+        @media print {
+            body { background: white; color: black; font-size: 10pt; line-height: 1.4; }
+            main { max-width: none; padding: 0.5in 0.6in; }
+            footer { display: none; }
+            section, .role, .project, .pub { break-inside: avoid; page-break-inside: avoid; }
+            .masthead h1 { font-size: 3.4em; }
+            section { padding-top: 24px; margin-bottom: 24px; }
+            .profile { padding-top: 24px; margin-bottom: 24px; }
+            a { color: inherit; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header class="masthead">
+            <h1>Clay H. Seifert</h1>
+            <div class="contact">
+                <a href="tel:+19723636298">+1 972 363 6298</a>
+                <span class="sep" aria-hidden="true">·</span>
+                <a href="mailto:clayhseifert@gmail.com">clayhseifert@gmail.com</a>
+                <span class="sep" aria-hidden="true">·</span>
+                <a href="https://www.linkedin.com/in/clay-seifert" target="_blank" rel="noopener me">linkedin.com/in/clay-seifert</a>
+            </div>
+            <p class="locations">Open to relocation · London · NYC · LA · SF</p>
+        </header>
+
+        <section class="profile">
+            <p class="lede">Product engineer and computational designer building ML systems at the intersection of architectural geometry and real-world design workflow. Proven track record deploying production systems — Archipedia.ai (multi-modal AEC precedent retrieval) and a WebGPU finite element solver — grounded in deep AEC domain knowledge and published research in geometric representation. Experienced translating architect workflows into product requirements and technical systems. Focused on making complex computational tools accessible, useful, and durable in practice.</p>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+
+            <article class="role">
+                <header>
+                    <h3><span class="company-link" data-company="drafted-ai">Drafted AI</span></h3>
+                    <span class="meta">San Francisco, CA · 2026–Present</span>
+                </header>
+                <p class="title">Product Engineer — Founding Team (Employee #6)</p>
+                <ul>
+                    <li>Building core editing and interaction features for an ML-driven architectural design platform (raised $17M at $100M valuation).</li>
+                    <li>Leading UI/UX design for generative workflows; translating architect needs into product specs and engineering requirements for a technical team.</li>
+                    <li>Bridging AEC domain logic, ML systems, and user-centered product development at the earliest stage of the company.</li>
+                    <li>Contributing to product strategy including roadmap decisions at the intersection of computational design and ML capability.</li>
+                </ul>
+            </article>
+
+            <article class="role">
+                <header>
+                    <h3><span class="company-link" data-company="testfit">Testfit</span></h3>
+                    <span class="meta">Dallas, TX · 2023</span>
+                </header>
+                <p class="title">Product Development Analyst</p>
+                <ul>
+                    <li>Reported to CEO/VP Product; translated architect workflows into product requirements and technical specifications for a 20+ person engineering team.</li>
+                    <li>Supported product R&amp;D across site planning and feasibility workflows; contributed to shipped features and internal documentation.</li>
+                    <li>Built communication infrastructure between AEC domain logic and software engineering execution.</li>
+                </ul>
+            </article>
+
+            <article class="role">
+                <header>
+                    <h3><span class="company-link" data-company="rick-wright-architects">Rick Wright Architects</span></h3>
+                    <span class="meta">Dallas, TX · 2020–2023</span>
+                </header>
+                <p class="title">Architectural Intern</p>
+                <ul>
+                    <li>Design and documentation across single-family residential, commercial, industrial, and institutional project types.</li>
+                    <li>Gained firsthand experience with conventional AEC practice tools and their constraints — the foundation for my computational design research agenda.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="projects">
+            <h2>Selected Projects</h2>
+
+            <article class="project">
+                <header>
+                    <h3><span class="company-link" data-company="archipedia">Archipedia.ai</span></h3>
+                    <span class="meta">2025–Present</span>
+                </header>
+                <p class="subtitle">Multi-Modal AEC Precedent Retrieval System</p>
+                <ul>
+                    <li>Built and deployed a production search engine for architectural precedents supporting query by geometric constraints, material assemblies, and spatial logic — active deployment at archipedia.ai with a growing practitioner user base.</li>
+                    <li>Developed end-to-end ML pipeline: vision embedding models (CLIP/ViT), vector similarity search (FAISS), multi-modal indexing, and an interactive React/FastAPI interface.</li>
+                    <li>Designed the retrieval system to treat archives as traceable design collaborators rather than aesthetic inspiration.</li>
+                </ul>
+                <p class="tech">PyTorch · CLIP/ViT · FAISS · React · FastAPI · Python</p>
+            </article>
+
+            <article class="project">
+                <header>
+                    <h3>GPU-Accelerated Structural Analysis</h3>
+                    <span class="meta">January 2026</span>
+                </header>
+                <p class="subtitle">Real-Time FEA Solver — collaboration with Lucas Epp, StructureCraft</p>
+                <ul>
+                    <li>Developed a real-time finite element analysis solver for 2D plate structures using WebGPU compute shaders — motivated by the need to integrate structural reasoning directly into generative architectural design workflows.</li>
+                    <li>Achieved sub-20ms solve times for 100,000 degrees of freedom with arbitrary polygonal boundaries, internal holes, and mixed support conditions.</li>
+                    <li>Implemented multigrid iterative methods with real-time stress visualization, moment/deflection computation, and isocurve rendering.</li>
+                    <li>Demonstrated that browser-based scientific computing can function as a viable interaction paradigm for constraint-aware generative design.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="research">
+            <h2>Research</h2>
+
+            <article class="role">
+                <header>
+                    <h3>Latent Geometric Representations in Architectural Fragments</h3>
+                    <span class="meta">2025–Present</span>
+                </header>
+                <p class="title">Independent Research</p>
+                <ul>
+                    <li>Developed Vision Transformer–based methods for recovering latent generative operations (extrusion, revolution, truncation, boolean operations) from architectural imagery — making fabrication logic computable from visual evidence.</li>
+                    <li>Created patch-aware retrieval workflows enabling evidence at the level of geometric parts and operations rather than whole-image similarity.</li>
+                    <li>Investigated geometry as proxy for fabrication constraints and assembly logic — directly relevant to computational design tooling in a production studio context.</li>
+                    <li>Published at AAG 2025, ACADIA 2025, CAADRIA 2026; submitted to ACM DIS 2026.</li>
+                </ul>
+                <p class="tech">Vision Transformers (ViT) · UMAP / t-SNE · similarity search · clustering</p>
+            </article>
+
+            <article class="role">
+                <header>
+                    <h3><span class="company-link" data-company="texas-robotics">Learning Agents Research Group, Texas Robotics</span></h3>
+                    <span class="meta">Austin, TX · 2024</span>
+                </header>
+                <p class="title">Embodied Interaction Designer (Advisor: Justin Hart)</p>
+                <ul>
+                    <li>Designed robot morphology and interaction affordances for human-robot interaction in real-world environments; translated research objectives into CAD geometry and fabrication-ready constraints.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="publications">
+            <h2>Publications</h2>
+            <p class="pub">Seifert, C., Guerra, D., Kokan, A., and Danahy, P. (2026). <em>Multi-Modal Precedent Retrieval: Patch-Aware and Tri-Scalar Rank Weighted Guidance for Design Search.</em> CAADRIA 2026.</p>
+            <p class="pub">Seifert, C. (2025). <em>Patterns Across Languages: Analyzing &amp; Mapping Latent Projective Geometry in Cross-Cultural Architectural Fragments.</em> ACADIA 2025.</p>
+            <p class="pub">Seifert, C. and Danahy, P. (2025). <em>Synthetic Vision: Analyzing Latent Projective Geometry in Photogrammetric Fragments.</em> AAG 2025.</p>
+        </section>
+
+        <section class="entrepreneurship">
+            <h2>Entrepreneurship</h2>
+            <article class="role">
+                <header>
+                    <h3><span class="company-link" data-company="resia-ai">Resia AI</span></h3>
+                    <span class="meta">Austin, TX · 2023–2025</span>
+                </header>
+                <p class="title">Founder</p>
+                <ul>
+                    <li>Co-founded home renovation ML platform; led product validation and team assembly (10+ members); secured $20K in grants; participated in SEAL 2024 accelerator (Techstars Network).</li>
+                    <li>Pitched to 50+ investors; learned rapid iteration, stakeholder interviewing, and product scoping under resource constraints.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <article class="role">
+                <header>
+                    <h3><span class="company-link" data-company="ut-austin">The University of Texas at Austin</span></h3>
+                    <span class="meta">Austin, TX</span>
+                </header>
+                <p class="title">Bachelor of Architecture — Dual Focus: Architecture &amp; Computer Science</p>
+            </article>
+        </section>
+
+        <section class="skills-section">
+            <h2>Technical Skills</h2>
+            <dl class="skills">
+                <dt>Comp. Design</dt>
+                <dd>Grasshopper, Rhino.Python, parametric modeling, shape grammars, generative systems, geometry processing, mesh operations, assembly representations</dd>
+
+                <dt>ML / AI</dt>
+                <dd>PyTorch, TensorFlow, Vision Transformers (ViT), CLIP, embedding models, similarity search (FAISS), dimensionality reduction (UMAP, t-SNE)</dd>
+
+                <dt>Languages</dt>
+                <dd>Python, JavaScript / TypeScript, C++, Bash / Shell</dd>
+
+                <dt>Web / Systems</dt>
+                <dd>React, Node.js, FastAPI, WebGPU, Three.js, browser-based scientific computing</dd>
+
+                <dt>Sci. Computing</dt>
+                <dd>NumPy, SciPy, finite element analysis, numerical optimization, parallel computing, GPU acceleration</dd>
+
+                <dt>Design Tools</dt>
+                <dd>Rhino, Grasshopper, AutoCAD, Revit, Adobe Creative Suite, Blender</dd>
+
+                <dt>Fabrication</dt>
+                <dd>CNC milling, laser cutting, 3D printing, physical prototyping, assembly constraints</dd>
+            </dl>
+        </section>
+
+        <section class="other">
+            <h2>Other</h2>
+            <p>Marathon runner · Muay Thai (Woodenman) · Brazilian Jiu-Jitsu · Freetail Hackers</p>
+        </section>
+
+        <footer>
+            <a href="/">← claysbrain.com</a>
+        </footer>
+    </main>
+</body>
+</html>
