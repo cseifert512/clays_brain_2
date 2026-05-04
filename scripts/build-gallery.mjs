@@ -157,6 +157,9 @@ async function writeGallery(items) {
     <meta name="description" content="${escapeHtml(galleryDescription)}">
     <meta name="author" content="Clay Seifert">
     <link rel="canonical" href="${SITE_URL}/gallery.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="${SITE_URL}/gallery.html">
     <meta property="og:title" content="${escapeHtml(galleryTitle)}">
