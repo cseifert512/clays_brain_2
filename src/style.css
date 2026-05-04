@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
-
 body {
     margin: 0;
-    font-family: 'Space Grotesk', sans-serif; /* Changed to Space Grotesk */
+    font-family: "neue-haas-grotesk-text", sans-serif;
     color: #222; /* Darker text for light background */
     background-color: #f0f0f0; /* Light grey for body */
     overflow: hidden; /* Prevent scrollbars from canvas */
@@ -61,7 +59,7 @@ a {
     align-items: center;
     z-index: 100;
     text-align: center;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "neue-haas-grotesk-text", sans-serif;
 }
 
 #preloader-modal h2 {
