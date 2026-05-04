@@ -416,6 +416,161 @@
             background: rgba(194, 138, 46, 0.72);
         }
 
+        .product-screen {
+            min-height: 510px;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--cream);
+            box-shadow: var(--shadow);
+        }
+
+        .screen-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .screen-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 270px;
+            gap: 14px;
+        }
+
+        .screen-canvas,
+        .screen-panel,
+        .screen-row {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(244, 241, 234, 0.72);
+        }
+
+        .screen-canvas {
+            min-height: 382px;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, rgba(23, 22, 20, 0.06) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(23, 22, 20, 0.05) 1px, transparent 1px),
+                #f5f2eb;
+            background-size: 28px 28px, 28px 28px, auto;
+        }
+
+        .screen-canvas::before,
+        .screen-canvas::after {
+            content: "";
+            position: absolute;
+            border: 2px solid rgba(73, 107, 125, 0.72);
+            border-radius: 8px;
+            background: rgba(255, 253, 245, 0.72);
+        }
+
+        .screen-canvas::before {
+            left: 16%;
+            top: 18%;
+            width: 42%;
+            height: 42%;
+        }
+
+        .screen-canvas::after {
+            right: 14%;
+            bottom: 16%;
+            width: 34%;
+            height: 34%;
+            border-color: rgba(183, 80, 60, 0.7);
+        }
+
+        .screen-panel {
+            min-height: 382px;
+            padding: 14px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .screen-row {
+            min-height: 62px;
+            padding: 12px;
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.35;
+        }
+
+        .metric-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .metric-card {
+            min-height: 150px;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .metric-card strong {
+            display: block;
+            margin-bottom: 10px;
+            font-family: var(--display);
+            font-size: 2.3rem;
+            line-height: 1;
+        }
+
+        .structure-frame {
+            position: relative;
+            min-height: 470px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background:
+                linear-gradient(90deg, rgba(23, 22, 20, 0.06) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(23, 22, 20, 0.05) 1px, transparent 1px),
+                var(--cream);
+            background-size: 34px 34px, 34px 34px, auto;
+            box-shadow: var(--shadow);
+        }
+
+        .plate {
+            position: absolute;
+            left: 16%;
+            right: 16%;
+            top: 18%;
+            bottom: 22%;
+            border: 18px solid rgba(29, 33, 31, 0.82);
+            border-radius: 8px;
+        }
+
+        .plate::before,
+        .plate::after {
+            content: "";
+            position: absolute;
+            width: 23%;
+            height: 38%;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 2px solid rgba(183, 80, 60, 0.8);
+        }
+
+        .plate::before {
+            left: 20%;
+            top: 22%;
+        }
+
+        .plate::after {
+            right: 18%;
+            bottom: 18%;
+        }
+
         .system-loop {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -586,7 +741,9 @@
             .two-up,
             .three-up,
             .image-grid,
-            .system-loop {
+            .system-loop,
+            .metric-row,
+            .screen-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -732,7 +889,7 @@
                 <button class="icon-button" type="button" id="prevSlide" aria-label="Previous slide">
                     <span class="arrow-icon prev" aria-hidden="true"></span>
                 </button>
-                <span class="slide-count" id="slideCount">01 / 27</span>
+                <span class="slide-count" id="slideCount">01 / 31</span>
                 <button class="icon-button" type="button" id="nextSlide" aria-label="Next slide">
                     <span class="arrow-icon next" aria-hidden="true"></span>
                 </button>
@@ -747,27 +904,27 @@
                 <img class="bg" src="/portfolio/ground-view-of-vertical-farming-tower-in-austin-texas-45dbf5e5.webp" alt="">
                 <div class="stage">
                     <p class="tag reveal" style="--i: 0">Clay Seifert</p>
-                    <h1 class="reveal" id="slide-1-title" style="--i: 1">Applied ML for design workflows</h1>
-                    <p class="line reveal" style="--i: 2">A story about making studio knowledge usable.</p>
+                    <h1 class="reveal" id="slide-1-title" style="--i: 1">Applied machine learning for design workflows</h1>
+                    <p class="line reveal" style="--i: 2">Making studio knowledge searchable, testable, and usable in live work.</p>
                 </div>
             </section>
 
             <section class="slide" id="slide-2" aria-labelledby="slide-2-title">
                 <div class="stage narrow">
-                    <h2 class="reveal" id="slide-2-title">The short version.</h2>
+                    <h2 class="reveal" id="slide-2-title">The question I keep coming back to.</h2>
                 </div>
             </section>
 
             <section class="slide dark" id="slide-3" aria-labelledby="slide-3-title">
                 <div class="stage narrow">
-                    <p class="quote reveal" id="slide-3-title">I like the messy middle.</p>
+                    <p class="quote reveal" id="slide-3-title">How can AI support design judgment without flattening it?</p>
                 </div>
             </section>
 
             <section class="slide" id="slide-4" aria-labelledby="slide-4-title">
                 <div class="stage split">
                     <div>
-                        <h2 class="reveal" id="slide-4-title">Between the idea...</h2>
+                        <h2 class="reveal" id="slide-4-title">Design intent</h2>
                     </div>
                     <div class="image-tile tall reveal" style="--i: 1">
                         <img src="/portfolio/hanging-garden-of-babylon-but-with-gothic-architectur-a73d85c0.webp" alt="A vaulted garden interior with columns and planting.">
@@ -781,41 +938,48 @@
                         <img src="/portfolio/front-elevation-ultra-fine-relief-of-data-streams-bin-b4955c67.webp" alt="A textured concrete facade with people nearby.">
                     </div>
                     <div>
-                        <h2 class="reveal" id="slide-5-title" style="--i: 1">...and the tool that helps it move.</h2>
+                        <h2 class="reveal" id="slide-5-title" style="--i: 1">Operational systems</h2>
                     </div>
                 </div>
             </section>
 
             <section class="slide dark" id="slide-6" aria-labelledby="slide-6-title">
                 <div class="stage narrow">
-                    <p class="quote reveal" id="slide-6-title">I don't think AI should replace design.</p>
+                    <p class="quote reveal" id="slide-6-title">I don't think AI should be a novelty layer.</p>
                 </div>
             </section>
 
             <section class="slide dark" id="slide-7" aria-labelledby="slide-7-title">
                 <div class="stage narrow">
-                    <p class="quote reveal" id="slide-7-title">I think it should make the studio smarter.</p>
+                    <p class="quote reveal" id="slide-7-title">It should improve memory, feedback, and decision-making.</p>
                 </div>
             </section>
 
-            <section class="slide" id="slide-8" aria-labelledby="slide-8-title">
+            <section class="slide dark" id="slide-8" aria-labelledby="slide-8-title">
                 <div class="stage narrow">
-                    <h2 class="reveal" id="slide-8-title">Precedent isn't decoration.</h2>
-                    <p class="line reveal" style="--i: 1">It is design evidence.</p>
+                    <p class="tag reveal">Work 1</p>
+                    <p class="quote reveal" id="slide-8-title" style="--i: 1">Archipedia</p>
                 </div>
             </section>
 
-            <section class="slide image" id="slide-9" aria-labelledby="slide-9-title">
+            <section class="slide" id="slide-9" aria-labelledby="slide-9-title">
+                <div class="stage narrow">
+                    <h2 class="reveal" id="slide-9-title">Precedent is working knowledge.</h2>
+                    <p class="line reveal" style="--i: 1">Not just inspiration. A way studios reason.</p>
+                </div>
+            </section>
+
+            <section class="slide image" id="slide-10" aria-labelledby="slide-10-title">
                 <img class="bg" src="/atlas/atlas.webp" alt="">
                 <div class="stage narrow">
-                    <h2 class="reveal" id="slide-9-title">But it gets buried.</h2>
+                    <h2 class="reveal" id="slide-10-title">But it fragments quickly.</h2>
                 </div>
             </section>
 
-            <section class="slide" id="slide-10" aria-labelledby="slide-10-title">
+            <section class="slide" id="slide-11" aria-labelledby="slide-11-title">
                 <div class="stage wide">
-                    <p class="tag reveal">Archipedia</p>
-                    <h2 class="reveal" id="slide-10-title" style="--i: 1">Search by architectural instinct.</h2>
+                    <p class="tag reveal">Archipedia.ai</p>
+                    <h2 class="reveal" id="slide-11-title" style="--i: 1">I built a search interface for architectural precedent.</h2>
                     <div class="image-grid reveal" style="--i: 2">
                         <div class="image-tile"><img src="/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-219aa22a.webp" alt="A timber and stone architectural interior."></div>
                         <div class="image-tile"><img src="/portfolio/wood-clt-limestone-organic-building-that-extends-from-da2906b9.webp" alt="Organic wood and stone building by water."></div>
@@ -825,43 +989,137 @@
                 </div>
             </section>
 
-            <section class="slide" id="slide-11" aria-labelledby="slide-11-title">
+            <section class="slide" id="slide-12" aria-labelledby="slide-12-title">
                 <div class="stage">
-                    <h2 class="reveal" id="slide-11-title">The pipeline is simple.</h2>
+                    <h2 class="reveal" id="slide-12-title">The system.</h2>
                     <div class="arrow-row reveal" style="--i: 1">
-                        <div class="node">images</div>
+                        <div class="node">CLIP / ViT</div>
                         <div class="arrow" aria-hidden="true"></div>
-                        <div class="node">embeddings</div>
+                        <div class="node">FAISS</div>
                         <div class="arrow" aria-hidden="true"></div>
-                        <div class="node">a better question</div>
+                        <div class="node">React / FastAPI</div>
                     </div>
-                </div>
-            </section>
-
-            <section class="slide dark" id="slide-12" aria-labelledby="slide-12-title">
-                <div class="stage narrow">
-                    <p class="quote reveal" id="slide-12-title">The hard part isn't the model.</p>
                 </div>
             </section>
 
             <section class="slide dark" id="slide-13" aria-labelledby="slide-13-title">
                 <div class="stage narrow">
-                    <p class="quote reveal" id="slide-13-title">The hard part is trust.</p>
+                    <p class="quote reveal" id="slide-13-title">The easy demo is similarity. The harder question is usefulness.</p>
                 </div>
             </section>
 
-            <section class="slide image" id="slide-14" aria-labelledby="slide-14-title">
-                <img class="bg" src="/portfolio/interior-rendered-gothic-cathedral-building-section-cut-c373d4df.webp" alt="">
+            <section class="slide dark" id="slide-14" aria-labelledby="slide-14-title">
                 <div class="stage narrow">
-                    <h2 class="reveal" id="slide-14-title">Whole images are not enough.</h2>
+                    <p class="tag reveal">Work 2</p>
+                    <p class="quote reveal" id="slide-14-title" style="--i: 1">Drafted</p>
                 </div>
             </section>
 
             <section class="slide" id="slide-15" aria-labelledby="slide-15-title">
                 <div class="stage split">
                     <div>
-                        <p class="tag reveal">Patch-aware research</p>
-                        <h2 class="reveal" id="slide-15-title" style="--i: 1">Parts matter.</h2>
+                        <p class="tag reveal">Drafted AI</p>
+                        <h2 class="reveal" id="slide-15-title" style="--i: 1">Product engineering for generative design workflows.</h2>
+                        <p class="line reveal" style="--i: 2">Editing, interaction, UX, product specs.</p>
+                    </div>
+                    <div class="product-screen reveal" style="--i: 3">
+                        <div class="screen-top">
+                            <span>design editor</span>
+                            <span>workflow state</span>
+                        </div>
+                        <div class="screen-grid">
+                            <div class="screen-canvas" aria-hidden="true"></div>
+                            <div class="screen-panel">
+                                <div class="screen-row">Generate options</div>
+                                <div class="screen-row">Edit geometry</div>
+                                <div class="screen-row">Compare states</div>
+                                <div class="screen-row">Keep the designer in control</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-16" aria-labelledby="slide-16-title">
+                <div class="stage three-up">
+                    <div class="card reveal">
+                        <span class="tiny-label">Drafted</span>
+                        <h2 id="slide-16-title">interaction features</h2>
+                    </div>
+                    <div class="card reveal" style="--i: 1">
+                        <span class="tiny-label">Drafted</span>
+                        <h2>generative UX</h2>
+                    </div>
+                    <div class="card reveal" style="--i: 2">
+                        <span class="tiny-label">Drafted</span>
+                        <h2>architect-to-engineer specs</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-17" aria-labelledby="slide-17-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-17-title">The model is not the product.</p>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-18" aria-labelledby="slide-18-title">
+                <div class="stage narrow">
+                    <p class="tag reveal">Work 3</p>
+                    <p class="quote reveal" id="slide-18-title" style="--i: 1">StructureCraft</p>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-19" aria-labelledby="slide-19-title">
+                <div class="stage split">
+                    <div>
+                        <p class="tag reveal">Real-time FEA</p>
+                        <h2 class="reveal" id="slide-19-title" style="--i: 1">A WebGPU structural solver in the browser.</h2>
+                    </div>
+                    <div class="structure-frame reveal" style="--i: 2">
+                        <div class="plate" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-20" aria-labelledby="slide-20-title">
+                <div class="stage">
+                    <h2 class="reveal" id="slide-20-title">The point was speed.</h2>
+                    <div class="metric-row reveal" style="--i: 1">
+                        <div class="metric-card">
+                            <strong>100k</strong>
+                            <p class="small">degrees of freedom</p>
+                        </div>
+                        <div class="metric-card">
+                            <strong>&lt;20ms</strong>
+                            <p class="small">solve times</p>
+                        </div>
+                        <div class="metric-card">
+                            <strong>real-time</strong>
+                            <p class="small">stress visualization</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-21" aria-labelledby="slide-21-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-21-title">If feedback is fast enough, it becomes part of thinking.</p>
+                </div>
+            </section>
+
+            <section class="slide image" id="slide-22" aria-labelledby="slide-22-title">
+                <img class="bg" src="/portfolio/interior-rendered-gothic-cathedral-building-section-cut-c373d4df.webp" alt="">
+                <div class="stage narrow">
+                    <h2 class="reveal" id="slide-22-title">Research thread: fragments.</h2>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-23" aria-labelledby="slide-23-title">
+                <div class="stage split">
+                    <div>
+                        <p class="tag reveal">Patch-aware ML</p>
+                        <h2 class="reveal" id="slide-23-title" style="--i: 1">Architectural reasoning happens at part scale.</h2>
                     </div>
                     <div class="diagram reveal" style="--i: 2">
                         <div class="patch-grid" aria-hidden="true">
@@ -876,11 +1134,11 @@
                 </div>
             </section>
 
-            <section class="slide" id="slide-16" aria-labelledby="slide-16-title">
+            <section class="slide" id="slide-24" aria-labelledby="slide-24-title">
                 <div class="stage three-up">
                     <div class="card reveal">
                         <span class="tiny-label">1</span>
-                        <h2 id="slide-16-title">operations</h2>
+                        <h2 id="slide-24-title">operations</h2>
                     </div>
                     <div class="card reveal" style="--i: 1">
                         <span class="tiny-label">2</span>
@@ -888,113 +1146,82 @@
                     </div>
                     <div class="card reveal" style="--i: 2">
                         <span class="tiny-label">3</span>
-                        <h2>logic</h2>
+                        <h2>constraints</h2>
                     </div>
                 </div>
             </section>
 
-            <section class="slide image" id="slide-17" aria-labelledby="slide-17-title">
+            <section class="slide image" id="slide-25" aria-labelledby="slide-25-title">
                 <img class="bg" src="/portfolio/detail-of-gothic-style-filigree-doorway-carved-into-l-31fe3333.webp" alt="">
                 <div class="stage narrow">
-                    <h2 class="reveal" id="slide-17-title">A detail can carry the idea.</h2>
+                    <h2 class="reveal" id="slide-25-title">Often, the detail is where the logic is.</h2>
                 </div>
             </section>
 
-            <section class="slide" id="slide-18" aria-labelledby="slide-18-title">
-                <div class="stage split">
-                    <div>
-                        <p class="tag reveal">Real-time feedback</p>
-                        <h2 class="reveal" id="slide-18-title" style="--i: 1">Feedback should arrive while the idea is still soft.</h2>
+            <section class="slide" id="slide-26" aria-labelledby="slide-26-title">
+                <div class="stage">
+                    <p class="tag reveal">How I would start</p>
+                    <h2 class="reveal" id="slide-26-title" style="--i: 1">First, learn the friction points.</h2>
+                    <div class="system-loop reveal" style="--i: 2">
+                        <article class="card">
+                            <h3>Repeated search</h3>
+                        </article>
+                        <article class="card">
+                            <h3>Missing context</h3>
+                        </article>
+                        <article class="card">
+                            <h3>Late feedback</h3>
+                        </article>
+                        <article class="card">
+                            <h3>Fragile handoffs</h3>
+                        </article>
                     </div>
-                    <div class="diagram reveal" style="--i: 2">
-                        <div class="arrow-row" style="grid-template-columns: 1fr 44px 1fr;">
-                            <div class="node">sketch</div>
-                            <div class="arrow" aria-hidden="true"></div>
-                            <div class="node">signal</div>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-27" aria-labelledby="slide-27-title">
+                <div class="stage">
+                    <h2 class="reveal" id="slide-27-title">Three things I would test.</h2>
+                    <div class="three-up reveal" style="--i: 1">
+                        <div class="card reveal">
+                            <span class="tiny-label">1</span>
+                            <h2>archive intelligence</h2>
+                        </div>
+                        <div class="card reveal" style="--i: 1">
+                            <span class="tiny-label">2</span>
+                            <h2>geometry-aware retrieval</h2>
+                        </div>
+                        <div class="card reveal" style="--i: 2">
+                            <span class="tiny-label">3</span>
+                            <h2>focused workflow assistants</h2>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="slide dark" id="slide-19" aria-labelledby="slide-19-title">
-                <div class="stage narrow">
-                    <p class="quote reveal" id="slide-19-title">Speed changes where feedback can live.</p>
-                </div>
-            </section>
-
-            <section class="slide" id="slide-20" aria-labelledby="slide-20-title">
-                <div class="stage narrow">
-                    <h2 class="reveal" id="slide-20-title">Then the product question.</h2>
-                </div>
-            </section>
-
-            <section class="slide dark" id="slide-21" aria-labelledby="slide-21-title">
-                <div class="stage narrow">
-                    <p class="quote reveal" id="slide-21-title">Will someone use this on a busy afternoon?</p>
-                </div>
-            </section>
-
-            <section class="slide" id="slide-22" aria-labelledby="slide-22-title">
-                <div class="stage">
-                    <p class="tag reveal">How I would start</p>
-                    <h2 class="reveal" id="slide-22-title" style="--i: 1">I would watch the work first.</h2>
-                    <div class="system-loop reveal" style="--i: 2">
-                        <article class="card">
-                            <h3>Where does time leak?</h3>
-                        </article>
-                        <article class="card">
-                            <h3>Where does memory fail?</h3>
-                        </article>
-                        <article class="card">
-                            <h3>Where do tools break trust?</h3>
-                        </article>
-                        <article class="card">
-                            <h3>Where would AI actually help?</h3>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide" id="slide-23" aria-labelledby="slide-23-title">
-                <div class="stage three-up">
-                    <div class="card reveal">
-                        <span class="tiny-label">Hypothesis 1</span>
-                        <h2 id="slide-23-title">studio memory</h2>
-                    </div>
-                    <div class="card reveal" style="--i: 1">
-                        <span class="tiny-label">Hypothesis 2</span>
-                        <h2>geometry search</h2>
-                    </div>
-                    <div class="card reveal" style="--i: 2">
-                        <span class="tiny-label">Hypothesis 3</span>
-                        <h2>small assistants</h2>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide image" id="slide-24" aria-labelledby="slide-24-title">
+            <section class="slide image" id="slide-28" aria-labelledby="slide-28-title">
                 <img class="bg" src="/portfolio/ariel-view-wood-clt-limestone-organic-buildings-that-229f33e9.webp" alt="">
                 <div class="stage narrow">
-                    <h2 class="reveal" id="slide-24-title">Why Heatherwick?</h2>
+                    <h2 class="reveal" id="slide-28-title">Why Heatherwick?</h2>
                 </div>
             </section>
 
-            <section class="slide dark" id="slide-25" aria-labelledby="slide-25-title">
+            <section class="slide dark" id="slide-29" aria-labelledby="slide-29-title">
                 <div class="stage narrow">
-                    <p class="quote reveal" id="slide-25-title">Because here, ML isn't about automating taste.</p>
+                    <p class="quote reveal" id="slide-29-title">Not automation for its own sake.</p>
                 </div>
             </section>
 
-            <section class="slide dark" id="slide-26" aria-labelledby="slide-26-title">
+            <section class="slide dark" id="slide-30" aria-labelledby="slide-30-title">
                 <div class="stage narrow">
-                    <p class="quote reveal" id="slide-26-title">It's about expanding how a creative studio remembers, searches, tests, and develops ideas.</p>
+                    <p class="quote reveal" id="slide-30-title">A better memory and feedback layer for a highly creative studio.</p>
                 </div>
             </section>
 
-            <section class="slide" id="slide-27" aria-labelledby="slide-27-title">
+            <section class="slide" id="slide-31" aria-labelledby="slide-31-title">
                 <div class="stage narrow">
-                    <h2 class="reveal" id="slide-27-title">That's where I fit.</h2>
-                    <p class="line reveal" style="--i: 1">Architecture, ML, product systems, and practical adoption.</p>
+                    <h2 class="reveal" id="slide-31-title">My role is to build that layer.</h2>
+                    <p class="line reveal" style="--i: 1">With design literacy, ML judgment, and product discipline.</p>
                 </div>
             </section>
         </main>
