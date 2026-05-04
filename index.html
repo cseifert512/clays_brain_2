@@ -28,12 +28,11 @@
     </script>
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111'/%3E%3Ctext x='50%25' y='50%25' dy='.1em' text-anchor='middle' dominant-baseline='middle' font-family='Space Grotesk, system-ui, sans-serif' font-size='30' font-weight='700' fill='%23fff' letter-spacing='-1'%3ECS%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://use.typekit.net/tnt2ozq.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
-
         body {
             margin: 0;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: "neue-haas-grotesk-text", sans-serif;
             color: #222;
             background-color: #f0f0f0;
             overflow: hidden;
@@ -91,15 +90,18 @@
             align-items: center;
             z-index: 100;
             text-align: center;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: "neue-haas-grotesk-text", sans-serif;
         }
 
         #preloader-modal h1 {
-            font-size: 2.5em;
-            margin: 0 0 2px;
+            font-size: 4em;
+            margin: 0 0 6px;
             color: #333;
-            font-weight: 700;
-            letter-spacing: -0.01em;
+            font-family: "freight-big-pro", serif;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0;
+            line-height: 1.1;
         }
 
         #preloader-modal .byline {
@@ -195,6 +197,9 @@
             text-decoration: underline;
             cursor: pointer;
             padding: 10px 20px;
+            font-family: "freight-big-pro", serif;
+            font-weight: 400;
+            font-style: italic;
         }
 
         #start-button:hover {
@@ -304,7 +309,6 @@
         }
 
         /* Reset Button Styles */
-
         #reset-button {
             position: absolute;
             top: 20px;
@@ -316,7 +320,7 @@
             border-radius: 18px;
             cursor: pointer;
             font-size: 0.9em;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: "neue-haas-grotesk-text", sans-serif;
             color: #333;
             transition: background-color 0.3s, color 0.3s;
             box-shadow: none;
@@ -327,7 +331,6 @@
         }
 
         /* Navigation Button Styles */
-
         #back-button, #forward-button {
             position: absolute;
             top: 60px;
@@ -338,7 +341,7 @@
             border-radius: 18px;
             cursor: pointer;
             font-size: 1.1em;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: "neue-haas-grotesk-text", sans-serif;
             color: #333;
             transition: background-color 0.3s, color 0.3s, opacity 0.3s;
             box-shadow: none;
@@ -374,7 +377,7 @@
 </head>
 <body>
     <div id="preloader-modal">
-        <h1>Clay Seifert</h1>
+        <h1>Clay H. Seifert</h1>
         <p class="byline"></p>
         <p class="tagline">Working at the intersection of architecture, AI, and construction robotics.</p>
         <div class="socials">
