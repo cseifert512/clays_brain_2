@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heatherwick v2 | Clay Seifert</title>
+    <meta name="description" content="A minimal, story-led web deck by Clay Seifert for a Heatherwick Studio conversation about applied machine learning for design workflows.">
+    <meta name="author" content="Clay Seifert">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://claysbrain.com/heatherwick2/">
+    <link rel="stylesheet" href="https://use.typekit.net/tnt2ozq.css">
+    <style>
+        :root {
+            --ink: #171614;
+            --muted: #625f58;
+            --paper: #f4f1ea;
+            --cream: #fffdf5;
+            --line: rgba(23, 22, 20, 0.16);
+            --line-strong: rgba(23, 22, 20, 0.34);
+            --charcoal: #1d211f;
+            --green: #4d6e52;
+            --blue: #496b7d;
+            --clay: #b7503c;
+            --gold: #c28a2e;
+            --panel: rgba(255, 253, 245, 0.78);
+            --shadow: 0 30px 90px rgba(23, 22, 20, 0.18);
+            --sans: "neue-haas-grotesk-text", Inter, Arial, sans-serif;
+            --display: "neue-haas-grotesk-display", "neue-haas-grotesk-text", Inter, Arial, sans-serif;
+            --serif: "freight-big-pro", Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100%;
+            margin: 0;
+            overflow: hidden;
+            color: var(--ink);
+            background:
+                linear-gradient(90deg, rgba(23, 22, 20, 0.045) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(23, 22, 20, 0.035) 1px, transparent 1px),
+                var(--paper);
+            background-size: 40px 40px, 40px 40px, auto;
+            font-family: var(--sans);
+            letter-spacing: 0;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .deck-shell {
+            position: relative;
+            height: 100vh;
+            height: 100svh;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .deck {
+            height: 100%;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+        }
+
+        .slide {
+            position: relative;
+            height: 100vh;
+            height: 100svh;
+            min-height: 100vh;
+            min-height: 100svh;
+            padding: 68px 72px 58px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            scroll-snap-align: start;
+            isolation: isolate;
+        }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            inset: 22px;
+            border: 1px solid var(--line);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .slide.dark {
+            color: var(--cream);
+            background:
+                linear-gradient(90deg, rgba(255, 253, 245, 0.07) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(255, 253, 245, 0.055) 1px, transparent 1px),
+                var(--charcoal);
+            background-size: 40px 40px, 40px 40px, auto;
+        }
+
+        .slide.dark::before {
+            border-color: rgba(255, 253, 245, 0.16);
+        }
+
+        .slide.image {
+            color: var(--cream);
+            background: var(--charcoal);
+        }
+
+        .slide.image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                linear-gradient(90deg, rgba(18, 20, 18, 0.82), rgba(18, 20, 18, 0.2) 52%, rgba(18, 20, 18, 0.46)),
+                linear-gradient(0deg, rgba(18, 20, 18, 0.6), transparent 58%);
+        }
+
+        .bg {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            opacity: 0.78;
+            filter: saturate(0.88) contrast(1.04);
+            transform: scale(1.04);
+        }
+
+        .stage {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+            transform: scale(var(--fit-scale, 1));
+            transform-origin: center center;
+            transition: transform 180ms ease;
+            will-change: transform;
+        }
+
+        .narrow {
+            width: min(840px, 100%);
+        }
+
+        .wide {
+            width: min(1260px, 100%);
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+            gap: 42px;
+            align-items: center;
+        }
+
+        .two-up {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            align-items: stretch;
+        }
+
+        .three-up {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .image-tile,
+        .card,
+        .diagram,
+        .note {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            box-shadow: 0 16px 50px rgba(23, 22, 20, 0.1);
+            overflow: hidden;
+        }
+
+        .dark .card,
+        .dark .diagram,
+        .dark .note {
+            border-color: rgba(255, 253, 245, 0.16);
+            background: rgba(255, 253, 245, 0.08);
+            box-shadow: none;
+        }
+
+        .image-tile {
+            height: 250px;
+            background: #d9d4c8;
+        }
+
+        .image-tile.tall {
+            height: 520px;
+        }
+
+        .image-tile.medium {
+            height: 360px;
+        }
+
+        .card {
+            min-height: 220px;
+            padding: 24px;
+        }
+
+        .note {
+            padding: 24px;
+        }
+
+        .diagram {
+            min-height: 430px;
+            padding: 24px;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1,
+        h2,
+        .big {
+            font-family: var(--display);
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+
+        h1 {
+            max-width: 1060px;
+            margin-bottom: 24px;
+            font-size: 5rem;
+            line-height: 0.94;
+        }
+
+        h2 {
+            max-width: 960px;
+            margin-bottom: 18px;
+            font-size: 4rem;
+            line-height: 0.96;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.18;
+        }
+
+        .big {
+            margin: 0;
+            font-size: 5.6rem;
+            line-height: 0.94;
+        }
+
+        .huge {
+            margin: 0;
+            font-family: var(--serif);
+            font-size: 6.6rem;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 0.92;
+        }
+
+        .line {
+            max-width: 850px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.28rem;
+            line-height: 1.42;
+        }
+
+        .dark .line,
+        .image .line {
+            color: rgba(255, 253, 245, 0.76);
+        }
+
+        .small {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.96rem;
+            line-height: 1.42;
+        }
+
+        .dark .small,
+        .image .small {
+            color: rgba(255, 253, 245, 0.72);
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 18px;
+            color: var(--green);
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .tag::before {
+            content: "";
+            width: 36px;
+            height: 2px;
+            background: currentColor;
+        }
+
+        .dark .tag,
+        .image .tag {
+            color: #d9b456;
+        }
+
+        .quote {
+            max-width: 1040px;
+            margin: 0;
+            font-family: var(--serif);
+            font-size: 3.2rem;
+            font-style: italic;
+            line-height: 1.08;
+        }
+
+        .tiny-label {
+            display: block;
+            margin-bottom: 16px;
+            color: var(--muted);
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .dark .tiny-label {
+            color: rgba(255, 253, 245, 0.62);
+        }
+
+        .arrow-row {
+            display: grid;
+            grid-template-columns: 1fr 58px 1fr 58px 1fr;
+            gap: 10px;
+            align-items: center;
+            margin-top: 36px;
+        }
+
+        .node {
+            min-height: 122px;
+            padding: 18px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 253, 245, 0.72);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .arrow {
+            height: 2px;
+            background: var(--line-strong);
+            position: relative;
+        }
+
+        .arrow::after {
+            content: "";
+            position: absolute;
+            top: -4px;
+            right: -1px;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid var(--line-strong);
+            border-right: 2px solid var(--line-strong);
+            transform: rotate(45deg);
+        }
+
+        .patch-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 7px;
+            height: 420px;
+            padding: 16px;
+            border-radius: 8px;
+            background: #232620;
+        }
+
+        .patch-grid span {
+            border-radius: 4px;
+            background: rgba(255, 253, 245, 0.13);
+        }
+
+        .patch-grid span:nth-child(3n) {
+            background: rgba(77, 110, 82, 0.74);
+        }
+
+        .patch-grid span:nth-child(4n) {
+            background: rgba(183, 80, 60, 0.72);
+        }
+
+        .patch-grid span:nth-child(7n) {
+            background: rgba(194, 138, 46, 0.72);
+        }
+
+        .system-loop {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 34px;
+        }
+
+        .system-loop .card {
+            min-height: 190px;
+        }
+
+        .deck-chrome {
+            position: fixed;
+            top: 18px;
+            left: 24px;
+            right: 24px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .home-link,
+        .deck-actions,
+        .slide-count {
+            pointer-events: auto;
+        }
+
+        .home-link {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        .dark ~ .deck-chrome .home-link {
+            color: var(--cream);
+        }
+
+        .deck-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(244, 241, 234, 0.84);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 10px 30px rgba(23, 22, 20, 0.08);
+        }
+
+        .icon-button {
+            position: relative;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            display: inline-grid;
+            place-items: center;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            color: var(--ink);
+            background: transparent;
+            cursor: pointer;
+            transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+        }
+
+        .icon-button:hover {
+            background: var(--cream);
+            border-color: var(--line);
+            transform: translateY(-1px);
+        }
+
+        .arrow-icon {
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid currentColor;
+            border-left: 2px solid currentColor;
+        }
+
+        .arrow-icon.prev {
+            transform: rotate(-45deg);
+        }
+
+        .arrow-icon.next {
+            transform: rotate(135deg);
+        }
+
+        .print-icon {
+            position: relative;
+            width: 17px;
+            height: 14px;
+            border: 2px solid currentColor;
+            border-radius: 2px;
+            transform: translateY(2px);
+        }
+
+        .print-icon::before,
+        .print-icon::after {
+            content: "";
+            position: absolute;
+            left: 3px;
+            right: 3px;
+            border: 2px solid currentColor;
+            background: var(--paper);
+        }
+
+        .print-icon::before {
+            top: -9px;
+            height: 8px;
+            border-bottom: 0;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .print-icon::after {
+            bottom: -7px;
+            height: 8px;
+            border-top: 0;
+            border-radius: 0 0 2px 2px;
+        }
+
+        .slide-count {
+            min-width: 62px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .progress {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 22;
+            height: 5px;
+            background: rgba(23, 22, 20, 0.08);
+        }
+
+        .progress span {
+            display: block;
+            width: 4%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--green), var(--blue), var(--clay), var(--gold));
+            transition: width 240ms ease;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition:
+                opacity 520ms ease,
+                transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition-delay: calc(var(--i, 0) * 65ms);
+        }
+
+        .slide.is-active .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 980px) {
+            .slide {
+                padding: 88px 24px 56px;
+            }
+
+            .split,
+            .two-up,
+            .three-up,
+            .image-grid,
+            .system-loop {
+                grid-template-columns: 1fr;
+            }
+
+            .image-tile,
+            .image-tile.medium,
+            .image-tile.tall {
+                height: 220px;
+            }
+
+            h1 {
+                font-size: 3.35rem;
+            }
+
+            h2,
+            .big {
+                font-size: 3.15rem;
+            }
+
+            .huge {
+                font-size: 4.3rem;
+            }
+
+            .quote {
+                font-size: 2.35rem;
+            }
+
+            .arrow-row {
+                grid-template-columns: 1fr;
+            }
+
+            .arrow {
+                width: 2px;
+                height: 32px;
+                margin: 0 auto;
+            }
+
+            .arrow::after {
+                top: auto;
+                right: -4px;
+                bottom: -1px;
+                transform: rotate(135deg);
+            }
+        }
+
+        @media (max-width: 680px) {
+            .deck-chrome {
+                left: 12px;
+                right: 12px;
+            }
+
+            .home-link {
+                display: none;
+            }
+
+            .slide {
+                padding: 88px 18px 48px;
+            }
+
+            h1 {
+                font-size: 2.55rem;
+            }
+
+            h2,
+            .big {
+                font-size: 2.35rem;
+            }
+
+            .huge {
+                font-size: 3.2rem;
+            }
+
+            .quote {
+                font-size: 1.9rem;
+            }
+
+            .deck-actions {
+                gap: 4px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 1ms !important;
+                scroll-behavior: auto !important;
+                transition-duration: 1ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @media print {
+            @page {
+                size: landscape;
+                margin: 0;
+            }
+
+            html,
+            body,
+            .deck-shell,
+            .deck {
+                height: auto;
+                overflow: visible;
+                background: #fff;
+            }
+
+            .deck-chrome,
+            .progress {
+                display: none;
+            }
+
+            .slide {
+                min-height: 100vh;
+                page-break-after: always;
+                break-after: page;
+                padding: 48px;
+            }
+
+            .stage {
+                transform: none !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="deck-shell">
+        <header class="deck-chrome" aria-label="Presentation controls">
+            <a class="home-link" href="/">Clay Seifert</a>
+            <div class="deck-actions">
+                <button class="icon-button" type="button" id="prevSlide" aria-label="Previous slide">
+                    <span class="arrow-icon prev" aria-hidden="true"></span>
+                </button>
+                <span class="slide-count" id="slideCount">01 / 27</span>
+                <button class="icon-button" type="button" id="nextSlide" aria-label="Next slide">
+                    <span class="arrow-icon next" aria-hidden="true"></span>
+                </button>
+                <button class="icon-button" type="button" id="printDeck" aria-label="Print deck">
+                    <span class="print-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </header>
+
+        <main class="deck" id="deck" tabindex="-1">
+            <section class="slide is-active image" id="slide-1" aria-labelledby="slide-1-title">
+                <img class="bg" src="/portfolio/ground-view-of-vertical-farming-tower-in-austin-texas-45dbf5e5.webp" alt="">
+                <div class="stage">
+                    <p class="tag reveal" style="--i: 0">Clay Seifert</p>
+                    <h1 class="reveal" id="slide-1-title" style="--i: 1">Applied ML for design workflows</h1>
+                    <p class="line reveal" style="--i: 2">A story about making studio knowledge usable.</p>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-2" aria-labelledby="slide-2-title">
+                <div class="stage narrow">
+                    <h2 class="reveal" id="slide-2-title">The short version.</h2>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-3" aria-labelledby="slide-3-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-3-title">I like the messy middle.</p>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-4" aria-labelledby="slide-4-title">
+                <div class="stage split">
+                    <div>
+                        <h2 class="reveal" id="slide-4-title">Between the idea...</h2>
+                    </div>
+                    <div class="image-tile tall reveal" style="--i: 1">
+                        <img src="/portfolio/hanging-garden-of-babylon-but-with-gothic-architectur-a73d85c0.webp" alt="A vaulted garden interior with columns and planting.">
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-5" aria-labelledby="slide-5-title">
+                <div class="stage split">
+                    <div class="image-tile tall reveal">
+                        <img src="/portfolio/front-elevation-ultra-fine-relief-of-data-streams-bin-b4955c67.webp" alt="A textured concrete facade with people nearby.">
+                    </div>
+                    <div>
+                        <h2 class="reveal" id="slide-5-title" style="--i: 1">...and the tool that helps it move.</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-6" aria-labelledby="slide-6-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-6-title">I don't think AI should replace design.</p>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-7" aria-labelledby="slide-7-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-7-title">I think it should make the studio smarter.</p>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-8" aria-labelledby="slide-8-title">
+                <div class="stage narrow">
+                    <h2 class="reveal" id="slide-8-title">Precedent isn't decoration.</h2>
+                    <p class="line reveal" style="--i: 1">It is design evidence.</p>
+                </div>
+            </section>
+
+            <section class="slide image" id="slide-9" aria-labelledby="slide-9-title">
+                <img class="bg" src="/atlas/atlas.webp" alt="">
+                <div class="stage narrow">
+                    <h2 class="reveal" id="slide-9-title">But it gets buried.</h2>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-10" aria-labelledby="slide-10-title">
+                <div class="stage wide">
+                    <p class="tag reveal">Archipedia</p>
+                    <h2 class="reveal" id="slide-10-title" style="--i: 1">Search by architectural instinct.</h2>
+                    <div class="image-grid reveal" style="--i: 2">
+                        <div class="image-tile"><img src="/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-219aa22a.webp" alt="A timber and stone architectural interior."></div>
+                        <div class="image-tile"><img src="/portfolio/wood-clt-limestone-organic-building-that-extends-from-da2906b9.webp" alt="Organic wood and stone building by water."></div>
+                        <div class="image-tile"><img src="/portfolio/open-corridor-space-carved-fluid-biopmorphic-limeston-e27911ba.webp" alt="A carved limestone corridor."></div>
+                        <div class="image-tile"><img src="/portfolio/clt-limestone-organic-building-that-extends-from-wate-49cb0dce.webp" alt="A limestone water passage."></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-11" aria-labelledby="slide-11-title">
+                <div class="stage">
+                    <h2 class="reveal" id="slide-11-title">The pipeline is simple.</h2>
+                    <div class="arrow-row reveal" style="--i: 1">
+                        <div class="node">images</div>
+                        <div class="arrow" aria-hidden="true"></div>
+                        <div class="node">embeddings</div>
+                        <div class="arrow" aria-hidden="true"></div>
+                        <div class="node">a better question</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-12" aria-labelledby="slide-12-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-12-title">The hard part isn't the model.</p>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-13" aria-labelledby="slide-13-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-13-title">The hard part is trust.</p>
+                </div>
+            </section>
+
+            <section class="slide image" id="slide-14" aria-labelledby="slide-14-title">
+                <img class="bg" src="/portfolio/interior-rendered-gothic-cathedral-building-section-cut-c373d4df.webp" alt="">
+                <div class="stage narrow">
+                    <h2 class="reveal" id="slide-14-title">Whole images are not enough.</h2>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-15" aria-labelledby="slide-15-title">
+                <div class="stage split">
+                    <div>
+                        <p class="tag reveal">Patch-aware research</p>
+                        <h2 class="reveal" id="slide-15-title" style="--i: 1">Parts matter.</h2>
+                    </div>
+                    <div class="diagram reveal" style="--i: 2">
+                        <div class="patch-grid" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-16" aria-labelledby="slide-16-title">
+                <div class="stage three-up">
+                    <div class="card reveal">
+                        <span class="tiny-label">1</span>
+                        <h2 id="slide-16-title">operations</h2>
+                    </div>
+                    <div class="card reveal" style="--i: 1">
+                        <span class="tiny-label">2</span>
+                        <h2>assemblies</h2>
+                    </div>
+                    <div class="card reveal" style="--i: 2">
+                        <span class="tiny-label">3</span>
+                        <h2>logic</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide image" id="slide-17" aria-labelledby="slide-17-title">
+                <img class="bg" src="/portfolio/detail-of-gothic-style-filigree-doorway-carved-into-l-31fe3333.webp" alt="">
+                <div class="stage narrow">
+                    <h2 class="reveal" id="slide-17-title">A detail can carry the idea.</h2>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-18" aria-labelledby="slide-18-title">
+                <div class="stage split">
+                    <div>
+                        <p class="tag reveal">Real-time feedback</p>
+                        <h2 class="reveal" id="slide-18-title" style="--i: 1">Feedback should arrive while the idea is still soft.</h2>
+                    </div>
+                    <div class="diagram reveal" style="--i: 2">
+                        <div class="arrow-row" style="grid-template-columns: 1fr 44px 1fr;">
+                            <div class="node">sketch</div>
+                            <div class="arrow" aria-hidden="true"></div>
+                            <div class="node">signal</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-19" aria-labelledby="slide-19-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-19-title">Speed changes where feedback can live.</p>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-20" aria-labelledby="slide-20-title">
+                <div class="stage narrow">
+                    <h2 class="reveal" id="slide-20-title">Then the product question.</h2>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-21" aria-labelledby="slide-21-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-21-title">Will someone use this on a busy afternoon?</p>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-22" aria-labelledby="slide-22-title">
+                <div class="stage">
+                    <p class="tag reveal">How I would start</p>
+                    <h2 class="reveal" id="slide-22-title" style="--i: 1">I would watch the work first.</h2>
+                    <div class="system-loop reveal" style="--i: 2">
+                        <article class="card">
+                            <h3>Where does time leak?</h3>
+                        </article>
+                        <article class="card">
+                            <h3>Where does memory fail?</h3>
+                        </article>
+                        <article class="card">
+                            <h3>Where do tools break trust?</h3>
+                        </article>
+                        <article class="card">
+                            <h3>Where would AI actually help?</h3>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-23" aria-labelledby="slide-23-title">
+                <div class="stage three-up">
+                    <div class="card reveal">
+                        <span class="tiny-label">Hypothesis 1</span>
+                        <h2 id="slide-23-title">studio memory</h2>
+                    </div>
+                    <div class="card reveal" style="--i: 1">
+                        <span class="tiny-label">Hypothesis 2</span>
+                        <h2>geometry search</h2>
+                    </div>
+                    <div class="card reveal" style="--i: 2">
+                        <span class="tiny-label">Hypothesis 3</span>
+                        <h2>small assistants</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide image" id="slide-24" aria-labelledby="slide-24-title">
+                <img class="bg" src="/portfolio/ariel-view-wood-clt-limestone-organic-buildings-that-229f33e9.webp" alt="">
+                <div class="stage narrow">
+                    <h2 class="reveal" id="slide-24-title">Why Heatherwick?</h2>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-25" aria-labelledby="slide-25-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-25-title">Because here, ML isn't about automating taste.</p>
+                </div>
+            </section>
+
+            <section class="slide dark" id="slide-26" aria-labelledby="slide-26-title">
+                <div class="stage narrow">
+                    <p class="quote reveal" id="slide-26-title">It's about expanding how a creative studio remembers, searches, tests, and develops ideas.</p>
+                </div>
+            </section>
+
+            <section class="slide" id="slide-27" aria-labelledby="slide-27-title">
+                <div class="stage narrow">
+                    <h2 class="reveal" id="slide-27-title">That's where I fit.</h2>
+                    <p class="line reveal" style="--i: 1">Architecture, ML, product systems, and practical adoption.</p>
+                </div>
+            </section>
+        </main>
+
+        <div class="progress" aria-hidden="true"><span id="deckProgress"></span></div>
+    </div>
+
+    <script>
+        const deck = document.getElementById("deck");
+        const slides = Array.from(document.querySelectorAll(".slide"));
+        const count = document.getElementById("slideCount");
+        const progress = document.getElementById("deckProgress");
+        const prev = document.getElementById("prevSlide");
+        const next = document.getElementById("nextSlide");
+        const printDeck = document.getElementById("printDeck");
+        let activeIndex = 0;
+
+        function pad(value) {
+            return String(value).padStart(2, "0");
+        }
+
+        function setActive(index, updateHash) {
+            activeIndex = Math.max(0, Math.min(slides.length - 1, index));
+            slides.forEach((slide, slideIndex) => {
+                slide.classList.toggle("is-active", slideIndex === activeIndex);
+            });
+            count.textContent = `${pad(activeIndex + 1)} / ${pad(slides.length)}`;
+            progress.style.width = `${((activeIndex + 1) / slides.length) * 100}%`;
+            if (updateHash) {
+                history.replaceState(null, "", `#${slides[activeIndex].id}`);
+            }
+        }
+
+        function fitSlidesToViewport() {
+            if (window.matchMedia("print").matches) return;
+            slides.forEach((slide) => {
+                const stage = slide.querySelector(".stage");
+                if (!stage) return;
+                stage.style.setProperty("--fit-scale", "1");
+
+                const styles = window.getComputedStyle(slide);
+                const availableWidth = slide.clientWidth - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight);
+                const availableHeight = slide.clientHeight - parseFloat(styles.paddingTop) - parseFloat(styles.paddingBottom);
+                const rect = stage.getBoundingClientRect();
+                const scale = Math.min(1, availableWidth / rect.width, availableHeight / rect.height);
+                stage.style.setProperty("--fit-scale", scale.toFixed(3));
+            });
+        }
+
+        function requestFit() {
+            requestAnimationFrame(fitSlidesToViewport);
+        }
+
+        function goTo(index) {
+            const target = slides[Math.max(0, Math.min(slides.length - 1, index))];
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            setActive(slides.indexOf(target), true);
+            requestFit();
+        }
+
+        prev.addEventListener("click", () => goTo(activeIndex - 1));
+        next.addEventListener("click", () => goTo(activeIndex + 1));
+        printDeck.addEventListener("click", () => window.print());
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowDown" || event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
+                event.preventDefault();
+                goTo(activeIndex + 1);
+            }
+            if (event.key === "ArrowUp" || event.key === "ArrowLeft" || event.key === "PageUp") {
+                event.preventDefault();
+                goTo(activeIndex - 1);
+            }
+            if (event.key === "Home") {
+                event.preventDefault();
+                goTo(0);
+            }
+            if (event.key === "End") {
+                event.preventDefault();
+                goTo(slides.length - 1);
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            const visible = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible) {
+                setActive(slides.indexOf(visible.target), false);
+            }
+        }, { threshold: [0.55, 0.7, 0.9] });
+
+        slides.forEach((slide) => observer.observe(slide));
+
+        window.addEventListener("resize", requestFit);
+        window.addEventListener("load", requestFit);
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(requestFit);
+        }
+        document.querySelectorAll("img").forEach((img) => {
+            if (!img.complete) img.addEventListener("load", requestFit, { once: true });
+        });
+
+        const hashIndex = slides.findIndex((slide) => `#${slide.id}` === window.location.hash);
+        if (hashIndex >= 0) {
+            requestAnimationFrame(() => goTo(hashIndex));
+        } else {
+            setActive(0, false);
+        }
+        requestFit();
+    </script>
+</body>
+</html>
