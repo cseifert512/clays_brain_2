@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Machine Learning for Design Workflows | Clay Seifert</title>
+    <meta name="description" content="Applied machine learning for design workflows: a web presentation prepared by Clay Seifert for a Heatherwick Studio interview.">
+    <meta name="author" content="Clay Seifert">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://claysbrain.com/heatherwick/">
+    <link rel="stylesheet" href="https://use.typekit.net/tnt2ozq.css">
+    <style>
+        :root {
+            --ink: #191714;
+            --muted: #64605a;
+            --quiet: #8b877f;
+            --paper: #f6f6f1;
+            --panel: rgba(255, 255, 250, 0.74);
+            --panel-strong: rgba(255, 255, 250, 0.92);
+            --line: rgba(25, 23, 20, 0.16);
+            --line-strong: rgba(25, 23, 20, 0.28);
+            --teal: #006f6a;
+            --clay: #bd503d;
+            --olive: #77803a;
+            --blue: #496b8c;
+            --gold: #b7892d;
+            --shadow: 0 24px 80px rgba(25, 23, 20, 0.16);
+            --sans: "neue-haas-grotesk-text", Inter, Arial, sans-serif;
+            --display: "neue-haas-grotesk-display", "neue-haas-grotesk-text", Inter, Arial, sans-serif;
+            --serif: "freight-big-pro", Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100%;
+            margin: 0;
+            overflow: hidden;
+            color: var(--ink);
+            background:
+                linear-gradient(90deg, rgba(25, 23, 20, 0.045) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(25, 23, 20, 0.035) 1px, transparent 1px),
+                var(--paper);
+            background-size: 42px 42px, 42px 42px, auto;
+            font-family: var(--sans);
+            letter-spacing: 0;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .deck-shell {
+            position: relative;
+            height: 100vh;
+            height: 100svh;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .deck {
+            height: 100%;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            scroll-padding-top: 0;
+        }
+
+        .deck-slide {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100svh;
+            padding: 76px 76px 64px;
+            display: flex;
+            align-items: center;
+            scroll-snap-align: start;
+            isolation: isolate;
+        }
+
+        .deck-slide::before {
+            content: "";
+            position: absolute;
+            inset: 24px;
+            border: 1px solid var(--line);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .slide-inner {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+        }
+
+        .slide-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+            gap: 34px;
+            align-items: center;
+        }
+
+        .slide-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 16px;
+            color: var(--teal);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .slide-kicker::before {
+            content: "";
+            width: 36px;
+            height: 2px;
+            background: currentColor;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1,
+        h2 {
+            font-family: var(--display);
+            letter-spacing: 0;
+        }
+
+        h1 {
+            max-width: 980px;
+            margin-bottom: 20px;
+            font-size: 4.7rem;
+            line-height: 0.96;
+            font-weight: 700;
+        }
+
+        h2 {
+            max-width: 880px;
+            margin-bottom: 22px;
+            font-size: 3.25rem;
+            line-height: 1.02;
+            font-weight: 700;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+
+        .subtitle {
+            max-width: 820px;
+            color: var(--muted);
+            font-size: 1.35rem;
+            line-height: 1.42;
+        }
+
+        .thesis {
+            max-width: 1020px;
+            margin: 34px 0 32px;
+            font-family: var(--serif);
+            font-size: 2.15rem;
+            font-style: italic;
+            line-height: 1.18;
+        }
+
+        .body-large {
+            max-width: 820px;
+            color: var(--muted);
+            font-size: 1.22rem;
+            line-height: 1.55;
+        }
+
+        .tight-copy {
+            color: var(--muted);
+            font-size: 0.98rem;
+            line-height: 1.5;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .card-grid.four {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .info-card,
+        .media-card,
+        .hypothesis-card,
+        .principle-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 12px 40px rgba(25, 23, 20, 0.08);
+        }
+
+        .info-card {
+            min-height: 170px;
+            padding: 20px;
+        }
+
+        .info-card h3,
+        .hypothesis-card h3,
+        .principle-card h3 {
+            color: var(--ink);
+        }
+
+        .info-card p,
+        .hypothesis-card p,
+        .principle-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.45;
+        }
+
+        .accent-teal {
+            color: var(--teal);
+        }
+
+        .accent-clay {
+            color: var(--clay);
+        }
+
+        .accent-olive {
+            color: var(--olive);
+        }
+
+        .accent-blue {
+            color: var(--blue);
+        }
+
+        .deck-chrome {
+            position: fixed;
+            top: 18px;
+            left: 24px;
+            right: 24px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .home-link,
+        .deck-actions,
+        .slide-count {
+            pointer-events: auto;
+        }
+
+        .home-link {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        .deck-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(246, 246, 241, 0.82);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 10px 30px rgba(25, 23, 20, 0.08);
+        }
+
+        .icon-button {
+            position: relative;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            display: inline-grid;
+            place-items: center;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            color: var(--ink);
+            background: transparent;
+            cursor: pointer;
+            transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+        }
+
+        .icon-button:hover {
+            background: var(--panel-strong);
+            border-color: var(--line);
+            transform: translateY(-1px);
+        }
+
+        .icon-button:focus-visible,
+        .home-link:focus-visible,
+        .project-link:focus-visible {
+            outline: 2px solid var(--teal);
+            outline-offset: 3px;
+        }
+
+        .arrow-icon {
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid currentColor;
+            border-left: 2px solid currentColor;
+        }
+
+        .arrow-icon.prev {
+            transform: rotate(-45deg);
+        }
+
+        .arrow-icon.next {
+            transform: rotate(135deg);
+        }
+
+        .print-icon {
+            position: relative;
+            width: 17px;
+            height: 14px;
+            border: 2px solid currentColor;
+            border-radius: 2px;
+            transform: translateY(2px);
+        }
+
+        .print-icon::before,
+        .print-icon::after {
+            content: "";
+            position: absolute;
+            left: 3px;
+            right: 3px;
+            border: 2px solid currentColor;
+            background: var(--paper);
+        }
+
+        .print-icon::before {
+            top: -9px;
+            height: 8px;
+            border-bottom: 0;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .print-icon::after {
+            bottom: -7px;
+            height: 8px;
+            border-top: 0;
+            border-radius: 0 0 2px 2px;
+        }
+
+        .slide-count {
+            min-width: 62px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .deck-progress {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 22;
+            height: 5px;
+            background: rgba(25, 23, 20, 0.08);
+        }
+
+        .deck-progress span {
+            display: block;
+            width: 10%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--teal), var(--clay), var(--gold));
+            transition: width 240ms ease;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition:
+                opacity 520ms ease,
+                transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition-delay: calc(var(--i, 0) * 70ms);
+        }
+
+        .deck-slide.is-active .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 26px;
+            color: var(--muted);
+            font-size: 0.96rem;
+        }
+
+        .hero-meta span {
+            padding: 8px 11px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 250, 0.54);
+        }
+
+        .role-stack {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .role-proof {
+            position: relative;
+            min-height: 420px;
+            padding: 26px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #1e211c;
+            color: #f9f7ef;
+        }
+
+        .role-proof::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 34px 34px;
+            opacity: 0.45;
+        }
+
+        .role-proof > * {
+            position: relative;
+        }
+
+        .role-proof .small {
+            margin: 0 0 22px;
+            color: rgba(249, 247, 239, 0.72);
+            font-size: 0.9rem;
+        }
+
+        .role-word {
+            display: block;
+            font-family: var(--display);
+            font-size: 4rem;
+            line-height: 0.95;
+            font-weight: 700;
+        }
+
+        .role-word:nth-of-type(1) {
+            color: #e0b94d;
+        }
+
+        .role-word:nth-of-type(2) {
+            color: #79c5bd;
+        }
+
+        .role-word:nth-of-type(3) {
+            color: #f07a5e;
+        }
+
+        .role-list {
+            display: grid;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .role-column {
+            display: grid;
+            gap: 14px;
+        }
+
+        .role-list li {
+            display: grid;
+            grid-template-columns: 28px minmax(0, 1fr);
+            gap: 12px;
+            padding: 17px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            color: var(--muted);
+            line-height: 1.42;
+        }
+
+        .role-list li::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            border: 1px solid var(--line-strong);
+            border-radius: 50%;
+            background:
+                linear-gradient(90deg, transparent 10px, var(--teal) 10px, var(--teal) 12px, transparent 12px),
+                linear-gradient(0deg, transparent 10px, var(--teal) 10px, var(--teal) 12px, transparent 12px);
+        }
+
+        .media-card {
+            min-height: 330px;
+            overflow: hidden;
+        }
+
+        .media-card figure {
+            height: 220px;
+            margin: 0;
+            overflow: hidden;
+            background: #d8d6ce;
+        }
+
+        .media-card .media-copy {
+            min-height: 132px;
+            padding: 16px;
+        }
+
+        .media-card h3 {
+            margin-bottom: 7px;
+        }
+
+        .media-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .media-card:hover figure img {
+            transform: scale(1.04);
+        }
+
+        .media-card figure img {
+            transition: transform 560ms ease;
+        }
+
+        .narrative-line {
+            margin-top: 28px;
+            padding: 22px 26px;
+            border-left: 4px solid var(--clay);
+            background: rgba(255, 255, 250, 0.62);
+            color: var(--ink);
+            font-family: var(--serif);
+            font-size: 1.55rem;
+            font-style: italic;
+            line-height: 1.3;
+        }
+
+        .case-study {
+            display: grid;
+            grid-template-columns: minmax(0, 0.88fr) minmax(360px, 1.12fr);
+            gap: 34px;
+            align-items: center;
+        }
+
+        .case-list {
+            display: grid;
+            gap: 12px;
+            margin: 26px 0 0;
+        }
+
+        .case-row {
+            display: grid;
+            grid-template-columns: 112px minmax(0, 1fr);
+            gap: 14px;
+            padding: 15px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .case-row strong {
+            color: var(--ink);
+        }
+
+        .case-row p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.45;
+        }
+
+        .archive-visual {
+            position: relative;
+            min-height: 520px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #20211d;
+            box-shadow: var(--shadow);
+        }
+
+        .archive-visual img {
+            position: absolute;
+            inset: 0;
+            opacity: 0.42;
+            filter: saturate(0.88) contrast(1.08);
+        }
+
+        .search-panel {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            bottom: 30px;
+            padding: 22px;
+            border: 1px solid rgba(249, 247, 239, 0.3);
+            border-radius: 8px;
+            background: rgba(246, 246, 241, 0.92);
+            box-shadow: 0 22px 80px rgba(0, 0, 0, 0.28);
+        }
+
+        .search-bar {
+            height: 48px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            background:
+                linear-gradient(90deg, rgba(0, 111, 106, 0.14), transparent 52%),
+                #fffefa;
+        }
+
+        .search-results {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .result-tile {
+            height: 92px;
+            overflow: hidden;
+            border-radius: 6px;
+            background: #d8d6ce;
+        }
+
+        .fragment-board {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 13px;
+            align-items: stretch;
+            margin-top: 30px;
+        }
+
+        .fragment-step {
+            min-height: 330px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .fragment-step figure {
+            position: relative;
+            height: 188px;
+            margin: 0 0 14px;
+            overflow: hidden;
+            border-radius: 6px;
+            background: #d8d6ce;
+        }
+
+        .fragment-step h3 {
+            color: var(--ink);
+        }
+
+        .fragment-step p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.42;
+        }
+
+        .token-grid {
+            display: grid;
+            height: 188px;
+            grid-template-columns: repeat(7, 1fr);
+            grid-auto-rows: 1fr;
+            gap: 5px;
+            padding: 13px;
+            background: #252720;
+        }
+
+        .token-grid span {
+            border-radius: 4px;
+            background: rgba(246, 246, 241, 0.16);
+        }
+
+        .token-grid span:nth-child(3n) {
+            background: rgba(0, 111, 106, 0.66);
+        }
+
+        .token-grid span:nth-child(4n) {
+            background: rgba(189, 80, 61, 0.72);
+        }
+
+        .token-grid span:nth-child(9n) {
+            background: rgba(183, 137, 45, 0.72);
+        }
+
+        .cluster-field {
+            position: relative;
+            height: 188px;
+            background: #24251f;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .cluster-field span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #f6f6f1;
+            opacity: 0.75;
+        }
+
+        .cluster-field span:nth-child(3n) {
+            background: #79c5bd;
+        }
+
+        .cluster-field span:nth-child(4n) {
+            background: #f07a5e;
+        }
+
+        .cluster-field span:nth-child(5n) {
+            background: #e0b94d;
+        }
+
+        .simulation-panel {
+            position: relative;
+            min-height: 500px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #f9f7ef;
+            box-shadow: var(--shadow);
+        }
+
+        .simulation-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(115deg, transparent 0 42%, rgba(0, 111, 106, 0.11) 42% 44%, transparent 44%),
+                linear-gradient(70deg, transparent 0 56%, rgba(189, 80, 61, 0.13) 56% 58%, transparent 58%),
+                linear-gradient(0deg, rgba(25, 23, 20, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(25, 23, 20, 0.08) 1px, transparent 1px);
+            background-size: auto, auto, 44px 44px, 44px 44px;
+        }
+
+        .structure-arc {
+            position: absolute;
+            left: 13%;
+            right: 13%;
+            bottom: 105px;
+            height: 250px;
+            border: 18px solid rgba(25, 23, 20, 0.78);
+            border-bottom: 0;
+            border-radius: 240px 240px 0 0;
+        }
+
+        .load-markers {
+            position: absolute;
+            left: 20%;
+            right: 20%;
+            top: 80px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .load-markers span {
+            width: 4px;
+            height: 118px;
+            background: linear-gradient(var(--clay), transparent);
+        }
+
+        .feedback-readout {
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .metric {
+            padding: 15px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 250, 0.9);
+        }
+
+        .metric span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+        }
+
+        .metric strong {
+            display: block;
+            margin-top: 6px;
+            font-size: 1.4rem;
+        }
+
+        .pipeline {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 34px;
+        }
+
+        .pipeline-step {
+            position: relative;
+            min-height: 160px;
+            padding: 16px 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .pipeline-step::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            width: 10px;
+            height: 1px;
+            background: var(--line-strong);
+        }
+
+        .pipeline-step:last-child::after {
+            display: none;
+        }
+
+        .pipeline-step span {
+            display: inline-grid;
+            width: 30px;
+            height: 30px;
+            place-items: center;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            color: #fff;
+            background: var(--teal);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .pipeline-step:nth-child(2) span,
+        .pipeline-step:nth-child(5) span {
+            background: var(--blue);
+        }
+
+        .pipeline-step:nth-child(3) span,
+        .pipeline-step:nth-child(6) span {
+            background: var(--clay);
+        }
+
+        .pipeline-step:nth-child(4) span {
+            background: var(--olive);
+        }
+
+        .pipeline-step h3 {
+            margin-bottom: 7px;
+            font-size: 0.94rem;
+        }
+
+        .pipeline-step p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.35;
+        }
+
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .product-tags span {
+            padding: 9px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 250, 0.7);
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .hypothesis-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .hypothesis-card {
+            min-height: 280px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hypothesis-card .number {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 40px;
+            border-radius: 50%;
+            color: #fff;
+            background: var(--ink);
+            font-weight: 700;
+        }
+
+        .hypothesis-card:nth-child(1) .number {
+            background: var(--teal);
+        }
+
+        .hypothesis-card:nth-child(2) .number {
+            background: var(--clay);
+        }
+
+        .hypothesis-card:nth-child(3) .number {
+            background: var(--blue);
+        }
+
+        .hypothesis-card h3 {
+            margin-bottom: 14px;
+            font-size: 1.2rem;
+        }
+
+        .user-first {
+            margin-top: 24px;
+            padding: 23px 26px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #20211d;
+            color: #f9f7ef;
+            font-family: var(--serif);
+            font-size: 1.55rem;
+            font-style: italic;
+            line-height: 1.32;
+        }
+
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 34px;
+        }
+
+        .principle-card {
+            min-height: 260px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .principle-card .mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--line-strong);
+            background:
+                linear-gradient(90deg, transparent 19px, currentColor 19px, currentColor 21px, transparent 21px),
+                linear-gradient(0deg, transparent 19px, currentColor 19px, currentColor 21px, transparent 21px);
+            color: var(--teal);
+        }
+
+        .principle-card:nth-child(2) .mark {
+            color: var(--clay);
+        }
+
+        .principle-card:nth-child(3) .mark {
+            color: var(--blue);
+        }
+
+        .principle-card:nth-child(4) .mark {
+            color: var(--olive);
+        }
+
+        .principle-card:nth-child(5) .mark {
+            color: var(--gold);
+        }
+
+        .closing {
+            max-width: 1000px;
+        }
+
+        .closing h2 {
+            font-size: 4rem;
+        }
+
+        .closing-statement {
+            margin: 34px 0;
+            font-family: var(--serif);
+            font-size: 2.15rem;
+            font-style: italic;
+            line-height: 1.24;
+        }
+
+        .final-line {
+            max-width: 860px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line-strong);
+            color: var(--ink);
+            font-size: 1.45rem;
+            line-height: 1.35;
+            font-weight: 700;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 36px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: 0 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 250, 0.68);
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.92rem;
+            transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-1px);
+            border-color: var(--line-strong);
+            background: var(--panel-strong);
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 1020px) {
+            body {
+                overflow: auto;
+            }
+
+            .deck-shell {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .deck {
+                height: auto;
+                overflow: visible;
+                scroll-snap-type: none;
+            }
+
+            .deck-slide {
+                min-height: auto;
+                padding: 98px 24px 58px;
+            }
+
+            .deck-slide::before {
+                inset: 14px;
+            }
+
+            .slide-grid,
+            .role-stack,
+            .case-study {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 3.35rem;
+            }
+
+            h2,
+            .closing h2 {
+                font-size: 2.55rem;
+            }
+
+            .thesis,
+            .closing-statement {
+                font-size: 1.68rem;
+            }
+
+            .card-grid,
+            .card-grid.four,
+            .fragment-board,
+            .hypothesis-grid,
+            .principles,
+            .pipeline {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .deck-chrome {
+                left: 14px;
+                right: 14px;
+            }
+
+            .home-link {
+                display: none;
+            }
+        }
+
+        @media (max-width: 680px) {
+            h1 {
+                font-size: 2.55rem;
+                line-height: 1.03;
+            }
+
+            h2,
+            .closing h2 {
+                font-size: 2.05rem;
+            }
+
+            .deck-slide {
+                padding: 92px 18px 48px;
+            }
+
+            .card-grid,
+            .card-grid.four,
+            .fragment-board,
+            .hypothesis-grid,
+            .principles,
+            .pipeline,
+            .feedback-readout,
+            .search-results {
+                grid-template-columns: 1fr;
+            }
+
+            .role-proof {
+                min-height: 350px;
+            }
+
+            .role-word {
+                font-size: 3rem;
+            }
+
+            .case-row {
+                grid-template-columns: 1fr;
+            }
+
+            .archive-visual,
+            .simulation-panel {
+                min-height: 430px;
+            }
+
+            .deck-actions {
+                gap: 4px;
+            }
+
+            .slide-count {
+                min-width: 54px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 1ms !important;
+                scroll-behavior: auto !important;
+                transition-duration: 1ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @media print {
+            @page {
+                size: landscape;
+                margin: 0;
+            }
+
+            html,
+            body {
+                width: 100%;
+                height: auto;
+                overflow: visible;
+                background: #fff;
+            }
+
+            .deck-shell,
+            .deck {
+                height: auto;
+                overflow: visible;
+            }
+
+            .deck-chrome,
+            .deck-progress {
+                display: none;
+            }
+
+            .deck-slide {
+                min-height: 100vh;
+                page-break-after: always;
+                break-after: page;
+                padding: 48px;
+                background: #fff;
+            }
+
+            .deck-slide::before {
+                inset: 18px;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+            .info-card,
+            .media-card,
+            .hypothesis-card,
+            .principle-card,
+            .role-list li {
+                box-shadow: none;
+                background: #fff;
+            }
+
+            .archive-visual,
+            .simulation-panel {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="deck-shell">
+        <header class="deck-chrome" aria-label="Presentation controls">
+            <a class="home-link" href="/">Clay Seifert</a>
+            <div class="deck-actions">
+                <button class="icon-button" type="button" id="prevSlide" aria-label="Previous slide">
+                    <span class="arrow-icon prev" aria-hidden="true"></span>
+                </button>
+                <span class="slide-count" id="slideCount">01 / 10</span>
+                <button class="icon-button" type="button" id="nextSlide" aria-label="Next slide">
+                    <span class="arrow-icon next" aria-hidden="true"></span>
+                </button>
+                <button class="icon-button" type="button" id="printDeck" aria-label="Print deck">
+                    <span class="print-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </header>
+
+        <main class="deck" id="deck" tabindex="-1">
+            <section class="deck-slide is-active" id="slide-1" aria-labelledby="slide-1-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">Why I think I fit this role</p>
+                    <div class="hero-meta reveal" style="--i: 1">
+                        <span>Clay Seifert</span>
+                        <span>Heatherwick Studio Interview</span>
+                        <span>Machine Learning Specialist</span>
+                    </div>
+                    <h1 class="reveal" id="slide-1-title" style="--i: 2">Applied Machine Learning for Design Workflows</h1>
+                    <p class="subtitle reveal" style="--i: 3">Turning architectural knowledge, geometry, and studio process into usable AI systems.</p>
+                    <p class="thesis reveal" style="--i: 4">I build applied AI systems for architecture: tools that make precedent, geometry, and design reasoning searchable, usable, and integrated into real workflows.</p>
+                    <div class="card-grid reveal" style="--i: 5">
+                        <article class="info-card">
+                            <h3 class="accent-teal">Architecture</h3>
+                            <p>B.Arch, design culture, precedent, geometry, studio workflows.</p>
+                        </article>
+                        <article class="info-card">
+                            <h3 class="accent-clay">Machine Learning</h3>
+                            <p>ViTs, embeddings, similarity search, clustering, patch-aware retrieval.</p>
+                        </article>
+                        <article class="info-card">
+                            <h3 class="accent-blue">Product Systems</h3>
+                            <p>React/FastAPI, deployed tools, user workflows, adoption, documentation.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-2" aria-labelledby="slide-2-title">
+                <div class="slide-inner role-stack">
+                    <div>
+                        <p class="slide-kicker reveal" style="--i: 0">Role reading</p>
+                        <h2 class="reveal" id="slide-2-title" style="--i: 1">What I think Heatherwick needs from this role</h2>
+                        <p class="body-large reveal" style="--i: 2">A person who can move between research, engineering, and studio delivery while keeping the work grounded in real adoption.</p>
+                    </div>
+                    <div class="role-column">
+                        <div class="role-proof reveal" style="--i: 3">
+                            <p class="small">The job description keeps returning to three measures.</p>
+                            <span class="role-word">Impact</span>
+                            <span class="role-word">Adoption</span>
+                            <span class="role-word">Longevity</span>
+                        </div>
+                        <ul class="role-list reveal" style="--i: 4">
+                            <li>Identify real workflow pain points inside the studio.</li>
+                            <li>Prototype ML tools quickly against those pain points.</li>
+                            <li>Turn successful prototypes into durable internal systems.</li>
+                            <li>Make tools usable by designers, not just technically impressive.</li>
+                            <li>Build documentation and adoption loops so the systems last.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-3" aria-labelledby="slide-3-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">Through-line</p>
+                    <h2 class="reveal" id="slide-3-title" style="--i: 1">My work sits between research, geometry, and usable tools</h2>
+                    <div class="card-grid four reveal" style="--i: 2">
+                        <article class="media-card">
+                            <figure>
+                                <img src="/atlas/atlas.webp" alt="A dense visual atlas of architectural images arranged in a grid.">
+                            </figure>
+                            <div class="media-copy">
+                                <h3>Archipedia.ai</h3>
+                                <p>Precedent search as a working design interface rather than a static archive.</p>
+                            </div>
+                        </article>
+                        <article class="media-card">
+                            <figure>
+                                <img src="/portfolio/front-elevation-ultra-fine-relief-of-data-streams-bin-b4955c67.webp" alt="A perforated architectural facade with visitors nearby.">
+                            </figure>
+                            <div class="media-copy">
+                                <h3>Patch-aware fragment research</h3>
+                                <p>Retrieval and comparison at the level of parts, operations, and assemblies.</p>
+                            </div>
+                        </article>
+                        <article class="media-card">
+                            <figure>
+                                <img src="/portfolio/axonometric-vector-map-of-walkable-urban-neighborhood-237d9b95.webp" alt="An axonometric neighborhood map with green spaces and urban blocks.">
+                            </figure>
+                            <div class="media-copy">
+                                <h3>Real-time feedback</h3>
+                                <p>Browser computation for faster structural and geometric design response.</p>
+                            </div>
+                        </article>
+                        <article class="media-card">
+                            <figure>
+                                <img src="/portfolio/ground-view-of-vertical-farming-tower-in-austin-texas-45dbf5e5.webp" alt="A branching timber canopy structure in an urban plaza.">
+                            </figure>
+                            <div class="media-copy">
+                                <h3>Product work</h3>
+                                <p>TestFit, Resia, Drafted, and founder work shaped around user workflows.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <p class="narrative-line reveal" style="--i: 3">Across these projects, the pattern is the same: take architectural knowledge or geometry, make it computable, and turn it into a tool designers can actually use.</p>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-4" aria-labelledby="slide-4-title">
+                <div class="slide-inner case-study">
+                    <div>
+                        <p class="slide-kicker reveal" style="--i: 0">Case study 1</p>
+                        <h2 class="reveal" id="slide-4-title" style="--i: 1">Archipedia: making precedent searchable as design evidence</h2>
+                        <div class="case-list reveal" style="--i: 2">
+                            <div class="case-row">
+                                <strong>Problem</strong>
+                                <p>Architectural knowledge is trapped in folders, PDFs, image boards, and individual memory.</p>
+                            </div>
+                            <div class="case-row">
+                                <strong>System</strong>
+                                <p>Visual embeddings, metadata, FAISS search, and a React/FastAPI interface.</p>
+                            </div>
+                            <div class="case-row">
+                                <strong>User value</strong>
+                                <p>Designers can search by visual, spatial, and material similarity rather than relying only on keywords.</p>
+                            </div>
+                            <div class="case-row">
+                                <strong>Heatherwick value</strong>
+                                <p>A studio archive becomes an active design resource, not dead storage.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="archive-visual reveal" style="--i: 3" aria-label="Conceptual search interface mockup">
+                        <img src="/atlas/atlas.webp" alt="">
+                        <div class="search-panel">
+                            <div class="search-bar" aria-hidden="true"></div>
+                            <div class="search-results">
+                                <div class="result-tile"><img src="/portfolio/interior-shot-wood-clt-limestone-organic-building-tha-219aa22a.webp" alt=""></div>
+                                <div class="result-tile"><img src="/portfolio/wood-clt-limestone-organic-building-that-extends-from-da2906b9.webp" alt=""></div>
+                                <div class="result-tile"><img src="/portfolio/open-corridor-space-carved-fluid-biopmorphic-limeston-e27911ba.webp" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-5" aria-labelledby="slide-5-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">Case study 2</p>
+                    <h2 class="reveal" id="slide-5-title" style="--i: 1">From whole-image similarity to part-level design reasoning</h2>
+                    <p class="body-large reveal" style="--i: 2">A lot of architectural ML stops at "this image looks like that image." My research asks whether we can retrieve or compare at the level of parts, operations, assemblies, and latent geometric logic.</p>
+                    <div class="fragment-board reveal" style="--i: 3">
+                        <article class="fragment-step">
+                            <figure>
+                                <img src="/portfolio/interior-rendered-gothic-cathedral-building-section-cut-c373d4df.webp" alt="A sectional architectural image used as a fragment input.">
+                            </figure>
+                            <h3>Fragment input</h3>
+                            <p>Architectural imagery becomes a field of meaningful local cues.</p>
+                        </article>
+                        <article class="fragment-step">
+                            <div class="token-grid" aria-hidden="true">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <h3>Patch tokens</h3>
+                            <p>ViT-style representations make local spatial signals comparable.</p>
+                        </article>
+                        <article class="fragment-step">
+                            <div class="cluster-field" aria-hidden="true">
+                                <span style="left: 12%; top: 18%"></span><span style="left: 24%; top: 29%"></span><span style="left: 18%; top: 62%"></span><span style="left: 36%; top: 42%"></span><span style="left: 44%; top: 20%"></span>
+                                <span style="left: 52%; top: 72%"></span><span style="left: 61%; top: 48%"></span><span style="left: 71%; top: 28%"></span><span style="left: 80%; top: 66%"></span><span style="left: 86%; top: 40%"></span>
+                                <span style="left: 30%; top: 76%"></span><span style="left: 49%; top: 54%"></span><span style="left: 66%; top: 15%"></span><span style="left: 76%; top: 82%"></span><span style="left: 9%; top: 44%"></span>
+                            </div>
+                            <h3>Embedding neighborhood</h3>
+                            <p>Clusters can expose similar operations, assemblies, or formal tendencies.</p>
+                        </article>
+                        <article class="fragment-step">
+                            <figure>
+                                <img src="/portfolio/detail-of-gothic-style-filigree-doorway-carved-into-l-31fe3333.webp" alt="A retrieved architectural form with detailed tracery.">
+                            </figure>
+                            <h3>Retrieved logic</h3>
+                            <p>Search can move toward extrusion, revolution, truncation, boolean logic, and part relationships.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-6" aria-labelledby="slide-6-title">
+                <div class="slide-inner slide-grid">
+                    <div>
+                        <p class="slide-kicker reveal" style="--i: 0">Case study 3</p>
+                        <h2 class="reveal" id="slide-6-title" style="--i: 1">Making technical constraints visible during design</h2>
+                        <div class="case-list reveal" style="--i: 2">
+                            <div class="case-row">
+                                <strong>Problem</strong>
+                                <p>Designers often get structural or geometric feedback too late.</p>
+                            </div>
+                            <div class="case-row">
+                                <strong>Prototype</strong>
+                                <p>Browser-based real-time structural feedback with GPU acceleration as a technical exploration.</p>
+                            </div>
+                            <div class="case-row">
+                                <strong>Broader point</strong>
+                                <p>Computation should not live only in specialist tools; it can become part of the design interaction loop.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simulation-panel reveal" style="--i: 3" aria-label="Conceptual real-time structural feedback diagram">
+                        <div class="load-markers" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                        <div class="structure-arc" aria-hidden="true"></div>
+                        <div class="feedback-readout">
+                            <div class="metric"><span>Stress</span><strong>Live</strong></div>
+                            <div class="metric"><span>Deflection</span><strong>Fast</strong></div>
+                            <div class="metric"><span>Geometry</span><strong>Editable</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-7" aria-labelledby="slide-7-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">Product and adoption</p>
+                    <h2 class="reveal" id="slide-7-title" style="--i: 1">I think about tools as workflows, not just models</h2>
+                    <p class="body-large reveal" style="--i: 2">The model is rarely the whole product. The real question is whether the system fits the way people work, whether they trust it, and whether it can be maintained after the novelty wears off.</p>
+                    <div class="pipeline reveal" style="--i: 3">
+                        <article class="pipeline-step">
+                            <span>1</span>
+                            <h3>User pain</h3>
+                            <p>Start from repeated friction in actual design or delivery work.</p>
+                        </article>
+                        <article class="pipeline-step">
+                            <span>2</span>
+                            <h3>Workflow map</h3>
+                            <p>Understand handoffs, trust, missing context, and current tools.</p>
+                        </article>
+                        <article class="pipeline-step">
+                            <span>3</span>
+                            <h3>Prototype</h3>
+                            <p>Build quickly enough to test whether the idea matters.</p>
+                        </article>
+                        <article class="pipeline-step">
+                            <span>4</span>
+                            <h3>Technical system</h3>
+                            <p>Harden the useful parts into APIs, data flows, and interfaces.</p>
+                        </article>
+                        <article class="pipeline-step">
+                            <span>5</span>
+                            <h3>Feedback</h3>
+                            <p>Watch real users expose what the prototype missed.</p>
+                        </article>
+                        <article class="pipeline-step">
+                            <span>6</span>
+                            <h3>Adoption</h3>
+                            <p>Document, support, maintain, and make it legible to others.</p>
+                        </article>
+                    </div>
+                    <div class="product-tags reveal" style="--i: 4">
+                        <span>TestFit</span>
+                        <span>Resia</span>
+                        <span>Drafted</span>
+                        <span>Founder/operator work</span>
+                        <span>Designer-facing systems</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-8" aria-labelledby="slide-8-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">First 90 days</p>
+                    <h2 class="reveal" id="slide-8-title" style="--i: 1">Applied ML opportunities I would want to test</h2>
+                    <div class="hypothesis-grid reveal" style="--i: 2">
+                        <article class="hypothesis-card">
+                            <span class="number">1</span>
+                            <h3>Studio memory and precedent intelligence</h3>
+                            <p>Search across internal project references, imagery, models, drawings, materials, and project language.</p>
+                        </article>
+                        <article class="hypothesis-card">
+                            <span class="number">2</span>
+                            <h3>Geometry-aware design search</h3>
+                            <p>Find precedents by shape, assembly logic, formal operation, or material behavior; not only tags.</p>
+                        </article>
+                        <article class="hypothesis-card">
+                            <span class="number">3</span>
+                            <h3>Lightweight AI assistants for studio workflows</h3>
+                            <p>Small, specific tools for reference organization, design option comparison, material retrieval, and internal knowledge Q&amp;A.</p>
+                        </article>
+                    </div>
+                    <p class="user-first reveal" style="--i: 3">I would not start by assuming the tool. I would start by interviewing designers and computational teams to find repeated pain points where ML could produce measurable value.</p>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-9" aria-labelledby="slide-9-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">Operating style</p>
+                    <h2 class="reveal" id="slide-9-title" style="--i: 1">How I work</h2>
+                    <div class="principles reveal" style="--i: 2">
+                        <article class="principle-card">
+                            <span class="mark" aria-hidden="true"></span>
+                            <h3>Prototype quickly, but validate against real users.</h3>
+                        </article>
+                        <article class="principle-card">
+                            <span class="mark" aria-hidden="true"></span>
+                            <h3>Translate between designers and engineers.</h3>
+                        </article>
+                        <article class="principle-card">
+                            <span class="mark" aria-hidden="true"></span>
+                            <h3>Prefer small useful tools over flashy demos.</h3>
+                        </article>
+                        <article class="principle-card">
+                            <span class="mark" aria-hidden="true"></span>
+                            <h3>Build systems others can understand and extend.</h3>
+                        </article>
+                        <article class="principle-card">
+                            <span class="mark" aria-hidden="true"></span>
+                            <h3>Treat ML as part of a creative and operational ecosystem.</h3>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-10" aria-labelledby="slide-10-title">
+                <div class="slide-inner closing">
+                    <p class="slide-kicker reveal" style="--i: 0">Closing</p>
+                    <h2 class="reveal" id="slide-10-title" style="--i: 1">Why Heatherwick</h2>
+                    <p class="closing-statement reveal" style="--i: 2">Heatherwick is one of the few studios where applied ML could matter not because it automates design, but because it can expand how a highly creative studio remembers, searches, tests, and develops ideas.</p>
+                    <p class="final-line reveal" style="--i: 3">I am most useful where architectural imagination, computational systems, and practical adoption have to meet.</p>
+                    <div class="project-links reveal" style="--i: 4">
+                        <a class="project-link" href="/">claysbrain.com</a>
+                        <a class="project-link" href="/gallery.html">Image gallery</a>
+                        <a class="project-link" href="mailto:clayhseifert@gmail.com">clayhseifert@gmail.com</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="deck-progress" aria-hidden="true"><span id="deckProgress"></span></div>
+    </div>
+
+    <script>
+        const deck = document.getElementById("deck");
+        const slides = Array.from(document.querySelectorAll(".deck-slide"));
+        const count = document.getElementById("slideCount");
+        const progress = document.getElementById("deckProgress");
+        const prev = document.getElementById("prevSlide");
+        const next = document.getElementById("nextSlide");
+        const printDeck = document.getElementById("printDeck");
+        let activeIndex = 0;
+
+        function pad(value) {
+            return String(value).padStart(2, "0");
+        }
+
+        function setActive(index, updateHash) {
+            activeIndex = Math.max(0, Math.min(slides.length - 1, index));
+            slides.forEach((slide, slideIndex) => {
+                slide.classList.toggle("is-active", slideIndex === activeIndex);
+            });
+            count.textContent = `${pad(activeIndex + 1)} / ${pad(slides.length)}`;
+            progress.style.width = `${((activeIndex + 1) / slides.length) * 100}%`;
+            if (updateHash) {
+                history.replaceState(null, "", `#${slides[activeIndex].id}`);
+            }
+        }
+
+        function goTo(index) {
+            const target = slides[Math.max(0, Math.min(slides.length - 1, index))];
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            setActive(slides.indexOf(target), true);
+        }
+
+        prev.addEventListener("click", () => goTo(activeIndex - 1));
+        next.addEventListener("click", () => goTo(activeIndex + 1));
+        printDeck.addEventListener("click", () => window.print());
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowDown" || event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
+                event.preventDefault();
+                goTo(activeIndex + 1);
+            }
+            if (event.key === "ArrowUp" || event.key === "ArrowLeft" || event.key === "PageUp") {
+                event.preventDefault();
+                goTo(activeIndex - 1);
+            }
+            if (event.key === "Home") {
+                event.preventDefault();
+                goTo(0);
+            }
+            if (event.key === "End") {
+                event.preventDefault();
+                goTo(slides.length - 1);
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            const visible = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible) {
+                setActive(slides.indexOf(visible.target), false);
+            }
+        }, { threshold: [0.55, 0.7, 0.9] });
+
+        slides.forEach((slide) => observer.observe(slide));
+
+        const hashIndex = slides.findIndex((slide) => `#${slide.id}` === window.location.hash);
+        if (hashIndex >= 0) {
+            requestAnimationFrame(() => goTo(hashIndex));
+        } else {
+            setActive(0, false);
+        }
+    </script>
+</body>
+</html>

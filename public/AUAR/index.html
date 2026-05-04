@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Engineering for Robotic Housing Systems | Clay Seifert</title>
+    <meta name="description" content="A conversational web deck by Clay Seifert for AUAR, focused on product engineering, AI, architectural geometry, and robotic housing workflows.">
+    <meta name="author" content="Clay Seifert">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://claysbrain.com/AUAR/">
+    <link rel="stylesheet" href="https://use.typekit.net/tnt2ozq.css">
+    <style>
+        :root {
+            --ink: #171614;
+            --muted: #65615a;
+            --paper: #f5f2eb;
+            --panel: rgba(255, 253, 245, 0.78);
+            --panel-strong: rgba(255, 253, 245, 0.95);
+            --line: rgba(23, 22, 20, 0.16);
+            --line-strong: rgba(23, 22, 20, 0.3);
+            --factory: #26332c;
+            --moss: #5e7a48;
+            --steel: #496b7d;
+            --clay: #b9543e;
+            --signal: #d99b27;
+            --light: #fffdf5;
+            --shadow: 0 24px 80px rgba(23, 22, 20, 0.16);
+            --sans: "neue-haas-grotesk-text", Inter, Arial, sans-serif;
+            --display: "neue-haas-grotesk-display", "neue-haas-grotesk-text", Inter, Arial, sans-serif;
+            --serif: "freight-big-pro", Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100%;
+            margin: 0;
+            overflow: hidden;
+            color: var(--ink);
+            background:
+                linear-gradient(90deg, rgba(23, 22, 20, 0.046) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(23, 22, 20, 0.038) 1px, transparent 1px),
+                radial-gradient(circle at 85% 14%, rgba(217, 155, 39, 0.14), transparent 28%),
+                var(--paper);
+            background-size: 42px 42px, 42px 42px, auto, auto;
+            font-family: var(--sans);
+            letter-spacing: 0;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .deck-shell {
+            position: relative;
+            height: 100vh;
+            height: 100svh;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .deck {
+            height: 100%;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+        }
+
+        .deck-slide {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100svh;
+            padding: 76px 76px 64px;
+            display: flex;
+            align-items: center;
+            scroll-snap-align: start;
+            isolation: isolate;
+        }
+
+        .deck-slide::before {
+            content: "";
+            position: absolute;
+            inset: 24px;
+            border: 1px solid var(--line);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .slide-inner {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
+            gap: 36px;
+            align-items: center;
+        }
+
+        .slide-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 16px;
+            color: var(--moss);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .slide-kicker::before {
+            content: "";
+            width: 36px;
+            height: 2px;
+            background: currentColor;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1,
+        h2 {
+            font-family: var(--display);
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+
+        h1 {
+            max-width: 1040px;
+            margin-bottom: 18px;
+            font-size: 4.55rem;
+            line-height: 0.97;
+        }
+
+        h2 {
+            max-width: 940px;
+            margin-bottom: 22px;
+            font-size: 3.18rem;
+            line-height: 1.03;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            line-height: 1.22;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+
+        .subtitle,
+        .body-large {
+            max-width: 820px;
+            color: var(--muted);
+            font-size: 1.25rem;
+            line-height: 1.52;
+        }
+
+        .thesis {
+            max-width: 1020px;
+            margin: 32px 0;
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-style: italic;
+            line-height: 1.2;
+        }
+
+        .deck-chrome {
+            position: fixed;
+            top: 18px;
+            left: 24px;
+            right: 24px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .home-link,
+        .deck-actions,
+        .slide-count {
+            pointer-events: auto;
+        }
+
+        .home-link {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        .deck-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(245, 242, 235, 0.84);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 10px 30px rgba(23, 22, 20, 0.08);
+        }
+
+        .icon-button {
+            position: relative;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            display: inline-grid;
+            place-items: center;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            color: var(--ink);
+            background: transparent;
+            cursor: pointer;
+            transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+        }
+
+        .icon-button:hover {
+            background: var(--panel-strong);
+            border-color: var(--line);
+            transform: translateY(-1px);
+        }
+
+        .icon-button:focus-visible,
+        .home-link:focus-visible,
+        .project-link:focus-visible {
+            outline: 2px solid var(--moss);
+            outline-offset: 3px;
+        }
+
+        .arrow-icon {
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid currentColor;
+            border-left: 2px solid currentColor;
+        }
+
+        .arrow-icon.prev {
+            transform: rotate(-45deg);
+        }
+
+        .arrow-icon.next {
+            transform: rotate(135deg);
+        }
+
+        .print-icon {
+            position: relative;
+            width: 17px;
+            height: 14px;
+            border: 2px solid currentColor;
+            border-radius: 2px;
+            transform: translateY(2px);
+        }
+
+        .print-icon::before,
+        .print-icon::after {
+            content: "";
+            position: absolute;
+            left: 3px;
+            right: 3px;
+            border: 2px solid currentColor;
+            background: var(--paper);
+        }
+
+        .print-icon::before {
+            top: -9px;
+            height: 8px;
+            border-bottom: 0;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .print-icon::after {
+            bottom: -7px;
+            height: 8px;
+            border-top: 0;
+            border-radius: 0 0 2px 2px;
+        }
+
+        .slide-count {
+            min-width: 62px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .deck-progress {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 22;
+            height: 5px;
+            background: rgba(23, 22, 20, 0.08);
+        }
+
+        .deck-progress span {
+            display: block;
+            width: 10%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--moss), var(--steel), var(--signal), var(--clay));
+            transition: width 240ms ease;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition:
+                opacity 520ms ease,
+                transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition-delay: calc(var(--i, 0) * 70ms);
+        }
+
+        .deck-slide.is-active .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-meta,
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 26px;
+            color: var(--muted);
+            font-size: 0.96rem;
+        }
+
+        .hero-meta span,
+        .chip-row span {
+            padding: 8px 11px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 253, 245, 0.6);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .four-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .info-card,
+        .story-card,
+        .media-card,
+        .hypothesis-card,
+        .principle-card,
+        .console-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 12px 40px rgba(23, 22, 20, 0.08);
+        }
+
+        .info-card {
+            min-height: 170px;
+            padding: 20px;
+        }
+
+        .info-card p,
+        .story-card p,
+        .hypothesis-card p,
+        .principle-card p,
+        .media-card p,
+        .console-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.45;
+        }
+
+        .accent-moss {
+            color: var(--moss);
+        }
+
+        .accent-steel {
+            color: var(--steel);
+        }
+
+        .accent-clay {
+            color: var(--clay);
+        }
+
+        .pitch-box {
+            position: relative;
+            padding: 30px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--factory);
+            color: var(--light);
+            box-shadow: var(--shadow);
+        }
+
+        .pitch-box::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(255, 253, 245, 0.08) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(255, 253, 245, 0.07) 1px, transparent 1px);
+            background-size: 34px 34px;
+            opacity: 0.46;
+        }
+
+        .pitch-box > * {
+            position: relative;
+        }
+
+        .pitch-box p {
+            margin: 0;
+            font-family: var(--serif);
+            font-size: 1.75rem;
+            font-style: italic;
+            line-height: 1.26;
+        }
+
+        .operator-console {
+            position: relative;
+            min-height: 505px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #20231f;
+            color: var(--light);
+            box-shadow: var(--shadow);
+        }
+
+        .operator-console::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(255, 253, 245, 0.08) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(255, 253, 245, 0.07) 1px, transparent 1px);
+            background-size: 36px 36px;
+        }
+
+        .console-header {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 22px;
+            border-bottom: 1px solid rgba(255, 253, 245, 0.16);
+        }
+
+        .console-header strong {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .status-pill {
+            padding: 5px 10px;
+            border: 1px solid rgba(217, 155, 39, 0.7);
+            border-radius: 999px;
+            color: #f1c15c;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .console-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 0.82fr;
+            gap: 14px;
+            padding: 22px;
+        }
+
+        .queue {
+            display: grid;
+            gap: 10px;
+        }
+
+        .queue-row {
+            display: grid;
+            grid-template-columns: 78px minmax(0, 1fr) 68px;
+            gap: 10px;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid rgba(255, 253, 245, 0.14);
+            border-radius: 8px;
+            background: rgba(255, 253, 245, 0.06);
+        }
+
+        .queue-row.warning {
+            border-color: rgba(217, 155, 39, 0.68);
+            background: rgba(217, 155, 39, 0.12);
+        }
+
+        .mini-bar {
+            height: 8px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: rgba(255, 253, 245, 0.16);
+        }
+
+        .mini-bar span {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #7daf67, #d99b27);
+        }
+
+        .machine-state {
+            display: grid;
+            gap: 12px;
+        }
+
+        .machine-state div {
+            min-height: 94px;
+            padding: 14px;
+            border: 1px solid rgba(255, 253, 245, 0.14);
+            border-radius: 8px;
+            background: rgba(255, 253, 245, 0.06);
+        }
+
+        .machine-state span {
+            display: block;
+            color: rgba(255, 253, 245, 0.6);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+        }
+
+        .machine-state strong {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.45rem;
+        }
+
+        .role-list {
+            display: grid;
+            gap: 12px;
+            margin: 26px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .role-list li {
+            display: grid;
+            grid-template-columns: 28px minmax(0, 1fr);
+            gap: 12px;
+            padding: 17px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            color: var(--muted);
+            line-height: 1.42;
+        }
+
+        .role-list li::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            border: 1px solid var(--line-strong);
+            border-radius: 50%;
+            background:
+                linear-gradient(90deg, transparent 10px, var(--moss) 10px, var(--moss) 12px, transparent 12px),
+                linear-gradient(0deg, transparent 10px, var(--moss) 10px, var(--moss) 12px, transparent 12px);
+        }
+
+        .media-card {
+            min-height: 330px;
+            overflow: hidden;
+        }
+
+        .media-card figure {
+            height: 220px;
+            margin: 0;
+            overflow: hidden;
+            background: #d9d4c8;
+        }
+
+        .media-card figure img {
+            transition: transform 560ms ease;
+        }
+
+        .media-card:hover figure img {
+            transform: scale(1.04);
+        }
+
+        .media-copy {
+            padding: 16px;
+        }
+
+        .media-copy p {
+            font-size: 0.9rem;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .story-card {
+            min-height: 245px;
+            padding: 18px;
+        }
+
+        .story-card span {
+            display: inline-grid;
+            width: 34px;
+            height: 34px;
+            place-items: center;
+            margin-bottom: 24px;
+            border-radius: 50%;
+            color: #fff;
+            background: var(--factory);
+            font-weight: 700;
+        }
+
+        .story-card:nth-child(2) span {
+            background: var(--steel);
+        }
+
+        .story-card:nth-child(3) span {
+            background: var(--clay);
+        }
+
+        .story-card:nth-child(4) span {
+            background: var(--moss);
+        }
+
+        .story-card:nth-child(5) span {
+            background: var(--signal);
+        }
+
+        .pipeline-visual {
+            margin-top: 26px;
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .pipeline-line {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 10px;
+            align-items: stretch;
+        }
+
+        .pipeline-line span {
+            position: relative;
+            min-height: 78px;
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 253, 245, 0.7);
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .pipeline-line span::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            width: 10px;
+            height: 1px;
+            background: var(--line-strong);
+        }
+
+        .pipeline-line span:last-child::after {
+            display: none;
+        }
+
+        .fragment-board {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 13px;
+            margin-top: 30px;
+        }
+
+        .fragment-step {
+            min-height: 330px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .fragment-step figure {
+            height: 188px;
+            margin: 0 0 14px;
+            overflow: hidden;
+            border-radius: 6px;
+            background: #d9d4c8;
+        }
+
+        .fragment-step p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.42;
+        }
+
+        .token-grid {
+            display: grid;
+            height: 188px;
+            grid-template-columns: repeat(7, 1fr);
+            grid-auto-rows: 1fr;
+            gap: 5px;
+            padding: 13px;
+            border-radius: 6px;
+            background: #252720;
+        }
+
+        .token-grid span {
+            border-radius: 4px;
+            background: rgba(255, 253, 245, 0.16);
+        }
+
+        .token-grid span:nth-child(3n) {
+            background: rgba(94, 122, 72, 0.72);
+        }
+
+        .token-grid span:nth-child(4n) {
+            background: rgba(185, 84, 62, 0.72);
+        }
+
+        .token-grid span:nth-child(8n) {
+            background: rgba(217, 155, 39, 0.72);
+        }
+
+        .feedback-panel {
+            position: relative;
+            min-height: 500px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--light);
+            box-shadow: var(--shadow);
+        }
+
+        .feedback-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(0deg, rgba(23, 22, 20, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(23, 22, 20, 0.08) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        .module-frame {
+            position: absolute;
+            left: 14%;
+            right: 14%;
+            top: 88px;
+            height: 260px;
+            border: 18px solid rgba(38, 51, 44, 0.82);
+            border-radius: 8px;
+        }
+
+        .module-frame::before,
+        .module-frame::after {
+            content: "";
+            position: absolute;
+            top: -18px;
+            bottom: -18px;
+            width: 18px;
+            background: rgba(38, 51, 44, 0.82);
+        }
+
+        .module-frame::before {
+            left: 31%;
+        }
+
+        .module-frame::after {
+            right: 31%;
+        }
+
+        .warning-tags {
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .warning-tags div {
+            padding: 15px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 253, 245, 0.92);
+        }
+
+        .warning-tags span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+        }
+
+        .warning-tags strong {
+            display: block;
+            margin-top: 7px;
+            font-size: 1.2rem;
+        }
+
+        .ai-opinion {
+            margin-top: 30px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #20231f;
+            color: var(--light);
+            font-family: var(--serif);
+            font-size: 1.7rem;
+            font-style: italic;
+            line-height: 1.28;
+        }
+
+        .workflow-questions {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .workflow-questions article {
+            min-height: 225px;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .workflow-questions span {
+            display: block;
+            margin-bottom: 24px;
+            color: var(--clay);
+            font-family: var(--serif);
+            font-size: 2.4rem;
+            font-style: italic;
+            line-height: 1;
+        }
+
+        .hypothesis-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .hypothesis-card {
+            min-height: 305px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hypothesis-card .number {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 36px;
+            border-radius: 50%;
+            color: #fff;
+            background: var(--factory);
+            font-weight: 700;
+        }
+
+        .hypothesis-card:nth-child(2) .number {
+            background: var(--clay);
+        }
+
+        .hypothesis-card:nth-child(3) .number {
+            background: var(--steel);
+        }
+
+        .hypothesis-card .question {
+            margin-top: auto;
+            padding-top: 16px;
+            color: var(--ink);
+            font-family: var(--serif);
+            font-size: 1.16rem;
+            font-style: italic;
+            line-height: 1.25;
+        }
+
+        .user-first {
+            margin-top: 24px;
+            padding: 23px 26px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--factory);
+            color: var(--light);
+            font-family: var(--serif);
+            font-size: 1.48rem;
+            font-style: italic;
+            line-height: 1.32;
+        }
+
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 34px;
+        }
+
+        .principle-card {
+            min-height: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .principle-card .mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--line-strong);
+            background:
+                linear-gradient(90deg, transparent 19px, currentColor 19px, currentColor 21px, transparent 21px),
+                linear-gradient(0deg, transparent 19px, currentColor 19px, currentColor 21px, transparent 21px);
+            color: var(--moss);
+        }
+
+        .principle-card:nth-child(2) .mark {
+            color: var(--steel);
+        }
+
+        .principle-card:nth-child(3) .mark {
+            color: var(--clay);
+        }
+
+        .principle-card:nth-child(4) .mark {
+            color: var(--signal);
+        }
+
+        .principle-card:nth-child(5) .mark {
+            color: var(--factory);
+        }
+
+        .closing {
+            max-width: 1020px;
+        }
+
+        .closing h2 {
+            font-size: 4rem;
+        }
+
+        .closing-statement {
+            margin: 34px 0;
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-style: italic;
+            line-height: 1.24;
+        }
+
+        .final-line {
+            max-width: 880px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line-strong);
+            color: var(--ink);
+            font-size: 1.42rem;
+            line-height: 1.35;
+            font-weight: 700;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 36px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: 0 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 253, 245, 0.7);
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.92rem;
+            transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-1px);
+            border-color: var(--line-strong);
+            background: var(--panel-strong);
+        }
+
+        @media (max-width: 1100px) {
+            body {
+                overflow: auto;
+            }
+
+            .deck-shell {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .deck {
+                height: auto;
+                overflow: visible;
+                scroll-snap-type: none;
+            }
+
+            .deck-slide {
+                min-height: auto;
+                padding: 98px 24px 58px;
+            }
+
+            .deck-slide::before {
+                inset: 14px;
+            }
+
+            .split,
+            .console-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 3.35rem;
+            }
+
+            h2,
+            .closing h2 {
+                font-size: 2.55rem;
+            }
+
+            .thesis,
+            .closing-statement,
+            .pitch-box p,
+            .ai-opinion {
+                font-size: 1.62rem;
+            }
+
+            .card-grid,
+            .four-grid,
+            .story-grid,
+            .fragment-board,
+            .workflow-questions,
+            .hypothesis-grid,
+            .principles,
+            .pipeline-line {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .deck-chrome {
+                left: 14px;
+                right: 14px;
+            }
+
+            .home-link {
+                display: none;
+            }
+        }
+
+        @media (max-width: 680px) {
+            h1 {
+                font-size: 2.52rem;
+                line-height: 1.03;
+            }
+
+            h2,
+            .closing h2 {
+                font-size: 2.05rem;
+            }
+
+            .deck-slide {
+                padding: 92px 18px 48px;
+            }
+
+            .card-grid,
+            .four-grid,
+            .story-grid,
+            .fragment-board,
+            .workflow-questions,
+            .hypothesis-grid,
+            .principles,
+            .pipeline-line,
+            .warning-tags {
+                grid-template-columns: 1fr;
+            }
+
+            .operator-console,
+            .feedback-panel {
+                min-height: 450px;
+            }
+
+            .queue-row {
+                grid-template-columns: 1fr;
+            }
+
+            .deck-actions {
+                gap: 4px;
+            }
+
+            .slide-count {
+                min-width: 54px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 1ms !important;
+                scroll-behavior: auto !important;
+                transition-duration: 1ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @media print {
+            @page {
+                size: landscape;
+                margin: 0;
+            }
+
+            html,
+            body {
+                width: 100%;
+                height: auto;
+                overflow: visible;
+                background: #fff;
+            }
+
+            .deck-shell,
+            .deck {
+                height: auto;
+                overflow: visible;
+            }
+
+            .deck-chrome,
+            .deck-progress {
+                display: none;
+            }
+
+            .deck-slide {
+                min-height: 100vh;
+                page-break-after: always;
+                break-after: page;
+                padding: 48px;
+                background: #fff;
+            }
+
+            .deck-slide::before {
+                inset: 18px;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+            .info-card,
+            .story-card,
+            .media-card,
+            .hypothesis-card,
+            .principle-card,
+            .workflow-questions article,
+            .role-list li {
+                box-shadow: none;
+                background: #fff;
+            }
+
+            .operator-console,
+            .feedback-panel,
+            .pitch-box {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="deck-shell">
+        <header class="deck-chrome" aria-label="Presentation controls">
+            <a class="home-link" href="/">Clay Seifert</a>
+            <div class="deck-actions">
+                <button class="icon-button" type="button" id="prevSlide" aria-label="Previous slide">
+                    <span class="arrow-icon prev" aria-hidden="true"></span>
+                </button>
+                <span class="slide-count" id="slideCount">01 / 10</span>
+                <button class="icon-button" type="button" id="nextSlide" aria-label="Next slide">
+                    <span class="arrow-icon next" aria-hidden="true"></span>
+                </button>
+                <button class="icon-button" type="button" id="printDeck" aria-label="Print deck">
+                    <span class="print-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </header>
+
+        <main class="deck" id="deck" tabindex="-1">
+            <section class="deck-slide is-active" id="slide-1" aria-labelledby="slide-1-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">Why I think I fit this role</p>
+                    <div class="hero-meta reveal" style="--i: 1">
+                        <span>Clay Seifert</span>
+                        <span>AUAR Conversation</span>
+                        <span>Product Engineering</span>
+                    </div>
+                    <h1 class="reveal" id="slide-1-title" style="--i: 2">Product Engineering for Robotic Housing Systems</h1>
+                    <p class="subtitle reveal" style="--i: 3">Turning architectural geometry, AI, and operator workflows into software with physical consequences.</p>
+                    <p class="thesis reveal" style="--i: 4">I build software systems at the intersection of architecture, AI, geometry, and product workflows: tools that help design information become usable, testable, and eventually buildable.</p>
+                    <div class="card-grid reveal" style="--i: 5">
+                        <article class="info-card">
+                            <h3 class="accent-moss">Architecture + Construction</h3>
+                            <p>B.Arch, design culture, housing, geometric systems, fabrication constraints, real AEC workflows.</p>
+                        </article>
+                        <article class="info-card">
+                            <h3 class="accent-steel">Product Engineering</h3>
+                            <p>React, TypeScript, FastAPI, user workflows, prototyping, full-stack systems, product judgment.</p>
+                        </article>
+                        <article class="info-card">
+                            <h3 class="accent-clay">AI + Computational Systems</h3>
+                            <p>ViTs, embeddings, similarity search, design reasoning, geometry-aware retrieval, real-time feedback.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-2" aria-labelledby="slide-2-title">
+                <div class="slide-inner split">
+                    <div>
+                        <p class="slide-kicker reveal" style="--i: 0">60-second story</p>
+                        <h2 class="reveal" id="slide-2-title" style="--i: 1">Why AUAR feels unusually aligned</h2>
+                        <p class="body-large reveal" style="--i: 2">I am a recent architecture graduate working at the intersection of AI, computational design, and construction technology. I am interested in how design intent turns into physical production, especially how software, robotics, and AI can expand what buildings can be, rather than just making them cheaper.</p>
+                        <p class="body-large reveal" style="--i: 3">I am looking for a role where I can build real systems, work close to the consequences, and take ownership quickly.</p>
+                    </div>
+                    <aside class="pitch-box reveal" style="--i: 4">
+                        <p>AUAR is compelling to me because the software has physical consequences. I am interested in the layer where architectural intent becomes manufacturable instructions, where AI can catch problems before they become expensive, and where operators need interfaces that work under pressure.</p>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-3" aria-labelledby="slide-3-title">
+                <div class="slide-inner split">
+                    <div>
+                        <p class="slide-kicker reveal" style="--i: 0">Role reading</p>
+                        <h2 class="reveal" id="slide-3-title" style="--i: 1">What I think AUAR needs from this role</h2>
+                        <p class="body-large reveal" style="--i: 2">This seems less like a conventional web product role and more like a bridge between software, robotics, construction, and human decision-making. The UI is not just a screen; it is part of the production system.</p>
+                        <ul class="role-list reveal" style="--i: 3">
+                            <li>Understand the actual problems operators, engineers, and designers face.</li>
+                            <li>Build interfaces that make production state, geometry, and risk legible.</li>
+                            <li>Move between frontend, backend, data models, and physical workflow constraints.</li>
+                            <li>Use AI where it changes what people can actually do, not just where it demos well.</li>
+                            <li>Ship software that works under pressure because mistakes have physical consequences.</li>
+                        </ul>
+                    </div>
+                    <div class="operator-console reveal" style="--i: 4" aria-label="Conceptual operator console mockup">
+                        <div class="console-header">
+                            <strong>Production console</strong>
+                            <span class="status-pill">attention required</span>
+                        </div>
+                        <div class="console-grid">
+                            <div class="queue">
+                                <div class="queue-row">
+                                    <strong>P-104</strong>
+                                    <div class="mini-bar"><span style="width: 86%"></span></div>
+                                    <span>cut</span>
+                                </div>
+                                <div class="queue-row warning">
+                                    <strong>P-105</strong>
+                                    <div class="mini-bar"><span style="width: 52%"></span></div>
+                                    <span>check</span>
+                                </div>
+                                <div class="queue-row">
+                                    <strong>P-106</strong>
+                                    <div class="mini-bar"><span style="width: 24%"></span></div>
+                                    <span>queued</span>
+                                </div>
+                                <div class="queue-row">
+                                    <strong>P-107</strong>
+                                    <div class="mini-bar"><span style="width: 8%"></span></div>
+                                    <span>ready</span>
+                                </div>
+                            </div>
+                            <div class="machine-state">
+                                <div><span>Next action</span><strong>Verify joint B7</strong></div>
+                                <div><span>Context</span><strong>Tool offset drift</strong></div>
+                                <div><span>Recovery path</span><strong>2 steps</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-4" aria-labelledby="slide-4-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">Through-line</p>
+                    <h2 class="reveal" id="slide-4-title" style="--i: 1">My work sits between architecture, computation, and usable tools</h2>
+                    <div class="four-grid reveal" style="--i: 2">
+                        <article class="media-card">
+                            <figure>
+                                <img src="/atlas/atlas.webp" alt="A dense visual atlas of architectural images arranged in a grid.">
+                            </figure>
+                            <div class="media-copy">
+                                <h3>Archipedia.ai</h3>
+                                <p>Architectural precedent retrieval and design intelligence.</p>
+                            </div>
+                        </article>
+                        <article class="media-card">
+                            <figure>
+                                <img src="/portfolio/front-elevation-ultra-fine-relief-of-data-streams-bin-b4955c67.webp" alt="A perforated architectural facade with visitors nearby.">
+                            </figure>
+                            <div class="media-copy">
+                                <h3>Patch-aware ML research</h3>
+                                <p>Part-level geometric reasoning from architectural images.</p>
+                            </div>
+                        </article>
+                        <article class="media-card">
+                            <figure>
+                                <img src="/portfolio/axonometric-vector-map-of-walkable-urban-neighborhood-237d9b95.webp" alt="An axonometric neighborhood map with green spaces and urban blocks.">
+                            </figure>
+                            <div class="media-copy">
+                                <h3>Real-time feedback</h3>
+                                <p>Computational response in-browser for design constraints.</p>
+                            </div>
+                        </article>
+                        <article class="media-card">
+                            <figure>
+                                <img src="/portfolio/close-up-of-vertical-farm-tower-connection-point-biom-48bdf98f.webp" alt="A branching timber column detail with visible connection hardware.">
+                            </figure>
+                            <div class="media-copy">
+                                <h3>AEC product work</h3>
+                                <p>Resia, TestFit, Drafted, and founder work around user workflows.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <p class="thesis reveal" style="--i: 3">Across these projects, the pattern is the same: take architectural knowledge, geometry, or constraints, make them computable, and turn them into a product workflow people can use.</p>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-5" aria-labelledby="slide-5-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">Concrete project story</p>
+                    <h2 class="reveal" id="slide-5-title" style="--i: 1">Archipedia: making architectural knowledge searchable</h2>
+                    <div class="story-grid reveal" style="--i: 2">
+                        <article class="story-card">
+                            <span>1</span>
+                            <h3>The problem was...</h3>
+                            <p>Architectural knowledge is trapped in images, folders, PDFs, project archives, and individual memory.</p>
+                        </article>
+                        <article class="story-card">
+                            <span>2</span>
+                            <h3>I built...</h3>
+                            <p>Visual embeddings, metadata, FAISS search, and a React/FastAPI interface for visual and conceptual retrieval.</p>
+                        </article>
+                        <article class="story-card">
+                            <span>3</span>
+                            <h3>The hard part was...</h3>
+                            <p>Making similarity useful to designers, not just technically plausible, and translating fuzzy intent into a searchable system.</p>
+                        </article>
+                        <article class="story-card">
+                            <span>4</span>
+                            <h3>What I learned was...</h3>
+                            <p>The value is not the model alone; it is the workflow that helps people make better decisions with less friction.</p>
+                        </article>
+                        <article class="story-card">
+                            <span>5</span>
+                            <h3>Why it maps to AUAR...</h3>
+                            <p>A design-to-production company needs structured, queryable knowledge about buildings, components, assemblies, constraints, and precedents.</p>
+                        </article>
+                    </div>
+                    <div class="pipeline-visual reveal" style="--i: 3">
+                        <div class="pipeline-line" aria-label="Archipedia pipeline">
+                            <span>Project images + metadata</span>
+                            <span>Embeddings</span>
+                            <span>Vector index</span>
+                            <span>Search UI</span>
+                            <span>Design decision</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-6" aria-labelledby="slide-6-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">Case study: geometric reasoning</p>
+                    <h2 class="reveal" id="slide-6-title" style="--i: 1">From whole-building similarity to part-level design reasoning</h2>
+                    <p class="body-large reveal" style="--i: 2">Manufacturability is rarely about the whole building image. It is about parts, joints, panels, openings, tolerances, sequencing, and repeated geometric conditions.</p>
+                    <div class="fragment-board reveal" style="--i: 3">
+                        <article class="fragment-step">
+                            <figure>
+                                <img src="/portfolio/interior-rendered-gothic-cathedral-building-section-cut-c373d4df.webp" alt="A sectional architectural image used as a fragment input.">
+                            </figure>
+                            <h3>Fragment input</h3>
+                            <p>Architectural images become local cues rather than only global style references.</p>
+                        </article>
+                        <article class="fragment-step">
+                            <div class="token-grid" aria-hidden="true">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <h3>Patch representation</h3>
+                            <p>ViT-style features can compare operations, assemblies, and latent geometric logic.</p>
+                        </article>
+                        <article class="fragment-step">
+                            <figure>
+                                <img src="/portfolio/gear-systems-and-fan-blades-carved-into-stone-embedde-62642580.webp" alt="Industrial gears embedded into a stone facade.">
+                            </figure>
+                            <h3>Retrieved condition</h3>
+                            <p>Search can move toward repeated details, constraints, and production-relevant families.</p>
+                        </article>
+                        <article class="fragment-step">
+                            <figure>
+                                <img src="/portfolio/close-up-of-vertical-farm-tower-connection-point-biom-48bdf98f.webp" alt="A branching timber connection detail.">
+                            </figure>
+                            <h3>Assembly relevance</h3>
+                            <p>The useful question becomes: where does this part, tolerance, or operation show up again?</p>
+                        </article>
+                    </div>
+                    <p class="ai-opinion reveal" style="--i: 4">I think AI is most useful here when it reduces operator uncertainty or catches production problems earlier. I am less interested in AI that generates impressive options but does not connect to manufacturability, QA, cost, or sequence.</p>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-7" aria-labelledby="slide-7-title">
+                <div class="slide-inner split">
+                    <div>
+                        <p class="slide-kicker reveal" style="--i: 0">Case study: real-time feedback</p>
+                        <h2 class="reveal" id="slide-7-title" style="--i: 1">Making constraints visible before they become expensive</h2>
+                        <p class="body-large reveal" style="--i: 2">In architecture and construction, feedback often arrives too late: structure, fabrication, coordination, tolerance, waste, sequencing.</p>
+                        <p class="body-large reveal" style="--i: 3">The reason I care about real-time feedback is not just speed. It is that speed changes where feedback can live. If analysis is fast enough, it can become part of the design or production interaction itself.</p>
+                    </div>
+                    <div class="feedback-panel reveal" style="--i: 4" aria-label="Design validation feedback diagram">
+                        <div class="module-frame" aria-hidden="true"></div>
+                        <div class="warning-tags">
+                            <div><span>Geometry</span><strong>Opening conflict</strong></div>
+                            <div><span>Waste</span><strong>High offcut</strong></div>
+                            <div><span>Sequence</span><strong>Reorder run</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-8" aria-labelledby="slide-8-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">Product and operator workflow</p>
+                    <h2 class="reveal" id="slide-8-title" style="--i: 1">I think about tools as workflows, not just interfaces</h2>
+                    <p class="body-large reveal" style="--i: 2">The model is rarely the full product. The real product is the loop between user, interface, data, and consequence. That feels especially true at AUAR because the consequence is physical.</p>
+                    <div class="workflow-questions reveal" style="--i: 3">
+                        <article>
+                            <span>1</span>
+                            <h3>Who uses this under pressure?</h3>
+                        </article>
+                        <article>
+                            <span>2</span>
+                            <h3>What decision are they trying to make?</h3>
+                        </article>
+                        <article>
+                            <span>3</span>
+                            <h3>What information do they need at that moment?</h3>
+                        </article>
+                        <article>
+                            <span>4</span>
+                            <h3>What happens if the system is wrong?</h3>
+                        </article>
+                        <article>
+                            <span>5</span>
+                            <h3>How does the tool earn trust over time?</h3>
+                        </article>
+                    </div>
+                    <div class="chip-row reveal" style="--i: 4">
+                        <span>Resia</span>
+                        <span>TestFit</span>
+                        <span>Drafted</span>
+                        <span>Founder/product work</span>
+                        <span>AEC users</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-9" aria-labelledby="slide-9-title">
+                <div class="slide-inner">
+                    <p class="slide-kicker reveal" style="--i: 0">First 90 days</p>
+                    <h2 class="reveal" id="slide-9-title" style="--i: 1">Hypotheses I would want to test at AUAR</h2>
+                    <div class="hypothesis-grid reveal" style="--i: 2">
+                        <article class="hypothesis-card">
+                            <span class="number">1</span>
+                            <h3>Operator production console</h3>
+                            <p>A clear interface for current panel/run state, production queue, errors and warnings, next action, recovery path, and live machine context.</p>
+                            <p class="question">What does an operator need to know in the 10 seconds after something goes wrong?</p>
+                        </article>
+                        <article class="hypothesis-card">
+                            <span class="number">2</span>
+                            <h3>Design-to-production validation layer</h3>
+                            <p>Flag panel geometry risks, material waste, assembly bottlenecks, tolerance-sensitive details, sequencing problems, and manufacturability warnings.</p>
+                            <p class="question">What mistakes are currently caught too late?</p>
+                        </article>
+                        <article class="hypothesis-card">
+                            <span class="number">3</span>
+                            <h3>Production insight on demand</h3>
+                            <p>Natural-language or command-bar access to live production data: pauses, delays, deltas between runs, interventions, and recurring geometry types.</p>
+                            <p class="question">Where could AI reduce cognitive load instead of adding noise?</p>
+                        </article>
+                    </div>
+                    <p class="user-first reveal" style="--i: 3">I would not start by assuming the feature. I would start by watching the production workflow, mapping the repeated decision points, and finding where software could make the next action clearer.</p>
+                </div>
+            </section>
+
+            <section class="deck-slide" id="slide-10" aria-labelledby="slide-10-title">
+                <div class="slide-inner closing">
+                    <p class="slide-kicker reveal" style="--i: 0">Closing</p>
+                    <h2 class="reveal" id="slide-10-title" style="--i: 1">Why AUAR</h2>
+                    <p class="closing-statement reveal" style="--i: 2">AUAR is exciting to me because it treats automation not as a way to flatten architecture, but as a way to make a new kind of building system possible.</p>
+                    <p class="closing-statement reveal" style="--i: 3">The opportunity I see is the software layer that connects design intent, production constraints, operator decisions, and physical assembly.</p>
+                    <p class="final-line reveal" style="--i: 4">I am most useful where architectural imagination, computational systems, and real-world production have to meet.</p>
+                    <div class="project-links reveal" style="--i: 5">
+                        <a class="project-link" href="/">claysbrain.com</a>
+                        <a class="project-link" href="/gallery.html">Image gallery</a>
+                        <a class="project-link" href="mailto:clayhseifert@gmail.com">clayhseifert@gmail.com</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="deck-progress" aria-hidden="true"><span id="deckProgress"></span></div>
+    </div>
+
+    <script>
+        const deck = document.getElementById("deck");
+        const slides = Array.from(document.querySelectorAll(".deck-slide"));
+        const count = document.getElementById("slideCount");
+        const progress = document.getElementById("deckProgress");
+        const prev = document.getElementById("prevSlide");
+        const next = document.getElementById("nextSlide");
+        const printDeck = document.getElementById("printDeck");
+        let activeIndex = 0;
+
+        function pad(value) {
+            return String(value).padStart(2, "0");
+        }
+
+        function setActive(index, updateHash) {
+            activeIndex = Math.max(0, Math.min(slides.length - 1, index));
+            slides.forEach((slide, slideIndex) => {
+                slide.classList.toggle("is-active", slideIndex === activeIndex);
+            });
+            count.textContent = `${pad(activeIndex + 1)} / ${pad(slides.length)}`;
+            progress.style.width = `${((activeIndex + 1) / slides.length) * 100}%`;
+            if (updateHash) {
+                history.replaceState(null, "", `#${slides[activeIndex].id}`);
+            }
+        }
+
+        function goTo(index) {
+            const target = slides[Math.max(0, Math.min(slides.length - 1, index))];
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            setActive(slides.indexOf(target), true);
+        }
+
+        prev.addEventListener("click", () => goTo(activeIndex - 1));
+        next.addEventListener("click", () => goTo(activeIndex + 1));
+        printDeck.addEventListener("click", () => window.print());
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowDown" || event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
+                event.preventDefault();
+                goTo(activeIndex + 1);
+            }
+            if (event.key === "ArrowUp" || event.key === "ArrowLeft" || event.key === "PageUp") {
+                event.preventDefault();
+                goTo(activeIndex - 1);
+            }
+            if (event.key === "Home") {
+                event.preventDefault();
+                goTo(0);
+            }
+            if (event.key === "End") {
+                event.preventDefault();
+                goTo(slides.length - 1);
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            const visible = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible) {
+                setActive(slides.indexOf(visible.target), false);
+            }
+        }, { threshold: [0.55, 0.7, 0.9] });
+
+        slides.forEach((slide) => observer.observe(slide));
+
+        const hashIndex = slides.findIndex((slide) => `#${slide.id}` === window.location.hash);
+        if (hashIndex >= 0) {
+            requestAnimationFrame(() => goTo(hashIndex));
+        } else {
+            setActive(0, false);
+        }
+    </script>
+</body>
+</html>
