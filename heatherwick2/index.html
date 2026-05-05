@@ -63,6 +63,12 @@
             object-fit: cover;
         }
 
+        video {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+        }
+
         button {
             font: inherit;
         }
@@ -214,6 +220,104 @@
 
         .image-tile.medium {
             height: 360px;
+        }
+
+        .demo-stage {
+            width: min(1280px, 100%);
+        }
+
+        .media-heading {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 28px;
+        }
+
+        .media-heading h2 {
+            margin-bottom: 0;
+            font-size: 2.8rem;
+        }
+
+        .media-heading .line {
+            max-width: 480px;
+            font-size: 0.98rem;
+        }
+
+        .video-frame,
+        .media-frame {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #111513;
+            box-shadow: var(--shadow);
+        }
+
+        .video-frame {
+            height: min(68vh, 650px);
+            min-height: 420px;
+        }
+
+        .media-frame {
+            height: min(62vh, 620px);
+            min-height: 360px;
+            background: var(--cream);
+        }
+
+        .video-frame video,
+        .media-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .media-frame.cover img,
+        .media-frame.cover video {
+            object-fit: cover;
+        }
+
+        .demo-links {
+            margin-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .demo-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: 0 16px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 253, 245, 0.72);
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 700;
+        }
+
+        .fragment-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr) minmax(0, 0.9fr);
+            gap: 14px;
+            align-items: stretch;
+        }
+
+        .fragment-card {
+            min-height: 440px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            box-shadow: 0 16px 50px rgba(23, 22, 20, 0.1);
+        }
+
+        .fragment-card .media-frame {
+            height: 310px;
+            min-height: 310px;
+            margin-bottom: 14px;
+            box-shadow: none;
         }
 
         .card {
@@ -743,7 +847,8 @@
             .image-grid,
             .system-loop,
             .metric-row,
-            .screen-grid {
+            .screen-grid,
+            .fragment-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -751,6 +856,24 @@
             .image-tile.medium,
             .image-tile.tall {
                 height: 220px;
+            }
+
+            .media-heading {
+                display: block;
+            }
+
+            .media-heading .line {
+                margin-top: 10px;
+            }
+
+            .video-frame,
+            .media-frame {
+                height: 52vh;
+                min-height: 320px;
+            }
+
+            .fragment-card {
+                min-height: 0;
             }
 
             h1 {
@@ -817,6 +940,10 @@
 
             .quote {
                 font-size: 1.9rem;
+            }
+
+            .media-heading h2 {
+                font-size: 2.05rem;
             }
 
             .deck-actions {
@@ -889,7 +1016,7 @@
                 <button class="icon-button" type="button" id="prevSlide" aria-label="Previous slide">
                     <span class="arrow-icon prev" aria-hidden="true"></span>
                 </button>
-                <span class="slide-count" id="slideCount">01 / 31</span>
+                <span class="slide-count" id="slideCount">01 / 39</span>
                 <button class="icon-button" type="button" id="nextSlide" aria-label="Next slide">
                     <span class="arrow-icon next" aria-hidden="true"></span>
                 </button>
@@ -976,6 +1103,21 @@
                 </div>
             </section>
 
+            <section class="slide" id="archipedia-search-gap" aria-labelledby="archipedia-search-gap-title">
+                <div class="stage demo-stage">
+                    <div class="media-heading">
+                        <div>
+                            <p class="tag reveal">Archipedia / CAADRIA</p>
+                            <h2 class="reveal" id="archipedia-search-gap-title" style="--i: 1">The retrieval gap.</h2>
+                        </div>
+                        <p class="line reveal" style="--i: 2">Architectural search is usually split between images, tags, and geometry. The useful version needs to be multi-modal, steerable, and explainable.</p>
+                    </div>
+                    <div class="media-frame reveal" style="--i: 3">
+                        <img src="/heatherwick2/media/archipedia/CAADRIA_LATENT_MAPS/image4.jpg" alt="Diagram comparing visual similarity, keyword metadata, and geometry/BIM retrieval paradigms.">
+                    </div>
+                </div>
+            </section>
+
             <section class="slide" id="slide-11" aria-labelledby="slide-11-title">
                 <div class="stage wide">
                     <p class="tag reveal">Archipedia.ai</p>
@@ -989,15 +1131,56 @@
                 </div>
             </section>
 
+            <section class="slide" id="archipedia-approach" aria-labelledby="archipedia-approach-title">
+                <div class="stage demo-stage">
+                    <div class="media-heading">
+                        <div>
+                            <p class="tag reveal">Archipedia / CAADRIA</p>
+                            <h2 class="reveal" id="archipedia-approach-title" style="--i: 1">Designers can steer what similarity means.</h2>
+                        </div>
+                        <p class="line reveal" style="--i: 2">Visual features, semantic descriptors, and contextual cues become adjustable retrieval signals instead of one opaque ranking.</p>
+                    </div>
+                    <div class="media-frame reveal" style="--i: 3">
+                        <img src="/heatherwick2/media/archipedia/CAADRIA_LATENT_MAPS/image6.jpg" alt="Diagram showing multimodal steerable retrieval from a query through visual, semantic, and contextual representations to ranked precedents.">
+                    </div>
+                </div>
+            </section>
+
             <section class="slide" id="slide-12" aria-labelledby="slide-12-title">
-                <div class="stage">
-                    <h2 class="reveal" id="slide-12-title">The system.</h2>
-                    <div class="arrow-row reveal" style="--i: 1">
-                        <div class="node">CLIP / ViT</div>
-                        <div class="arrow" aria-hidden="true"></div>
-                        <div class="node">FAISS</div>
-                        <div class="arrow" aria-hidden="true"></div>
-                        <div class="node">React / FastAPI</div>
+                <div class="stage demo-stage">
+                    <div class="media-heading">
+                        <div>
+                            <p class="tag reveal">Archipedia / CAADRIA</p>
+                            <h2 class="reveal" id="slide-12-title" style="--i: 1">The system.</h2>
+                        </div>
+                        <p class="line reveal" style="--i: 2">Query image, metadata, and designer weighting feed embedding streams, FAISS retrieval, late fusion, and patch-level explanation.</p>
+                    </div>
+                    <div class="media-frame reveal" style="--i: 3">
+                        <img src="/heatherwick2/media/archipedia/CAADRIA_LATENT_MAPS/image39.png" alt="Archipedia system pipeline showing query image, tri-slider control, project metadata, encoding streams, FAISS retrieval, late fusion, patch re-ranking, ranked precedent list, and patch activation maps.">
+                    </div>
+                    <div class="demo-links reveal" style="--i: 4">
+                        <a class="demo-link" href="https://drive.google.com/file/d/1l1LBHNX0rBq5uV9HTNF0Df7H4PPHVxHn/view?resourcekey" target="_blank" rel="noopener">Open heatmap demo</a>
+                        <a class="demo-link" href="https://drive.google.com/file/d/1Jq-DgxztZ5Yg3vQ18_c7g-rhhrxI-GsQ/view" target="_blank" rel="noopener">Open node demo</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" id="archipedia-latent-maps" aria-labelledby="archipedia-latent-maps-title">
+                <div class="stage demo-stage">
+                    <div class="media-heading">
+                        <div>
+                            <p class="tag reveal">Archipedia / CAADRIA</p>
+                            <h2 class="reveal" id="archipedia-latent-maps-title" style="--i: 1">The archive becomes navigable.</h2>
+                        </div>
+                        <p class="line reveal" style="--i: 2">Latent maps make the collection inspectable: clusters, neighborhoods, and regional/contextual patterns become part of the design conversation.</p>
+                    </div>
+                    <div class="two-up reveal" style="--i: 3">
+                        <div class="media-frame">
+                            <img src="/heatherwick2/media/archipedia/CAADRIA_LATENT_MAPS/TSNE-1.gif" alt="Animated t-SNE latent map of architectural precedent images.">
+                        </div>
+                        <div class="media-frame">
+                            <img src="/heatherwick2/media/archipedia/CAADRIA_LATENT_MAPS/GEOGRAPHY_GIF.gif" alt="Animated geographic latent map of architectural precedent images.">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1016,43 +1199,99 @@
             </section>
 
             <section class="slide" id="slide-15" aria-labelledby="slide-15-title">
-                <div class="stage split">
-                    <div>
-                        <p class="tag reveal">Drafted AI</p>
-                        <h2 class="reveal" id="slide-15-title" style="--i: 1">Product engineering for generative design workflows.</h2>
-                        <p class="line reveal" style="--i: 2">Editing, interaction, UX, product specs.</p>
+                <div class="stage narrow">
+                    <p class="tag reveal">Drafted AI</p>
+                    <h2 class="reveal" id="slide-15-title" style="--i: 1">Product engineering for generative design workflows.</h2>
+                    <p class="line reveal" style="--i: 2">Editing, interaction, UX, product specs. The work was turning model capability into a usable design surface.</p>
+                </div>
+            </section>
+
+            <section class="slide" id="drafted-shaping" aria-labelledby="drafted-shaping-title">
+                <div class="stage demo-stage">
+                    <div class="media-heading">
+                        <div>
+                            <p class="tag reveal">Drafted AI</p>
+                            <h2 class="reveal" id="drafted-shaping-title" style="--i: 1">Shaping a design direction.</h2>
+                        </div>
+                        <p class="line reveal" style="--i: 2">A small interaction, but the important question is control: can the designer steer the system without losing intent?</p>
                     </div>
-                    <div class="product-screen reveal" style="--i: 3">
-                        <div class="screen-top">
-                            <span>design editor</span>
-                            <span>workflow state</span>
-                        </div>
-                        <div class="screen-grid">
-                            <div class="screen-canvas" aria-hidden="true"></div>
-                            <div class="screen-panel">
-                                <div class="screen-row">Generate options</div>
-                                <div class="screen-row">Edit geometry</div>
-                                <div class="screen-row">Compare states</div>
-                                <div class="screen-row">Keep the designer in control</div>
-                            </div>
-                        </div>
+                    <div class="video-frame reveal" style="--i: 3">
+                        <video src="/heatherwick2/media/drafted/shaping.mp4" muted loop playsinline preload="metadata"></video>
                     </div>
                 </div>
             </section>
 
-            <section class="slide" id="slide-16" aria-labelledby="slide-16-title">
-                <div class="stage three-up">
-                    <div class="card reveal">
-                        <span class="tiny-label">Drafted</span>
-                        <h2 id="slide-16-title">interaction features</h2>
+            <section class="slide" id="drafted-floorplan" aria-labelledby="drafted-floorplan-title">
+                <div class="stage demo-stage">
+                    <div class="media-heading">
+                        <div>
+                            <p class="tag reveal">Drafted AI</p>
+                            <h2 class="reveal" id="drafted-floorplan-title" style="--i: 1">Editing the plan directly.</h2>
+                        </div>
+                        <p class="line reveal" style="--i: 2">This is the product layer around the model: local edits, visual feedback, and a workflow that stays legible.</p>
                     </div>
-                    <div class="card reveal" style="--i: 1">
-                        <span class="tiny-label">Drafted</span>
-                        <h2>generative UX</h2>
+                    <div class="video-frame reveal" style="--i: 3">
+                        <video src="/heatherwick2/media/drafted/Floorplan_editing.mp4" muted loop playsinline preload="metadata"></video>
                     </div>
-                    <div class="card reveal" style="--i: 2">
-                        <span class="tiny-label">Drafted</span>
-                        <h2>architect-to-engineer specs</h2>
+                </div>
+            </section>
+
+            <section class="slide" id="drafted-materialize" aria-labelledby="drafted-materialize-title">
+                <div class="stage demo-stage">
+                    <div class="media-heading">
+                        <div>
+                            <p class="tag reveal">Drafted AI</p>
+                            <h2 class="reveal" id="drafted-materialize-title" style="--i: 1">Materializing an option.</h2>
+                        </div>
+                        <p class="line reveal" style="--i: 2">The interface needs to make a generated option feel inspectable, not mysterious.</p>
+                    </div>
+                    <div class="video-frame reveal" style="--i: 3">
+                        <video src="/heatherwick2/media/drafted/materialize.mp4" muted loop playsinline preload="metadata"></video>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" id="drafted-mobile" aria-labelledby="drafted-mobile-title">
+                <div class="stage demo-stage">
+                    <div class="media-heading">
+                        <div>
+                            <p class="tag reveal">Drafted AI</p>
+                            <h2 class="reveal" id="drafted-mobile-title" style="--i: 1">Checking the workflow on mobile.</h2>
+                        </div>
+                        <p class="line reveal" style="--i: 2">Useful tools have to survive the places people actually open them, not just the ideal desktop demo.</p>
+                    </div>
+                    <div class="video-frame reveal" style="--i: 3">
+                        <video src="/heatherwick2/media/drafted/mobikle.mp4" muted loop playsinline preload="metadata"></video>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" id="drafted-filter" aria-labelledby="drafted-filter-title">
+                <div class="stage demo-stage">
+                    <div class="media-heading">
+                        <div>
+                            <p class="tag reveal">Drafted AI</p>
+                            <h2 class="reveal" id="drafted-filter-title" style="--i: 1">Creating a filter.</h2>
+                        </div>
+                        <p class="line reveal" style="--i: 2">A good AI product still needs ordinary product clarity: filtering, comparison, saved states, and repeatable user choices.</p>
+                    </div>
+                    <div class="video-frame reveal" style="--i: 3">
+                        <video src="/heatherwick2/media/drafted/create_fileter.mp4" muted loop playsinline preload="metadata"></video>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" id="drafted-opener" aria-labelledby="drafted-opener-title">
+                <div class="stage demo-stage">
+                    <div class="media-heading">
+                        <div>
+                            <p class="tag reveal">Drafted AI</p>
+                            <h2 class="reveal" id="drafted-opener-title" style="--i: 1">Opening the workflow.</h2>
+                        </div>
+                        <p class="line reveal" style="--i: 2">The first moments matter: can a designer understand what the system is asking, what it can do, and how to move next?</p>
+                    </div>
+                    <div class="video-frame reveal" style="--i: 3">
+                        <video src="/heatherwick2/media/drafted/create_opemer.mp4" muted loop playsinline preload="metadata"></video>
                     </div>
                 </div>
             </section>
@@ -1109,7 +1348,7 @@
             </section>
 
             <section class="slide image" id="slide-22" aria-labelledby="slide-22-title">
-                <img class="bg" src="/portfolio/interior-rendered-gothic-cathedral-building-section-cut-c373d4df.webp" alt="">
+                <img class="bg" src="/heatherwick2/media/fragments/hero_gif.gif" alt="">
                 <div class="stage narrow">
                     <h2 class="reveal" id="slide-22-title">Research thread: fragments.</h2>
                 </div>
@@ -1120,39 +1359,52 @@
                     <div>
                         <p class="tag reveal">Patch-aware ML</p>
                         <h2 class="reveal" id="slide-23-title" style="--i: 1">Architectural reasoning happens at part scale.</h2>
-                    </div>
-                    <div class="diagram reveal" style="--i: 2">
-                        <div class="patch-grid" aria-hidden="true">
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        <p class="line reveal" style="--i: 2">The research question is whether a model can reason about operations, assemblies, and latent geometric logic instead of only whole-image style.</p>
+                        <div class="demo-links reveal" style="--i: 3">
+                            <a class="demo-link" href="https://docs.google.com/presentation/d/1QNkQKs3yRS2SWRkewufrYaLv3L-K_TWx/edit?usp=drive_link&amp;ouid=110473912861159430927&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">Open research deck</a>
                         </div>
+                    </div>
+                    <div class="media-frame reveal" style="--i: 4">
+                        <img src="/heatherwick2/media/fragments/system_architecture.jpeg" alt="Diagram of a ViT-small synthetic pretraining pipeline with patch and position embeddings, lineage classification, and patch saliency heads.">
                     </div>
                 </div>
             </section>
 
             <section class="slide" id="slide-24" aria-labelledby="slide-24-title">
-                <div class="stage three-up">
-                    <div class="card reveal">
+                <div class="stage wide">
+                    <div class="media-heading">
                         <span class="tiny-label">1</span>
-                        <h2 id="slide-24-title">operations</h2>
+                        <h2 class="reveal" id="slide-24-title" style="--i: 1">Patch-level evidence.</h2>
+                        <p class="line reveal" style="--i: 2">The visual proof is small: which fragments matter, where they sit, and how they map back to an architectural condition.</p>
                     </div>
-                    <div class="card reveal" style="--i: 1">
-                        <span class="tiny-label">2</span>
-                        <h2>assemblies</h2>
-                    </div>
-                    <div class="card reveal" style="--i: 2">
-                        <span class="tiny-label">3</span>
-                        <h2>constraints</h2>
+                    <div class="fragment-grid reveal" style="--i: 3">
+                        <article class="fragment-card">
+                            <div class="media-frame">
+                                <img src="/heatherwick2/media/fragments/overlaid_heatmap_gif.gif" alt="Animated patch saliency heatmap over an architectural fragment.">
+                            </div>
+                            <h3>Saliency</h3>
+                            <p class="small">Which local regions does the model treat as meaningful?</p>
+                        </article>
+                        <article class="fragment-card">
+                            <div class="media-frame">
+                                <img src="/heatherwick2/media/fragments/umapping_subfragments.gif" alt="Animated UMAP mapping of architectural subfragments.">
+                            </div>
+                            <h3>Clusters</h3>
+                            <p class="small">Can fragments group by latent operations rather than surface appearance?</p>
+                        </article>
+                        <article class="fragment-card">
+                            <div class="media-frame">
+                                <img src="/heatherwick2/media/fragments/overlaid_heatmap2.gif" alt="Second animated saliency heatmap over an architectural fragment.">
+                            </div>
+                            <h3>Part logic</h3>
+                            <p class="small">Where does the design reasoning sit inside the image?</p>
+                        </article>
                     </div>
                 </div>
             </section>
 
             <section class="slide image" id="slide-25" aria-labelledby="slide-25-title">
-                <img class="bg" src="/portfolio/detail-of-gothic-style-filigree-doorway-carved-into-l-31fe3333.webp" alt="">
+                <img class="bg" src="/heatherwick2/media/fragments/fragment_positioning.gif" alt="">
                 <div class="stage narrow">
                     <h2 class="reveal" id="slide-25-title">Often, the detail is where the logic is.</h2>
                 </div>
@@ -1250,9 +1502,26 @@
             });
             count.textContent = `${pad(activeIndex + 1)} / ${pad(slides.length)}`;
             progress.style.width = `${((activeIndex + 1) / slides.length) * 100}%`;
+            syncVideoPlayback();
             if (updateHash) {
                 history.replaceState(null, "", `#${slides[activeIndex].id}`);
             }
+        }
+
+        function syncVideoPlayback() {
+            slides.forEach((slide, slideIndex) => {
+                slide.querySelectorAll("video").forEach((video) => {
+                    if (slideIndex === activeIndex) {
+                        video.muted = true;
+                        const playPromise = video.play();
+                        if (playPromise && typeof playPromise.catch === "function") {
+                            playPromise.catch(() => {});
+                        }
+                    } else {
+                        video.pause();
+                    }
+                });
+            });
         }
 
         function fitSlidesToViewport() {
@@ -1323,6 +1592,10 @@
         }
         document.querySelectorAll("img").forEach((img) => {
             if (!img.complete) img.addEventListener("load", requestFit, { once: true });
+        });
+        document.querySelectorAll("video").forEach((video) => {
+            video.addEventListener("loadedmetadata", requestFit, { once: true });
+            video.addEventListener("loadeddata", requestFit, { once: true });
         });
 
         const hashIndex = slides.findIndex((slide) => `#${slide.id}` === window.location.hash);
