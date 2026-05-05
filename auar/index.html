@@ -612,6 +612,13 @@
             transition: transform 560ms ease;
         }
 
+        img.media-contain {
+            box-sizing: border-box;
+            object-fit: contain;
+            padding: 10px;
+            background: #f7f4ed;
+        }
+
         .media-card:hover figure img {
             transform: scale(1.04);
         }
@@ -1350,7 +1357,7 @@
                     <div class="four-grid reveal" style="--i: 2">
                         <article class="media-card">
                             <figure>
-                                <img src="/atlas/atlas.webp" alt="A dense visual atlas of architectural images arranged in a grid.">
+                                <img class="media-contain" src="/heatherwick2/media/archipedia/CAADRIA_LATENT_MAPS/image6.jpg" alt="Archipedia diagram showing multimodal steerable precedent retrieval from a query through visual, semantic, and contextual representations.">
                             </figure>
                             <div class="media-copy">
                                 <h3>Archipedia.ai</h3>
@@ -1359,7 +1366,7 @@
                         </article>
                         <article class="media-card">
                             <figure>
-                                <img src="/portfolio/front-elevation-ultra-fine-relief-of-data-streams-bin-b4955c67.webp" alt="A perforated architectural facade with visitors nearby.">
+                                <img class="media-contain" src="/heatherwick2/media/fragments/overlaid_heatmap_gif.gif" alt="Animated patch saliency heatmap over an architectural fragment.">
                             </figure>
                             <div class="media-copy">
                                 <h3>Patch-aware ML research</h3>
@@ -1440,32 +1447,28 @@
                     <div class="fragment-board reveal" style="--i: 3">
                         <article class="fragment-step">
                             <figure>
-                                <img src="/portfolio/interior-rendered-gothic-cathedral-building-section-cut-c373d4df.webp" alt="A sectional architectural image used as a fragment input.">
+                                <img class="media-contain" src="/heatherwick2/media/fragments/overlaid_heatmap_gif.gif" alt="Animated architectural fragment input with patch saliency overlay.">
                             </figure>
                             <h3>Fragment input</h3>
                             <p>Architectural images become local cues rather than only global style references.</p>
                         </article>
                         <article class="fragment-step">
-                            <div class="token-grid" aria-hidden="true">
-                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                            </div>
+                            <figure>
+                                <img class="media-contain" src="/heatherwick2/media/fragments/system_architecture.jpeg" alt="Patch-aware ML pipeline showing synthetic pretraining, ViT patch embeddings, lineage classification, and saliency heads.">
+                            </figure>
                             <h3>Patch representation</h3>
                             <p>ViT-style features can compare operations, assemblies, and latent geometric logic.</p>
                         </article>
                         <article class="fragment-step">
                             <figure>
-                                <img src="/portfolio/gear-systems-and-fan-blades-carved-into-stone-embedde-62642580.webp" alt="Industrial gears embedded into a stone facade.">
+                                <img class="media-contain" src="/heatherwick2/media/fragments/umapping_subfragments.gif" alt="Animated UMAP mapping of architectural subfragments.">
                             </figure>
                             <h3>Retrieved condition</h3>
                             <p>Search can move toward repeated details, constraints, and production-relevant families.</p>
                         </article>
                         <article class="fragment-step">
                             <figure>
-                                <img src="/portfolio/close-up-of-vertical-farm-tower-connection-point-biom-48bdf98f.webp" alt="A branching timber connection detail.">
+                                <img class="media-contain" src="/heatherwick2/media/fragments/overlaid_heatmap2.gif" alt="Animated patch saliency overlay highlighting part-level architectural logic.">
                             </figure>
                             <h3>Assembly relevance</h3>
                             <p>The useful question becomes: where does this part, tolerance, or operation show up again?</p>
