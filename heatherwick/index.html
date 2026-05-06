@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applied Machine Learning for Design Workflows | Clay Seifert</title>
+    <title>Heatherwick Studio ML Interview Deck | Clay Seifert</title>
     <meta name="description" content="Applied machine learning for design workflows: a web presentation prepared by Clay Seifert for a Heatherwick Studio interview.">
     <meta name="author" content="Clay Seifert">
     <meta name="robots" content="noindex">
@@ -1644,9 +1644,6 @@
             });
             count.textContent = `${pad(activeIndex + 1)} / ${pad(slides.length)}`;
             progress.style.width = `${((activeIndex + 1) / slides.length) * 100}%`;
-            if (updateHash) {
-                history.replaceState(null, "", `#${slides[activeIndex].id}`);
-            }
         }
 
         function fitSlidesToViewport() {
